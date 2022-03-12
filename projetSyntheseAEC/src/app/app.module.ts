@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { CandidatService } from './candidat.service'; /* import service candidat dans module.ts par WC */
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 
 /* Voici Angular Material */
 import { MatMenuModule } from '@angular/material/menu';
@@ -42,7 +44,7 @@ import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.compon
     MatIconModule
 
   ],
-  providers: [],
+  providers: [CandidatService], /* ajout des services dans le provider par WC*/
   bootstrap: [AppComponent]
 })
 export class AppModule { }

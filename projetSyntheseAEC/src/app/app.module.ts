@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidatService } from './candidat.service'; /* import service candidat dans module.ts par WC */
+import { EntrepriseService } from './entreprise.service'; /* import service Entreprise dans module.ts par WC */
+import { OffrestageService } from './offrestage.service'; /* import service OffreStage dans module.ts par WC */
+import { RegionService } from './region.service'; /* import service RegionService dans module.ts par WC */
+import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,7 +48,11 @@ import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.compon
     MatIconModule
 
   ],
-  providers: [CandidatService], /* ajout des services dans le provider par WC*/
-  bootstrap: [AppComponent]
+  providers: [CandidatService,
+              EntrepriseService,
+              OffrestageService,
+              RegionService,
+              RequetestagaService,
+  ], /* ajout des services dans le provider par WC*/
 })
 export class AppModule { }

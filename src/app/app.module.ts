@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +21,12 @@ import { PiedPageComponent } from './components-pages/pied-page/pied-page.compon
 import { DialogFormulaireInternshipRequestComponent } from './components-pages/internship-request/dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
 import { FormulaireInternshipRequestComponent } from       './components-pages/internship-request/formulaire-internship-request/formulaire-internship-request.component';
 import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +51,7 @@ import { TableInternshipRequestComponent } from './components-pages/internship-r
     MatCheckboxModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "fr-CA" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

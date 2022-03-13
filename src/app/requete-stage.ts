@@ -1,7 +1,7 @@
-export interface OffreStage {
-  _id: String,
+export interface RequeteStage {
+  id: String,
   title: String,
-  description: String,
+  description: String
   enterprise: String,
   startDate: Date,
   endDate: Date,
@@ -16,3 +16,4 @@ export interface OffreStage {
   updatedAt: Date,
   active: Boolean, 
 }
+

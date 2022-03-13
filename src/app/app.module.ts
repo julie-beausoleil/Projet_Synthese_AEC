@@ -49,10 +49,11 @@ import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.compon
 
   ],
   providers: [CandidatService,
-              EntrepriseService,
-              OffrestageService,
-              RegionService,
-              RequetestagaService,
+    EntrepriseService,
+    OffrestageService,
+    RegionService,
+    RequetestagaService,
   ], /* ajout des services dans le provider par WC*/
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

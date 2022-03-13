@@ -1,5 +1,5 @@
-interface InternshipRequest {
-    _id: string;
+export interface InternshipRequest {
+    _id?: string;
     title: string;
     description: string;
     enterprise: string;

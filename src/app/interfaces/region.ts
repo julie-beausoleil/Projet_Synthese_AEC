@@ -1,5 +1,5 @@
 export interface Region {
-  id: String,
+  _id: String,
   title: String,
   updatedAt: Date,
 }

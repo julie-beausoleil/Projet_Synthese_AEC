@@ -90,10 +90,7 @@
     </mat-form-field>
 
 
-
-
-
-
+    <!--  
     <mat-form-field required appearance="fill" class="full-width">
         <mat-label>Compétences</mat-label>
         <input name="skills" [(ngModel)]="internshipRequest.skills" #skills="ngModel" matInput required
@@ -101,16 +98,20 @@
         <mat-error *ngIf="skills.invalid && (description.dirty || skills.touched) && skills.hasError('required')">
             Les compétences sont obligatoires.</mat-error>
     </mat-form-field>
+    -->
 
+    <app-chip-input [listeItems]="internshipRequest.skills" (listeItemsChange)="updateSkills($event)">
+    </app-chip-input>
 
-
-
-    <div id="divVedette">
+    <div id="divPublished">
         <mat-checkbox [(ngModel)]="internshipRequest.published" name="{{internshipRequest.published}}">Publié
         </mat-checkbox>
     </div>
 
-    <div id="divVedette">
+    <app-chip-input [listeItems]="internshipRequest.paid" (listeItemsChange)="updatePaid($event)">
+    </app-chip-input>
+
+    <div id="divActive">
         <mat-checkbox [(ngModel)]="internshipRequest.active" name="{{internshipRequest.active}}">Actif</mat-checkbox>
     </div>
 
@@ -122,3 +123,6 @@
     </div>
 
 </form>
+
+
+<!-- https://stackblitz.com/edit/angular-nuifjo-dxlxrp?file=app%2Fchips-input-example.ts -->

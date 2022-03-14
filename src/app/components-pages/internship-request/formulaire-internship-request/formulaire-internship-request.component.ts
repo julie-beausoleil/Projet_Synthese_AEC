@@ -34,4 +34,17 @@ export class FormulaireInternshipRequestComponent implements OnInit {
   onCancel() { 
     this.majTableau.emit();
   }
+
+  updateSkills(event:any) {
+    //console.log("------------> updateCaracteristiques: " + event);
+    this.internshipRequest.skills = [];
+    this.internshipRequest.skills = [...event];
+  }
+
+  updatePaid(event:any) {
+    //console.log("------------> updateCaracteristiques: " + event);
+    this.internshipRequest.paid = [];
+    this.internshipRequest.paid = [...event];
+  }
+
 }

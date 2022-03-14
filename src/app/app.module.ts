@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
@@ -21,6 +22,8 @@ import { PiedPageComponent } from './components-pages/pied-page/pied-page.compon
 import { DialogFormulaireInternshipRequestComponent } from './components-pages/internship-request/dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
 import { FormulaireInternshipRequestComponent } from       './components-pages/internship-request/formulaire-internship-request/formulaire-internship-request.component';
 import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+import { ChipInputComponent } from './components-utilitaires/chip-input/chip-input.component';
+
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -35,12 +38,14 @@ registerLocaleData(localeFr);
     DialogFormulaireInternshipRequestComponent,
     FormulaireInternshipRequestComponent,
     TableInternshipRequestComponent,
+    ChipInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
+    MatChipsModule,
     FormsModule,
     MatTableModule,
     MatCardModule,

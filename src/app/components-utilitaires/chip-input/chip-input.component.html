@@ -1,0 +1,16 @@
+<mat-form-field class="example-chip-list" appearance="fill">
+  <!-- <mat-label>Caractéristiques</mat-label> -->
+
+  <mat-chip-list #chipList aria-label="Caracteristique selection">
+    <mat-chip *ngFor="let item of listeItems" (removed)="remove(item)">
+      {{item}}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+
+    <input placeholder="Nouvel item..." [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>

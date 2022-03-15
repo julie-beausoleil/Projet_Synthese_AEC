@@ -15,3 +15,9 @@ export interface InternshipRequest {
     paid: string[];
     active: boolean;
 }
+
+
+export interface FormulaireInternshipRequestData {
+   internshipRequest: InternshipRequest;
+   isDisabled: boolean;
+}

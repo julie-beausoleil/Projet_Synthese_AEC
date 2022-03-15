@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { InternshipRequest } from 'src/app/interfaces/internshipRequest';
+import { FormulaireInternshipRequestData, InternshipRequest } from 'src/app/interfaces/internshipRequest';
 import { InternshipRequestService } from '../../../services/internship-request.service';
 
 @Component({
@@ -10,12 +10,17 @@ import { InternshipRequestService } from '../../../services/internship-request.s
 })
 export class FormulaireInternshipRequestComponent implements OnInit {
 
-  @Input() internshipRequest: InternshipRequest = <InternshipRequest>{}; 
+  @Input() formulaireInternshipRequestData: FormulaireInternshipRequestData = <FormulaireInternshipRequestData>{}; 
+  internshipRequest = this.formulaireInternshipRequestData.internshipRequest;
+  isDisabled = this.formulaireInternshipRequestData.isDisabled;
+
   @Output() majTableau = new EventEmitter();
 
   constructor(private internshipRequestService: InternshipRequestService) { }
 
   ngOnInit(): void {
+    this.internshipRequest = this.formulaireInternshipRequestData.internshipRequest;
+    this.isDisabled = this.formulaireInternshipRequestData.isDisabled;
   }
 
   onSave(internshipRequestForm: NgForm) {

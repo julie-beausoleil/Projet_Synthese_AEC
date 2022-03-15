@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { InternshipRequest } from '../../../interfaces/internshipRequest'
+import { FormulaireInternshipRequestData, InternshipRequest } from '../../../interfaces/internshipRequest'
 
 @Component({
   selector: 'app-dialog-formulaire-internship-request',
@@ -10,7 +10,7 @@ import { InternshipRequest } from '../../../interfaces/internshipRequest'
 export class DialogFormulaireInternshipRequestComponent {
 
   constructor(public dialogRef: MatDialogRef<DialogFormulaireInternshipRequestComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: InternshipRequest) { }
+              @Inject(MAT_DIALOG_DATA) public data: FormulaireInternshipRequestData) { }
 
   fermerDialogue(): void {
     this.dialogRef.close();

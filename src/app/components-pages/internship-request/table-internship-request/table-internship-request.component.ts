@@ -12,6 +12,7 @@ import { InternshipRequest } from '../../../interfaces/internshipRequest';
 })
 export class TableInternshipRequestComponent implements OnInit {
 
+  isDisabled:boolean= false;
   internshipRequests: InternshipRequest[] = [];
   selectedInternshipRequest?: InternshipRequest;
   columnsToDisplay = ['profil', 'etablissement', 'dateDebut', 'actions'];
@@ -55,9 +56,14 @@ export class TableInternshipRequestComponent implements OnInit {
     } else { 
       this.selectedInternshipRequest = internshipRequest;
     }
+    this.isDisabled = false;
+
+    let formulaireInternshipRequest = { internshipRequest : this.selectedInternshipRequest, 
+                                        isDisabled : this.isDisabled};
+
     const dialogRef = this.dialog.open(DialogFormulaireInternshipRequestComponent, {
       width: '1000px',
-      data: this.selectedInternshipRequest,
+      data: formulaireInternshipRequest,
     });
 
     dialogRef.afterClosed().subscribe(_ => {
@@ -65,4 +71,25 @@ export class TableInternshipRequestComponent implements OnInit {
       this.getInternshipRequests();
     });
   }
+
+
+  onSelectReadOnly(internshipRequest: InternshipRequest) {
+    this.selectedInternshipRequest = internshipRequest;
+    this.isDisabled = true;
+
+    let formulaireInternshipRequest = { internshipRequest : this.selectedInternshipRequest, 
+                                        isDisabled : this.isDisabled};
+    
+    const dialogRef = this.dialog.open(DialogFormulaireInternshipRequestComponent, {
+      width: '1000px',
+      data: formulaireInternshipRequest,
+    });
+
+    dialogRef.afterClosed().subscribe(_ => {
+      this.selectedInternshipRequest = undefined;
+      this.getInternshipRequests();
+    });
+  }
+
+
 }// Fin TableInternshipRequestComponent

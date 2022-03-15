@@ -1,1 +1,58 @@
 <p>ajout-candidat works!</p>
+
+<h1>Ajouter un Candidat</h1>
+<button mat-stroked-button>Annuler</button>
+<button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
+<br /><br /><br />
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nom et Prénom: </mat-label>
+    <input matInput placeholder="Nom et Prénom" value="Nom et Prénom" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Poste</mat-label>
+    <input matInput placeholder="Poste" value="Poste" />
+  </mat-form-field>
+  <br />
+  <h2>Courte présentation</h2>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <textarea matInput placeholder=""></textarea>
+  </mat-form-field>
+  <br /><br />
+  <h4>Informations personnelles</h4>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Adresse</mat-label>
+    <input matInput placeholder="Adresse" value="Adresse" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Ville</mat-label>
+    <input matInput placeholder="Ville" value="Ville" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Province</mat-label>
+    <input matInput placeholder="Province" value="Province" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Code Postal</mat-label>
+    <input matInput placeholder="Code Postal" value="Code Postal" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+1 &nbsp;</span>
+    <input type="tel" matInput placeholder="555-555-1234" />
+    <mat-icon matSuffix>mode_edit</mat-icon></mat-form-field
+  ><br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Courriel</mat-label>
+    <input matInput placeholder="Courriel" value="Couriel" />
+  </mat-form-field>
+  <br />
+  <button mat-stroked-button>Annuler</button>
+  <button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
+</form>

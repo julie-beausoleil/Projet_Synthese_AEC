@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Candidat } from '../candidat';
 
 @Component({
   selector: 'app-ajout-candidat',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout-candidat.component.sass']
 })
 export class AjoutCandidatComponent implements OnInit {
-
+  @Input() candidat?: Candidat;
   constructor() { }
 
   ngOnInit(): void {

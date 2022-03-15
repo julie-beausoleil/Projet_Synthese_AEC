@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./candidats.component.sass']
 })
 export class CandidatsComponent implements OnInit {
+  name = `Plume Latraverse `;
+  description = `UX Designer `;
   longText = `plume@latraverse.com `;
   tel = `819-999-9999 `;
   constructor() { }

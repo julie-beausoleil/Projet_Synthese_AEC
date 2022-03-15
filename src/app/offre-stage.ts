@@ -10,8 +10,8 @@ export interface OffreStage {
   stageType: String,
   hoursPerWeek: Number,
   additionalInfo: String,
-  paid: [String],
-  skills: [String],
+  paid: String[];
+  skills: String[];
   published: Boolean,
   updatedAt: Date,
   active: Boolean, 

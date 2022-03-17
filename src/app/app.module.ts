@@ -45,6 +45,7 @@ import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.componen
 import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
     AjoutCandidatComponent,
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
-    FicheEntrepriseComponent
+    FicheEntrepriseComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Candidat } from '../candidat';
+import { Candidat } from '../dossierDesInterfaces/candidat';
 
 @Component({
   selector: 'app-ajout-candidat',

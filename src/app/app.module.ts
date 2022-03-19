@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 /* Les services */
-import { CandidatService } from './candidat.service'; /* import service candidat dans module.ts par WC */
-import { EntrepriseService } from './entreprise.service'; /* import service Entreprise dans module.ts par WC */
-import { OffrestageService } from './offrestage.service'; /* import service OffreStage dans module.ts par WC */
-import { RegionService } from './region.service'; /* import service RegionService dans module.ts par WC */
-import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+import { CandidatService } from './dossierDesServices/candidat.service'; /* import service candidat dans module.ts par WC */
+import { EntrepriseService } from './dossierDesServices/entreprise.service'; /* import service Entreprise dans module.ts par WC */
+import { OffrestageService } from './dossierDesServices/offrestage.service'; /* import service OffreStage dans module.ts par WC */
+import { RegionService } from './dossierDesServices/region.service'; /* import service RegionService dans module.ts par WC */
+import { RequetestagaService } from './dossierDesServices/requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
 
 
 import { AppRoutingModule } from './app-routing.module';

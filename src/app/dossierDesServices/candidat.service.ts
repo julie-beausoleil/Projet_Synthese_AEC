@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service candidat par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Candidat } from './candidat';
+import { Candidat } from '../dossierDesInterfaces/candidat';
 import { Observable } from 'rxjs';
 
 const httpOptions = {

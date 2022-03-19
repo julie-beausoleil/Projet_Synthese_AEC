@@ -46,6 +46,7 @@ import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.co
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
     FicheEntrepriseComponent,
-    AccueilComponent
+    AccueilComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,

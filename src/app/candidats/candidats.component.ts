@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CandidatService } from '../candidat.service';
-import { Candidat } from '../candidat';
+
 
 @Component({
   selector: 'app-candidats',
@@ -13,7 +12,7 @@ export class CandidatsComponent implements OnInit {
   longText = `plume@latraverse.com `;
   tel = `819-999-9999 `;
 
-  constructor(private candidatService: CandidatService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

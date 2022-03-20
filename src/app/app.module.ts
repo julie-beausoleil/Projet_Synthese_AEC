@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -45,6 +46,7 @@ import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.componen
 import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 
@@ -73,8 +75,9 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
     FicheEntrepriseComponent,
+    ListeEntreprisesComponent,
     AccueilComponent,
-    DatePickerComponent
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,9 +88,10 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatTableModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [CandidatService,
               EntrepriseService,

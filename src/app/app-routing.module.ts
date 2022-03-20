@@ -7,6 +7,7 @@ import { DemandesDeStagesComponent } from './demandes-de-stages/demandes-de-stag
 import { OffresDeStageComponent } from './offres-de-stage/offres-de-stage.component';
 import { CandidatsComponent } from './candidats/candidats.component';
 import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 
 /* Liens pour la barre de navigation */
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';

@@ -19,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -42,6 +43,7 @@ import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.componen
 import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
     AjoutCandidatComponent,
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
-    FicheEntrepriseComponent
+    FicheEntrepriseComponent,
+    ListeEntreprisesComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [CandidatService,
               EntrepriseService,

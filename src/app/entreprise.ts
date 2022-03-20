@@ -1,5 +1,5 @@
 export interface Entreprise {
-  id: String, 
+ _id: String, 
   name: String,
   description: String,
   imageUrl: String,

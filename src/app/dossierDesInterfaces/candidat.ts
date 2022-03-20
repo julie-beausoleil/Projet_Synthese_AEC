@@ -1,5 +1,5 @@
 export interface Candidat {
-  id: String,
+  _id: String,
   name: String,
   description: String,
   jobTitle: String,
@@ -10,7 +10,6 @@ export interface Candidat {
   province: String,
   postalCode: String,
   published: Boolean,
-  updatedAt: Date   /* n'est pas dans les interfaces de Dinh */
 }
 
 

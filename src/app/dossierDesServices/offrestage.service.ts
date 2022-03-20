@@ -25,7 +25,7 @@ export class OffrestageService {
   }
 
   editOffreStage(offrestage: OffreStage): Observable<OffreStage> {
-    return this.http.put<OffreStage>(this.offrestageUrl + "?id=" + offrestage.id, offrestage, httpOptions);
+    return this.http.put<OffreStage>(this.offrestageUrl + "?id=" + offrestage._id, offrestage, httpOptions);
   }
 
   deleteOffreStage(id: String): Observable<OffreStage> {

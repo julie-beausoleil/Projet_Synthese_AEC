@@ -1,7 +1,7 @@
 export interface RequeteStage {
-  id: String,
+  _id: String,
   title: String,
-  description: String
+  description: String,
   enterprise: String,
   startDate: Date,
   endDate: Date,
@@ -10,10 +10,8 @@ export interface RequeteStage {
   stageType: String,
   hoursPerWeek: Number,
   additionalInfo: String,
-  paid: String[];
-  skills: String[];
+  paid: String [],
+  skills: String [],
   published: Boolean,
-  updatedAt: Date,
-  active: Boolean, 
 }
 

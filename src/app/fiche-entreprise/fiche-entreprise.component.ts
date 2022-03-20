@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entreprise } from "../entreprise"; /* Importation de mon interface */
-import { EntrepriseService } from '../entreprise.service'; /* Importantion de mon service */
+import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation de mon interface */
+import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service */
 import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulaire est valide
 
 @Component({
@@ -8,10 +8,11 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
   templateUrl: './fiche-entreprise.component.html',
   styleUrls: ['./fiche-entreprise.component.sass']
 })
-export class FicheEntrepriseComponent implements OnInit {
+export class FicheEntrepriseComponent implements OnInit { 
 
   entreprises : Entreprise[]= [] ;   
   selectedEntreprise?: Entreprise; 
+  columnsToDisplay = ["address", 'actions'];
 
   constructor(private entrepriseService : EntrepriseService) { }
 

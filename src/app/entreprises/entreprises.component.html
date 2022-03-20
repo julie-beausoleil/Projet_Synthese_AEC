@@ -1,16 +1,12 @@
 
-
-
 <!-- Début de la section 1 -->
 <div class="carte-entreprise"  *ngIf="entreprise"> <!-- nom de mon service(effacer) -->    
-  
 
   <section class="">
-    <mat-card class="card">  
-
-      
+    <mat-card class="card"> 
 
       <mat-icon>person</mat-icon> <!--   ici il faudrait ajouter le logo de l'entreprise, comment on procède ?-->
+        
       <mat-card-title-group>
         <mat-card-title>{{ entreprise.name }}</mat-card-title>
         <mat-card-subtitle>{{ entreprise.address }}</mat-card-subtitle>

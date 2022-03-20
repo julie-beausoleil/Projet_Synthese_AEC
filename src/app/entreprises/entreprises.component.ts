@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entreprise } from "../entreprise"; /* Importation de mon interface */
+import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation de mon interface */
 
 @Component({
   selector: 'app-entreprises',
@@ -9,10 +9,16 @@ import { Entreprise } from "../entreprise"; /* Importation de mon interface */
 export class EntreprisesComponent implements OnInit {
 
   @Input() entreprise? : Entreprise;    
+    entreprises : Entreprise[]= [] ;   
+    selectedEntreprise?: Entreprise; 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(entreprise: Entreprise): void {
+    this.selectedEntreprise = entreprise; 
   }
 
 

@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 /* Les services */
-import { CandidatService } from './candidat.service'; /* import service candidat dans module.ts par WC */
-import { EntrepriseService } from './entreprise.service'; /* import service Entreprise dans module.ts par WC */
-import { OffrestageService } from './offrestage.service'; /* import service OffreStage dans module.ts par WC */
-import { RegionService } from './region.service'; /* import service RegionService dans module.ts par WC */
-import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+import { CandidatService } from './dossierDesServices/candidat.service'; /* import service candidat dans module.ts par WC */
+import { EntrepriseService } from './dossierDesServices/entreprise.service'; /* import service Entreprise dans module.ts par WC */
+import { OffrestageService } from './dossierDesServices/offrestage.service'; /* import service OffreStage dans module.ts par WC */
+import { RegionService } from './dossierDesServices/region.service'; /* import service RegionService dans module.ts par WC */
+import { RequetestagaService } from './dossierDesServices/requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -44,6 +48,9 @@ import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.co
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+
 
 
 @NgModule({
@@ -70,8 +77,12 @@ import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
     FicheEntrepriseComponent,
-    ListeEntreprisesComponent
+    ListeEntreprisesComponent,
+    AccueilComponent,
+    DatePickerComponent,
   ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -81,8 +92,12 @@ import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
+  
   providers: [CandidatService,
               EntrepriseService,
               OffrestageService,

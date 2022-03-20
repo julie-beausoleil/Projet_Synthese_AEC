@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service region par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RequeteStage } from './requete-stage';
+import { RequeteStage } from '../dossierDesInterfaces/requete-stage';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -23,7 +23,7 @@ export class RequetestagaService {
   }
 
   editRegion(reqstage: RequeteStage): Observable<RequeteStage> {
-    return this.http.put<RequeteStage>(this.reqstageUrl + "?id=" + reqstage.id, reqstage, httpOptions);
+    return this.http.put<RequeteStage>(this.reqstageUrl + "?id=" + reqstage._id, reqstage, httpOptions);
   }
 
   deleteRegion(id: String): Observable<RequeteStage> {

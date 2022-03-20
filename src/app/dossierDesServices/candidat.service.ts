@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service candidat par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Candidat } from './candidat';
+import { Candidat } from '../dossierDesInterfaces/candidat';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -26,7 +26,7 @@ export class CandidatService {
   }
 
   editCandidat(candidat: Candidat): Observable<Candidat> {
-    return this.http.put<Candidat>(this.candidatUrl + "?id=" + candidat.id, candidat, httpOptions);
+    return this.http.put<Candidat>(this.candidatUrl + "?id=" + candidat._id, candidat, httpOptions);
   }
 
   deleteCandidat(id: String): Observable<Candidat> {

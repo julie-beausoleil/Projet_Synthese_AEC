@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service offre-stage par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { OffreStage } from './offre-stage';
+import { OffreStage } from '../dossierDesInterfaces/offre-stage';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -25,7 +25,7 @@ export class OffrestageService {
   }
 
   editOffreStage(offrestage: OffreStage): Observable<OffreStage> {
-    return this.http.put<OffreStage>(this.offrestageUrl + "?id=" + offrestage.id, offrestage, httpOptions);
+    return this.http.put<OffreStage>(this.offrestageUrl + "?id=" + offrestage._id, offrestage, httpOptions);
   }
 
   deleteOffreStage(id: String): Observable<OffreStage> {

@@ -1,5 +1,5 @@
 export interface Entreprise {
- _id: String, 
+  _id: String,
   name: String,
   description: String,
   imageUrl: String,
@@ -11,7 +11,6 @@ export interface Entreprise {
   province: String,
   postalCode: String,
   published: Boolean,
-  updatedAt: Date, /* n'est pas dans les interfaces de Dinh */
 }
 
 

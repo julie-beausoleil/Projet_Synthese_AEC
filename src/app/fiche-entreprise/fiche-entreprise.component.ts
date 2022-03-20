@@ -8,9 +8,7 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
   templateUrl: './fiche-entreprise.component.html',
   styleUrls: ['./fiche-entreprise.component.sass']
 })
-export class FicheEntrepriseComponent implements OnInit {
-
-  @Input() entreprise? : Entreprise;  
+export class FicheEntrepriseComponent implements OnInit { 
 
   entreprises : Entreprise[]= [] ;   
   selectedEntreprise?: Entreprise; 

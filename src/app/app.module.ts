@@ -24,7 +24,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
 import { CandidatsComponent } from './candidats/candidats.component';
@@ -50,7 +49,6 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
-
 
 
 @NgModule({
@@ -79,10 +77,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     FicheEntrepriseComponent,
     ListeEntreprisesComponent,
     AccueilComponent,
-    DatePickerComponent,
+    DatePickerComponent
   ],
-
-
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -95,9 +91,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     MatTableModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInputModule
   ],
-  
   providers: [CandidatService,
               EntrepriseService,
               OffrestageService,

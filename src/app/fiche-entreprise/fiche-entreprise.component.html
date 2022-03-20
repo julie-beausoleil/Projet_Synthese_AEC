@@ -1,0 +1,88 @@
+ 
+
+  <mat-icon>person</mat-icon> <!--   ici il faudrait ajouter le logo de l'entreprise, comment on procède ?-->
+  <h4>Entreprise</h4>
+  <h2> nom</h2>
+
+  <div>
+    <h2>Courte présentation</h2>
+    <p>Mettre description API</p>
+  </div>
+
+  <div>
+    <h4>Personne contact</h4>
+    <h3>Nom API</h3>
+  </div>
+
+  <div>
+    <h4>Adrese</h4>
+    <p>ad api</p>
+
+    <h4>Ville</h4>
+    <p>api</p>
+
+    <h4>Province</h4>
+    <p>api</p>
+
+    <h4>Code postal</h4>
+    <p>api</p>
+
+    <h4>Téléphone</h4>
+    <p>api</p>
+
+    <h4>Courriel</h4>
+    <p>api</p>
+  </div>
+
+
+
+
+
+
+   
+  <table mat-table #tableEntreprise [dataSource]="entreprises">
+      
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let entreprise" class="boutonsAction">
+              <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editButton;" color="primary" form="forfaitFormEdition" mat-button>
+                  <i class="material-icons">done</i>
+              </button>
+                          
+              <ng-template #editButton>
+                  <form (ngSubmit)="onSelect(entreprise)">
+                      <button mat-button><i class="material-icons">edit</i></button>
+                  </form>
+              </ng-template>
+  
+              <form (ngSubmit)="deleteEntreprise(entreprise)">
+                  <button mat-button ><i class="material-icons">delete</i></button>
+              </form>
+          </td>
+        </ng-container>    
+       
+    
+  </table>
+    
+      
+       
+
+  
+ 
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

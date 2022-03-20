@@ -9,13 +9,11 @@ import { OffrestageService } from './dossierDesServices/offrestage.service'; /* 
 import { RegionService } from './dossierDesServices/region.service'; /* import service RegionService dans module.ts par WC */
 
 import { HttpClientModule } from '@angular/common/http';
-import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+import { RequetestagaService } from './dossierDesServices/requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
 
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';

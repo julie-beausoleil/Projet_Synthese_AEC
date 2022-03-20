@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service region par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Region } from './region';
+import { Region } from '../dossierDesInterfaces/region';
 import { Observable } from 'rxjs';
 
 const httpOptions = {

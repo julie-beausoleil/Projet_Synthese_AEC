@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service entreprise par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Entreprise } from './entreprise';
+import { Entreprise } from '../dossierDesInterfaces/entreprise';
 import { Observable } from 'rxjs';
 
 const httpOptions = {

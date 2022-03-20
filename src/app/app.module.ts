@@ -77,7 +77,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     FicheEntrepriseComponent,
     ListeEntreprisesComponent,
     AccueilComponent,
-    DatePickerComponent
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +91,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     MatTableModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [CandidatService,
               EntrepriseService,

@@ -10,8 +10,11 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
 })
 export class FicheEntrepriseComponent implements OnInit {
 
+  @Input() entreprise? : Entreprise;  
+
   entreprises : Entreprise[]= [] ;   
   selectedEntreprise?: Entreprise; 
+  columnsToDisplay = ["address", 'actions'];
 
   constructor(private entrepriseService : EntrepriseService) { }
 

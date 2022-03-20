@@ -9,10 +9,16 @@ import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation 
 export class EntreprisesComponent implements OnInit {
 
   @Input() entreprise? : Entreprise;    
+    entreprises : Entreprise[]= [] ;   
+    selectedEntreprise?: Entreprise; 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(entreprise: Entreprise): void {
+    this.selectedEntreprise = entreprise; 
   }
 
 

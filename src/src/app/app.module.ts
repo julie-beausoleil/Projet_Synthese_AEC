@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 /* Les services */
 import { CandidatService } from './dossierDesServices/candidat.service'; /* import service candidat dans module.ts par WC */
@@ -49,6 +50,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +76,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     EditerEntrepriseComponent,
     FicheEntrepriseComponent,
     AccueilComponent,
-    DatePickerComponent
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     MatCardModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [CandidatService,
               EntrepriseService,

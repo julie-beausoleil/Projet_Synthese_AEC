@@ -1,0 +1,36 @@
+<button (click)="onSelect(undefined)" mat-button><i class="material-icons">add</i></button>
+
+
+<h2>Dernières demandes de stage</h2>
+
+<table id="tableInternshipRequests" mat-table #tableInternshipRequests [dataSource]="internshipRequests">
+
+    <ng-container matColumnDef="profil">
+        <th mat-header-cell *matHeaderCellDef>Poste </th>
+        <td mat-cell *matCellDef="let internshipRequest"> {{internshipRequest.title}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="etablissement">
+        <th mat-header-cell *matHeaderCellDef>Entreprise</th>
+        <td mat-cell *matCellDef="let internshipRequest"> {{internshipRequest.enterprise}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateDebut">
+        <th mat-header-cell *matHeaderCellDef>Date de début</th>
+        <td mat-cell *matCellDef="let internshipRequest"> {{internshipRequest.startDate | date:'EEEE, d MMMM, y'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let internshipRequest" class="boutonsAction">
+            <button (click)="onSelectReadOnly(internshipRequest)" mat-button><i
+                    class="material-icons">pageview</i></button>
+            <button (click)="onSelect(internshipRequest)" mat-button><i class="material-icons">edit</i></button>
+            <button (click)="onDelete(internshipRequest)" mat-button><i class="material-icons">delete</i></button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+</table>

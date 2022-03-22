@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class EntrepriseService {
-  entrepriseUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/enterprise'; /*variable chemin vers l'API de l'entreprise par WC*/
+  entrepriseUrl = 'https://projet-synthese-api.herokuapp.com/api/enterprise'; /*variable chemin vers l'API de l'entreprise par WC*/
 
   constructor(private http: HttpClient) { }
 
@@ -26,11 +26,11 @@ export class EntrepriseService {
   }
 
   editEntreprise(entreprise: Entreprise): Observable<Entreprise> {
-    return this.http.put<Entreprise>(this.entrepriseUrl + "?id=" + entreprise._id, entreprise, httpOptions);
+    return this.http.put<Entreprise>(this.entrepriseUrl + "?id=" + entreprise.id, entreprise, httpOptions);
   }
 
-  deleteEntreprise(_id: String): Observable<Entreprise> {
-    return this.http.delete<Entreprise>(this.entrepriseUrl + "?id=" + _id);
+  deleteCandidat(id: String): Observable<Entreprise> {
+    return this.http.delete<Entreprise>(this.entrepriseUrl + "?id=" + id);
   }
 
 }

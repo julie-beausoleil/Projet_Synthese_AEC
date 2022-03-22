@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
 
 /* Liens pour la side barre (barre de navigation) */
 import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.component';
@@ -20,18 +21,18 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 
 /* Liens pour la page s'accueil */
 import { AccueilComponent } from './accueil/accueil.component';
-
 const routes: Routes = [
-/* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
+  /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
   { path: '', component: TableauDeBordComponent },
   { path: 'tableau-de-bord', component: TableauDeBordComponent },
   { path: 'demandes-de-stages', component: DemandesDeStagesComponent },
-  { path: 'offres-de-stage', component: OffresDeStageComponent},
+  { path: 'offres-de-stage', component: OffresDeStageComponent },
   { path: 'candidats', component: CandidatsComponent },
   { path: 'entreprises', component: EntreprisesComponent },
+  { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent }
 
-  /* Route pour les boutons d'ajout */
-  { path: 'ajout-candidat', component: AjoutCandidatComponent },
+   /* Route pour les boutons d'ajout */
+   { path: 'ajout-candidat', component: AjoutCandidatComponent },
   { path: 'ajout-demande-stage', component: AjoutDemandeStageComponent },
   { path: 'ajout-entreprise', component: AjoutEntrepriseComponent },
   { path: 'ajout-offre-stage', component: AjoutOffreStageComponent },
@@ -39,9 +40,9 @@ const routes: Routes = [
   /* Route pour les fiches */
   { path: 'fiche-candidat', component: FicheCandidatComponent },
   { path: 'fiche-entreprise', component: FicheEntrepriseComponent },
-  
+
   /* Voici la page d'acceuil */
-  { path: 'accueil', component: AccueilComponent},
+  { path: 'accueil', component: AccueilComponent },
 ];
 
 @NgModule({

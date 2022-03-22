@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
@@ -7,22 +7,29 @@ import { CandidatService } from './dossierDesServices/candidat.service'; /* impo
 import { EntrepriseService } from './dossierDesServices/entreprise.service'; /* import service Entreprise dans module.ts par WC */
 import { OffrestageService } from './dossierDesServices/offrestage.service'; /* import service OffreStage dans module.ts par WC */
 import { RegionService } from './dossierDesServices/region.service'; /* import service RegionService dans module.ts par WC */
-import { RequetestagaService } from './dossierDesServices/requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+
+import { HttpClientModule } from '@angular/common/http';
+import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+
+import { FormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 
 /* Voici Angular Material */
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -51,6 +58,19 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 
+import { EnteteComponent } from './components-pages/entete/entete.component';
+import { PiedPageComponent } from './components-pages/pied-page/pied-page.component';
+import { DialogFormulaireInternshipRequestComponent } from './components-pages/internship-request/dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
+import { FormulaireInternshipRequestComponent } from './components-pages/internship-request/formulaire-internship-request/formulaire-internship-request.component';
+import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+import { ChipInputComponent } from './components-utilitaires/chip-input/chip-input.component';
+
+
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +97,12 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     FicheEntrepriseComponent,
     AccueilComponent,
     DatePickerComponent,
+    EnteteComponent,
+    PiedPageComponent,
+    DialogFormulaireInternshipRequestComponent,
+    FormulaireInternshipRequestComponent,
+    TableInternshipRequestComponent,
+    ChipInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,11 +118,26 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
     MatInputModule,
     MatCheckboxModule
   ],
+
   providers: [CandidatService,
-              EntrepriseService,
-              OffrestageService,
-              RegionService,
-              RequetestagaService,],
+    EntrepriseService,
+    OffrestageService,
+    RegionService,
+    RequetestagaService,
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatChipsModule,
+    FormsModule,
+    MatTableModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatIconModule,
+    { provide: LOCALE_ID, useValue: "fr-CA" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

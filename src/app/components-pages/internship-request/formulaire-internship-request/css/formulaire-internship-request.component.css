@@ -1,0 +1,15 @@
+form {
+  min-width: 1000px;
+  width: 1400px;
+  max-width: 1500px;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+.full-width {
+  width: 95%;
+}
+
+.half-width {
+  width: 85%;
+}/*# sourceMappingURL=formulaire-internship-request.component.css.map */

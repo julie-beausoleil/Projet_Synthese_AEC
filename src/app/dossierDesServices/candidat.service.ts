@@ -26,7 +26,7 @@ export class CandidatService {
   }
 
   editCandidat(candidat: Candidat): Observable<Candidat> {
-    return this.http.put<Candidat>(this.candidatUrl + "?id=" + candidat.id, candidat, httpOptions);
+    return this.http.put<Candidat>(this.candidatUrl + "?id=" + candidat._id, candidat, httpOptions);
   }
 
   deleteCandidat(id: String): Observable<Candidat> {

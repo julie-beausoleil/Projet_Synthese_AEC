@@ -23,7 +23,7 @@ export class RequetestagaService {
   }
 
   editRegion(reqstage: RequeteStage): Observable<RequeteStage> {
-    return this.http.put<RequeteStage>(this.reqstageUrl + "?id=" + reqstage.id, reqstage, httpOptions);
+    return this.http.put<RequeteStage>(this.reqstageUrl + "?id=" + reqstage._id, reqstage, httpOptions);
   }
 
   deleteRegion(id: String): Observable<RequeteStage> {

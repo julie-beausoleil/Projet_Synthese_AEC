@@ -7,7 +7,7 @@ import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.compon
 import { DemandesDeStagesComponent } from './demandes-de-stages/demandes-de-stages.component';
 import { OffresDeStageComponent } from './offres-de-stage/offres-de-stage.component';
 import { CandidatsComponent } from './candidats/candidats.component';
-import { EntreprisesComponent } from './entreprises/entreprises.component';
+import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 
 /* Liens pour la barre de navigation */
 import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.component';
@@ -27,9 +27,9 @@ const routes: Routes = [
   { path: 'tableau-de-bord', component: TableauDeBordComponent },
   { path: 'demandes-de-stages', component: DemandesDeStagesComponent },
   { path: 'offres-de-stage', component: OffresDeStageComponent },
-  { path: 'candidats', component: CandidatsComponent },
-  { path: 'entreprises', component: EntreprisesComponent },
-  { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent }
+  { path: 'candidats', component: CandidatsComponent },  
+  { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
+  { path: 'entreprises', component: ListeEntreprisesComponent },
 
    /* Route pour les boutons d'ajout */
    { path: 'ajout-candidat', component: AjoutCandidatComponent },

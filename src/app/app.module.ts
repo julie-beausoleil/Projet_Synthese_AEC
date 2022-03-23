@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';

@@ -1,0 +1,16 @@
+<!-- PAGE ENTREPRISE, importation de mon composant entreprise pouraficher les cartes de visites en boucle -->
+<h1>Entreprise</h1>
+
+<!-- Boutton pour ajouter une entreprise -->
+<button mat-stroked-button>Ajouter une entreprise</button><br /><br />
+
+
+<!-- Boucle pour afficher les cartes des entreprises de mon API -->
+<div class="liste-entreprises">     
+  <div>
+    <app-entreprises *ngFor="let entreprise  of entreprises " [entreprise] = "entreprise" ></app-entreprises> 
+  </div>
+</div>
+
+
+

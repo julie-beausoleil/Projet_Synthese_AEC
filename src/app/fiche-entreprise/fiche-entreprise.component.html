@@ -1,1 +1,61 @@
-<p>fiche-entreprise works!</p>
+<!-- MON TABLEAU POUR AFFICHER MES ENTREPRISE -->
+<table mat-table #tableEntreprises [dataSource]="entreprises">
+
+
+    <!-- SOUS FORMULAIRE EDITION-SUPPRESION -->
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> address</th>
+            <td mat-cell *matCellDef="let entreprise">
+                <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+                    <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editAddress;" class="input-full-width">
+                      <input name="selectedEntrepriseAddress" [(ngModel)]="selectedEntreprise.address" matInput required minlength="2"  maxlength="50" name="addressEdition" #addressEdition="ngModel">
+                    </mat-form-field>
+                </form>
+                <ng-template #editAddress><span (click)="onSelect(entreprise)">{{entreprise.address}}</span></ng-template>
+            </td>
+        </ng-container>
+    
+    
+     
+    
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let entreprise" class="boutonsAction">
+                <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editButton;" color="primary" form="entrepriseFormEdition" mat-button>
+                    <i class="material-icons">done</i>
+                </button>
+                            
+                <ng-template #editButton>
+                    <form (ngSubmit)="onSelect(entreprise)">
+                        <button mat-button><i class="material-icons">edit</i></button>
+                    </form>
+                </ng-template>
+    
+                <form (ngSubmit)="deleteEntreprise(entreprise)">
+                    <button mat-button ><i class="material-icons">delete</i></button>
+                </form>
+            </td>
+        </ng-container> 
+    
+         
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    
+    </table>
+    
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

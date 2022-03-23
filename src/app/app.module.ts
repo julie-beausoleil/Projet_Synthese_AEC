@@ -9,7 +9,7 @@ import { OffrestageService } from './dossierDesServices/offrestage.service'; /* 
 import { RegionService } from './dossierDesServices/region.service'; /* import service RegionService dans module.ts par WC */
 
 import { HttpClientModule } from '@angular/common/http';
-import { RequetestagaService } from './requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
+import { RequetestagaService } from './dossierDesServices/requetestaga.service'; /* import service RequeteStageService dans module.ts par WC */
 
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
@@ -53,6 +53,7 @@ import { AjoutCandidatComponent } from './ajout-candidat/ajout-candidat.componen
 import { AjoutEntrepriseComponent } from './ajout-entreprise/ajout-entreprise.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 
@@ -95,6 +96,7 @@ registerLocaleData(localeFr);
     AjoutEntrepriseComponent,
     EditerEntrepriseComponent,
     FicheEntrepriseComponent,
+    ListeEntreprisesComponent,
     AccueilComponent,
     DatePickerComponent,
     EnteteComponent,
@@ -113,13 +115,15 @@ registerLocaleData(localeFr);
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatTableModule,
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule
   ],
 
-  providers: [CandidatService,
+  providers: [
+    CandidatService,
     EntrepriseService,
     OffrestageService,
     RegionService,

@@ -5,7 +5,7 @@ import { Region } from '../dossierDesInterfaces/region';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -13,12 +13,12 @@ const httpOptions = {
 })
 
 export class RegionService {
-  regionUrl = 'https://projet-synthese-api.herokuapp.com/api/region'; /*variable chemin vers l'API region par WC*/
+  regionUrl = 'https://projet-synthese-api.herokuapp.com/api/2096430/region'; /*variable chemin vers l'API region par WC*/
 
   constructor(private http: HttpClient) { }
 
   getRegions(): Observable<Region[]> {
-    return this.http.get<Region[]>(this.regionUrl);  
+    return this.http.get<Region[]>(this.regionUrl);
   }
 
   addRegion(region: Region): Observable<Region> {

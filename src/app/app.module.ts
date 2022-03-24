@@ -63,18 +63,19 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
-
-import { EnteteComponent } from './components-pages/entete/entete.component';
-import { PiedPageComponent } from './components-pages/pied-page/pied-page.component';
-import { DialogFormulaireInternshipRequestComponent } from './components-pages/internship-request/dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
-import { FormulaireInternshipRequestComponent } from './components-pages/internship-request/formulaire-internship-request/formulaire-internship-request.component';
-import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+import { DialogFormulaireInternshipRequestComponent } from './dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
+import { FormulaireInternshipRequestComponent } from './formulaire-internship-request/formulaire-internship-request.component';
+import { TableInternshipRequestComponent } from './table-internship-request/table-internship-request.component';
 import { ChipInputComponent } from './components-utilitaires/chip-input/chip-input.component';
 
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+<<<<<<< Updated upstream
 import { SelectionComponent } from './selection/selection.component';
+=======
+import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
+>>>>>>> Stashed changes
 
 registerLocaleData(localeFr);
 
@@ -105,13 +106,15 @@ registerLocaleData(localeFr);
     ListeEntreprisesComponent,
     AccueilComponent,
     DatePickerComponent,
-    EnteteComponent,
-    PiedPageComponent,
     DialogFormulaireInternshipRequestComponent,
     FormulaireInternshipRequestComponent,
     TableInternshipRequestComponent,
     ChipInputComponent,
+<<<<<<< Updated upstream
     SelectionComponent,
+=======
+    ListeCandidatComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -126,6 +129,7 @@ registerLocaleData(localeFr);
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
+<<<<<<< Updated upstream
     MatCheckboxModule,
     MatNativeDateModule,
     MatSelectModule,
@@ -139,6 +143,8 @@ registerLocaleData(localeFr);
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
+=======
+>>>>>>> Stashed changes
     NoopAnimationsModule,
     MatChipsModule,
     FormsModule,
@@ -150,6 +156,14 @@ registerLocaleData(localeFr);
     MatDialogModule,
     MatCheckboxModule,
     MatIconModule,
+    HttpClientModule,
+  ],
+
+  providers: [CandidatService,
+    EntrepriseService,
+    OffrestageService,
+    RegionService,
+    RequetestagaService,  
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
   bootstrap: [AppComponent]

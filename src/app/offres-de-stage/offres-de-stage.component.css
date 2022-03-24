@@ -37,17 +37,3 @@
 .card__size2 {
   width: 75rem;
 }
-
-.titre2 {
-  font-size: 1.5rem;
-}
-
-.titre3 {
-  font-size: 1.5rem;
-  color: red;
-}
-
-.example-container .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-}
-/*# sourceMappingURL=offres-de-stage.component.css.map */

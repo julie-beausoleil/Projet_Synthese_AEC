@@ -1,5 +1,9 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
 
 /* Les services */
 import { CandidatService } from './dossierDesServices/candidat.service'; /* import service candidat dans module.ts par WC */
@@ -30,6 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -69,6 +74,7 @@ import { ChipInputComponent } from './components-utilitaires/chip-input/chip-inp
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { SelectionComponent } from './selection/selection.component';
 
 registerLocaleData(localeFr);
 
@@ -105,6 +111,7 @@ registerLocaleData(localeFr);
     FormulaireInternshipRequestComponent,
     TableInternshipRequestComponent,
     ChipInputComponent,
+    SelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +126,9 @@ registerLocaleData(localeFr);
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
 
   providers: [CandidatService,
@@ -126,6 +136,8 @@ registerLocaleData(localeFr);
     OffrestageService,
     RegionService,
     RequetestagaService,
+    MatDatepickerModule,
+    MatNativeDateModule,
     HttpClientModule,
     NoopAnimationsModule,
     MatChipsModule,

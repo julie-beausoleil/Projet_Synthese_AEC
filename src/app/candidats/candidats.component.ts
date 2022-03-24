@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Candidat } from '../candidat'; /*ajout l'interface dans le composant candidat par WC*/
-import { CandidatService } from '../candidat.service'; /*importer le service candidat pour que le composant candidat*/
+import { Candidat } from '../dossierDesInterfaces/candidat'; /*ajout l'interface dans le composant candidat par WC*/
+import { CandidatService } from '../dossierDesServices/candidat.service'; /*importer le service candidat pour que le composant candidat*/
 /*puisse l'utiliser*/
 
 @Component({
@@ -9,6 +9,10 @@ import { CandidatService } from '../candidat.service'; /*importer le service can
   styleUrls: ['./candidats.component.sass']
 })
 export class CandidatsComponent implements OnInit {
+  name = `Plume Latraverse `;
+  description = `UX Designer `;
+  email = `plume@latraverse.com `;
+  phone = `819-999-9999 `;
 
   candidats: Candidat[] = []; /*declaration d'un tableau de candidat par WC*/
 

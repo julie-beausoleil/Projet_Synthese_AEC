@@ -14,9 +14,13 @@
       <mat-card-title>{{ name }}</mat-card-title>
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
+    <!-- Boutton pour ajouter un candidat -->
+    <button mat-stroked-button>
+      <a routerLink="/editer-candidat">Editer un candidat</a></button
+    ><br /><br />
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -27,8 +31,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -39,8 +43,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 </section>
@@ -55,8 +59,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -67,8 +71,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -79,8 +83,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 </section>
@@ -95,8 +99,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -107,8 +111,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -119,8 +123,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 </section>
@@ -135,8 +139,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -147,8 +151,8 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 
@@ -159,9 +163,20 @@
       <mat-card-subtitle>{{ description }}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
-      {{ longText }}<br />
-      {{ tel }}
+      {{ email }}<br />
+      {{ phone }}
     </mat-card-content>
   </mat-card>
 </section>
 <!-- Fin de la section 4 -->
+<button mat-stroked-button>
+  <a routerLink="/fiche-candidat"><mat-icon>done</mat-icon></a>
+</button>
+
+<button mat-stroked-button>
+  <mat-icon>create</mat-icon>
+</button>
+
+<button mat-stroked-button>
+  <mat-icon>close</mat-icon>
+</button>

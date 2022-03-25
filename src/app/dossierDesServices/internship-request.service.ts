@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { InternshipRequest } from '../interfaces/internshipRequest';
+import { InternshipRequest } from '../dossierDesInterfaces/internshipRequest';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 

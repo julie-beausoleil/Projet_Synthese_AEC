@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormulaireInternshipRequestData, InternshipRequest } from 'src/app/interfaces/internshipRequest';
-import { InternshipRequestService } from '../../../services/internship-request.service';
+import { FormulaireInternshipRequestData, InternshipRequest } from '../dossierDesInterfaces/internshipRequest';
+import { InternshipRequestService } from '../dossierDesServices/internship-request.service';
+
 
 @Component({
   selector: 'app-formulaire-internship-request',

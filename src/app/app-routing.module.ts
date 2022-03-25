@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+import { TableInternshipRequestComponent } from './table-internship-request/table-internship-request.component';
+
 
 /* Liens pour la side barre (barre de navigation) */
 import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.component';
@@ -21,13 +22,14 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 
 /* Liens pour la page s'accueil */
 import { AccueilComponent } from './accueil/accueil.component';
+import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
   { path: '', component: TableauDeBordComponent },
   { path: 'tableau-de-bord', component: TableauDeBordComponent },
   { path: 'demandes-de-stages', component: DemandesDeStagesComponent },
-  { path: 'offres-de-stage', component: OffresDeStageComponent },
-  { path: 'candidats', component: CandidatsComponent },  
+  { path: 'offres-de-stage', component: OffresDeStageComponent },   
+  { path: 'candidats', component: ListeCandidatComponent },  
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
   { path: 'entreprises', component: ListeEntreprisesComponent },
 

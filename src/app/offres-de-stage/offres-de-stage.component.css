@@ -1,0 +1,39 @@
+.card__body {
+  width: 75rem;
+  margin-left: 20rem;
+}
+
+.card__entete {
+  font-size: 1rem;
+}
+
+.card__sousentete {
+  font-size: 2rem;
+}
+
+.btn__align {
+  text-align: end;
+}
+
+.largeur__card {
+  width: 15%;
+}
+
+.body__form {
+  width: 75rem;
+  margin-left: 20rem;
+}
+
+.titre1 {
+  color: red;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.card__size1 {
+  width: 75rem;
+}
+
+.card__size2 {
+  width: 75rem;
+}

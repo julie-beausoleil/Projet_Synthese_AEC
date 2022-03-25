@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogFormulaireInternshipRequestComponent } from '../dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
-import { InternshipRequestService } from '../../../services/internship-request.service';
-import { InternshipRequest } from '../../../interfaces/internshipRequest';
+import { InternshipRequestService } from '../dossierDesServices/internship-request.service';
+import { InternshipRequest } from '../dossierDesInterfaces/internshipRequest';
 
 
 @Component({

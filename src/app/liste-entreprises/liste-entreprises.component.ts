@@ -10,7 +10,7 @@ import { Entreprise } from "../dossierDesInterfaces/entreprise";/* Importation d
 export class ListeEntreprisesComponent implements OnInit {
 
   entreprises : Entreprise [] = [];
-  selectedForfait?: Entreprise;  
+  selectedEntreprise?: Entreprise;  
 
   constructor(private entrepriseService : EntrepriseService) { }
 

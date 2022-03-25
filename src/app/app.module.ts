@@ -1,6 +1,6 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -34,7 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -61,20 +61,14 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 import { ListeEntreprisesComponent } from './liste-entreprises/liste-entreprises.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
-
-
-
-import { EnteteComponent } from './components-pages/entete/entete.component';
-import { PiedPageComponent } from './components-pages/pied-page/pied-page.component';
-import { DialogFormulaireInternshipRequestComponent } from './components-pages/internship-request/dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
-import { FormulaireInternshipRequestComponent } from './components-pages/internship-request/formulaire-internship-request/formulaire-internship-request.component';
-import { TableInternshipRequestComponent } from './components-pages/internship-request/table-internship-request/table-internship-request.component';
+import { DialogFormulaireInternshipRequestComponent } from './dialog-formulaire-internship-request/dialog-formulaire-internship-request.component';
+import { FormulaireInternshipRequestComponent } from './formulaire-internship-request/formulaire-internship-request.component';
+import { TableInternshipRequestComponent } from './table-internship-request/table-internship-request.component';
 import { ChipInputComponent } from './components-utilitaires/chip-input/chip-input.component';
-
-
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { SelectionComponent } from './selection/selection.component';
+import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
 
 registerLocaleData(localeFr);
 
@@ -105,13 +99,12 @@ registerLocaleData(localeFr);
     ListeEntreprisesComponent,
     AccueilComponent,
     DatePickerComponent,
-    EnteteComponent,
-    PiedPageComponent,
     DialogFormulaireInternshipRequestComponent,
     FormulaireInternshipRequestComponent,
     TableInternshipRequestComponent,
     ChipInputComponent,
     SelectionComponent,
+    ListeCandidatComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,33 +116,21 @@ registerLocaleData(localeFr);
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
+    MatDatepickerModule,    
     MatInputModule,
-    MatCheckboxModule,
-    MatNativeDateModule,
-    MatSelectModule,
-  ],
+    NoopAnimationsModule,
+    MatChipsModule,
+    FormsModule,
+    MatFormFieldModule,    
+    MatDialogModule,
+    MatCheckboxModule,    
+    ],
 
   providers: [CandidatService,
     EntrepriseService,
     OffrestageService,
     RegionService,
-    RequetestagaService,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    HttpClientModule,
-    NoopAnimationsModule,
-    MatChipsModule,
-    FormsModule,
-    MatTableModule,
-    MatCardModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatIconModule,
+    RequetestagaService,  
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
   bootstrap: [AppComponent]

@@ -2,15 +2,16 @@
 <h1>Candidat</h1>
 
 <!-- Boutton pour ajouter une entreprise -->
-<button mat-stroked-button>Ajouter un candidat</button><br /><br />
+<button mat-stroked-button>
+  <a routerLink="/ajout-candidat">Ajouter un candidat</a></button
+><br /><br />
 
-
-<!-- Boucle pour afficher les cartes des entreprises de mon API -->
-<div class="liste-candidats">     
+<!-- Boucle pour afficher les cartes des candidats de mon API -->
+<div class="liste-candidats">
   <div>
-    <app-candidats *ngFor="let candidat of candidats" [candidat] = "candidat" ></app-candidats> 
+    <app-candidats
+      *ngFor="let candidat of candidats"
+      [candidat]="candidat"
+    ></app-candidats>
   </div>
 </div>
-
-
-

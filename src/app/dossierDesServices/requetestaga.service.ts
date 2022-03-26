@@ -12,8 +12,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RequetestagaService {
-  reqstageUrl = 'https://projet-synthese-api.herokuapp.com/api/internship-request'; /*variable chemin vers l'API RequetStage par WC*/
+  reqstageUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/internship-request'; /*variable chemin vers l'API RequetStage par WC*/
 
+  constructor(private http: HttpClient) { }
+  
   getReqStages(): Observable<RequeteStage[]> {
     return this.http.get<RequeteStage[]>(this.reqstageUrl);  
   }
@@ -30,5 +32,5 @@ export class RequetestagaService {
     return this.http.delete<RequeteStage>(this.reqstageUrl + "?id=" + id);
   }
 
-  constructor(private http: HttpClient) { }
+  
 }

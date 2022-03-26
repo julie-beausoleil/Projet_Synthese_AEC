@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'entreprises', component: ListeEntreprisesComponent },
 
    /* Route pour les boutons d'ajout */
-   { path: 'ajout-candidat', component: AjoutCandidatComponent },
+  { path: 'ajout-candidat', component: AjoutCandidatComponent },
   { path: 'ajout-demande-stage', component: AjoutDemandeStageComponent },
   { path: 'ajout-entreprise', component: AjoutEntrepriseComponent },
   { path: 'ajout-offre-stage', component: AjoutOffreStageComponent },

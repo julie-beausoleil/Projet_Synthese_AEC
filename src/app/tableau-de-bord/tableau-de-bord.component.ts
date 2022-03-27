@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tableau-de-bord.component.sass']
 })
 export class TableauDeBordComponent implements OnInit {
+ 
 
   constructor() { }
 

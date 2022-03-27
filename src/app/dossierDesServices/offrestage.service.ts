@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class OffrestageService {
-  offrestageUrl = 'https://projet-synthese-api.herokuapp.com/api/internship-offer'; /*variable chemin vers l'API offre-stage par WC*/
+  offrestageUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/internship-offer'; /*variable chemin vers l'API offre-stage par WC*/
 
   constructor(private http: HttpClient) { }
 

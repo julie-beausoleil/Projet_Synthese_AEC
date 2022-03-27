@@ -16,7 +16,7 @@ import { RequetestagaService } from './dossierDesServices/requetestaga.service';
 
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -104,7 +104,7 @@ registerLocaleData(localeFr);
     TableInternshipRequestComponent,
     ChipInputComponent,
     SelectionComponent,
-    ListeCandidatComponent,
+    ListeCandidatComponent
   ],
   imports: [
     BrowserModule,
@@ -123,7 +123,9 @@ registerLocaleData(localeFr);
     FormsModule,
     MatFormFieldModule,    
     MatDialogModule,
-    MatCheckboxModule,    
+    MatCheckboxModule,  
+    MatNativeDateModule,
+    MatSelectModule
     ],
 
   providers: [CandidatService,

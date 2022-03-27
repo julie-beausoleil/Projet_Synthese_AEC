@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class RegionService {
-  regionUrl = 'https://projet-synthese-api.herokuapp.com/api/region'; /*variable chemin vers l'API region par WC*/
+  regionUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/region'; /*variable chemin vers l'API region par WC*/
 
   constructor(private http: HttpClient) { }
 

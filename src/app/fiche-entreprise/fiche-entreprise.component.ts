@@ -10,9 +10,10 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
 })
 export class FicheEntrepriseComponent implements OnInit { 
 
-  entreprises : Entreprise[]= [] ;   
+  entreprises: Entreprise[] = [];
+  columnsToDisplay = ['address', 'actions']; 
   selectedEntreprise?: Entreprise; 
-  columnsToDisplay = ["address", 'actions'];
+  
 
   constructor(private entrepriseService : EntrepriseService) { }
 
@@ -35,7 +36,7 @@ export class FicheEntrepriseComponent implements OnInit {
     this.selectedEntreprise = entreprise; 
   }
 
-  editEntreprise(entrepriseFormEdition: NgForm): void {
+  onEdit(entrepriseFormEdition: NgForm): void {
     if (entrepriseFormEdition.valid && this.selectedEntreprise!= null) {
       this.entrepriseService.editEntreprise(this.selectedEntreprise)
           .subscribe(() => this.selectedEntreprise = undefined);

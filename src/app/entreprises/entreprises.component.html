@@ -1,23 +1,26 @@
-
 <!-- Début de la section 1 -->
-<div class="carte-entreprise"  *ngIf="entreprise"> <!-- nom de mon service(effacer) -->    
+<div class="carte-entreprise" *ngIf="entreprise">
+  <!-- nom de mon service(effacer) -->
 
   <section class="">
-    <mat-card class="card"> 
+    <mat-card class="card">
+      <button mat-stroked-button>
+        <mat-icon>person</mat-icon>
+        <!--   ici il faudrait ajouter le logo de l'entreprise, comment on procède ?-->
+        <a routerLink="/fiche-entreprise">Fiche entreprise</a>
+      </button>
 
-      <mat-icon>person</mat-icon> <!--   ici il faudrait ajouter le logo de l'entreprise, comment on procède ?-->
-        
       <mat-card-title-group>
         <mat-card-title>{{ entreprise.name }}</mat-card-title>
         <mat-card-subtitle>{{ entreprise.address }}</mat-card-subtitle>
         <mat-card-subtitle>{{ entreprise.city }}</mat-card-subtitle>
         <mat-card-subtitle>{{ entreprise.province }}</mat-card-subtitle>
-        <br>
-        <mat-card-subtitle> Téléphone : {{ entreprise.contactPhone }}</mat-card-subtitle>
-      </mat-card-title-group>    
+        <br />
+        <mat-card-subtitle>
+          Téléphone : {{ entreprise.contactPhone }}</mat-card-subtitle
+        >
+      </mat-card-title-group>
     </mat-card>
   </section>
 </div>
 <!-- Fin de la section 1 -->
-
-

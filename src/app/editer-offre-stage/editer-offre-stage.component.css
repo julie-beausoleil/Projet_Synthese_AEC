@@ -1,1 +1,83 @@
-/* No CSS *//*# sourceMappingURL=editer-offre-stage.component.css.map */
+.card__body {
+  width: 75rem;
+  margin-left: 20rem;
+}
+
+.card__entete {
+  font-size: 1rem;
+}
+
+.card__sousentete {
+  font-size: 2rem;
+}
+
+.btn__align {
+  text-align: end;
+}
+
+.datepicker__align {
+  margin-left: 40rem;
+  margin-top: -6rem;
+}
+
+.btn__align--color {
+  background-color: red;
+  color: white;
+}
+
+.largeur__card {
+  width: 15rem;
+}
+
+.body__form {
+  width: 75rem;
+  margin-left: 20rem;
+}
+
+.titre1 {
+  color: red;
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.titre4 {
+  color: steelblue;
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
+.card__size1 {
+  width: 75rem;
+}
+
+.card__size2 {
+  width: 75rem;
+}
+
+.card__border {
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-bottom: 0px;
+  border-right-width: black 10px;
+}
+
+.titre2 {
+  font-size: 1.5rem;
+}
+
+.titre3 {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.largeur__champ {
+  width: 35rem;
+  height: 2.5rem;
+  border-color: gray;
+}
+
+.datepicker__position {
+  width: 35rem;
+  height: 2.5rem;
+}
+/*# sourceMappingURL=editer-offre-stage.component.css.map */

@@ -16,7 +16,8 @@
 }
 
 .datepicker__align {
-  margin-left: 50rem;
+  margin-left: 40rem;
+  margin-top: -6rem;
 }
 
 .btn__align--color {
@@ -78,9 +79,5 @@
 .datepicker__position {
   width: 35rem;
   height: 2.5rem;
-}
-
-.pt {
-  margin-top: 3rem;
 }
 /*# sourceMappingURL=offres-de-stage.component.css.map */

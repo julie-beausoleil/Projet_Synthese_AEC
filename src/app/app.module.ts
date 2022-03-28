@@ -69,6 +69,8 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { SelectionComponent } from './selection/selection.component';
 import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
+import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-demandes.component';
+import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 
 registerLocaleData(localeFr);
 
@@ -104,7 +106,9 @@ registerLocaleData(localeFr);
     TableInternshipRequestComponent,
     ChipInputComponent,
     SelectionComponent,
-    ListeCandidatComponent
+    ListeCandidatComponent,
+    DernieresDemandesComponent,
+    DernieresOffresComponent
   ],
   imports: [
     BrowserModule,

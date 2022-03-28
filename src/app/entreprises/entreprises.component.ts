@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation de mon interface */
 import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importation de mon service */
 
@@ -13,7 +14,7 @@ export class EntreprisesComponent implements OnInit {
     entreprises : Entreprise[]= [] ;   
     selectedEntreprise?: Entreprise; 
 
-  constructor() { }
+  constructor(private entrepriseService : EntrepriseService, router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,11 @@ export class EntreprisesComponent implements OnInit {
   onSelect(entreprise: Entreprise): void {
     this.selectedEntreprise = entreprise; 
   }
+
+  getEntreprises(): void {
+    this.entrepriseService.getEntreprises()
+      .subscribe(resultat => this.entreprises = resultat);
+  }
+
 }
 

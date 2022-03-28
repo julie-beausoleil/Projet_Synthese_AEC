@@ -27,5 +27,6 @@ export class CandidatsComponent implements OnInit {
   onSelect(candidat: Candidat): void {
     this.selectedCandidat = candidat; 
   }
+ 
 
 }

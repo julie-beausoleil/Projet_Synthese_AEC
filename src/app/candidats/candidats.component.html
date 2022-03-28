@@ -4,10 +4,13 @@
 
   <section class="">
     <mat-card class="card">
-      <button mat-stroked-button>
-        <mat-icon>person</mat-icon>
-        <a routerLink="/fiche-candidat">Fiche candidat</a>
-      </button>
+      <!--   <button mat-stroked-button></button>-->
+      <a mat-button href="http://localhost:4200/fiche-candidat" target="_blank"
+        ><mat-icon>person</mat-icon></a
+      >
+
+      <!--   <a routerLink="/fiche-candidat">Fiche candidat</a> -->
+
       <mat-card-title-group>
         <mat-card-title>{{ candidat.name }}</mat-card-title>
         <mat-card-subtitle>{{ candidat.jobTitle }}</mat-card-subtitle>

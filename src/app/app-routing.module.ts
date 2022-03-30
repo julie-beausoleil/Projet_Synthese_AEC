@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'candidats', component: ListeCandidatComponent },  
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
   { path: 'entreprises', component: ListeEntreprisesComponent },
+  { path: 'entreprises/:_id', component: FicheEntrepriseComponent}, /* ajouté ici SG */
 
    /* Route pour les boutons d'ajout */
   { path: 'ajout-candidat', component: AjoutCandidatComponent },

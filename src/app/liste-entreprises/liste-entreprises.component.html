@@ -7,9 +7,15 @@
 
 
 <!-- Boucle pour afficher les cartes des entreprises de mon API -->
-<div class="liste-entreprises">     
-  <div>
+<!--<div class="liste-entreprises">     
+  <div (click)="onClick(entreprise.id)" >
     <app-entreprises *ngFor="let entreprise  of entreprises " [entreprise] = "entreprise" ></app-entreprises> 
+  </div>
+</div>   -->
+
+<div *ngFor="let entreprise of entreprises"> 
+  <div (click)="onClick(entreprise._id)">
+    <app-entreprises [entreprise] = "entreprise" ></app-entreprises>
   </div>
 </div>
 

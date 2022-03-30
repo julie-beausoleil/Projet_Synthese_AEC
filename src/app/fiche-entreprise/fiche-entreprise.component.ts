@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation de mon interface */
 import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service */
 import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulaire est valide
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-fiche-entreprise',
@@ -10,31 +11,38 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
 })
 export class FicheEntrepriseComponent implements OnInit { 
 
-  entreprises: Entreprise[] = [];
-  columnsToDisplay = ['address', 'actions']; 
+  entreprise : Entreprise = {
+    _id: " ",
+    name: "",
+    description: "",
+    imageUrl: "",
+    contactName: "",
+    contactEmail: "",
+    contactPhone: "",
+    address: "",
+    city: "",
+    province: "",
+    postalCode: "",
+    published: false,
+  };  
+
   selectedEntreprise?: Entreprise; 
   
 
-  constructor(private entrepriseService : EntrepriseService) { }
+  constructor(private entrepriseService : EntrepriseService,
+                private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.getEntreprises();
+   const id = String (this.route.snapshot.params['_id']);
+   this.entrepriseService.getEntreprise(id)
+    .subscribe(resultat => this.entreprise = resultat);
   }
 
-  getEntreprises (): void {
-    this.entrepriseService.getEntreprises()
-      .subscribe(resultat => this.entreprises = resultat);
-  } 
-  
 
   deleteEntreprise(entreprise: Entreprise ): void {
     this.entrepriseService.deleteEntreprise(entreprise._id)
-      .subscribe(result => this.entreprises = this.entreprises.filter(p => p !== entreprise));
+      .subscribe(() => this.router.navigate(['/']));
   } 
-
-  onSelect(entreprise: Entreprise): void {
-    this.selectedEntreprise = entreprise; 
-  }
 
   onEdit(entrepriseFormEdition: NgForm): void {
     if (entrepriseFormEdition.valid && this.selectedEntreprise!= null) {

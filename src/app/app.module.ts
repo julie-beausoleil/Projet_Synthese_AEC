@@ -34,7 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -129,7 +129,8 @@ registerLocaleData(localeFr);
     MatDialogModule,
     MatCheckboxModule,  
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
     ],
 
   providers: [CandidatService,

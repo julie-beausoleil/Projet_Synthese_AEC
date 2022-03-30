@@ -1,1 +1,35 @@
-<p>dernieres-demandes works!</p>
+<div class="container">
+  <h1>Dernière demandes de stage</h1>
+  <p>En attente de validation</p>
+  <button mat-stroked-button>Valider toutes les demandes</button>
+
+  <table class="table">
+    <thead>
+      <tr class="title">
+        <th class="col" class="d-none">ID</th>
+        <th class="col">Profil</th>
+        <th class="col">Établissement</th>
+        <th class="col">Date</th>
+        <th class="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let requeteStage of requetesStage">
+        <td class="d-none">{{ requeteStage._id }}</td>
+        <td>
+          <mat-icon>school</mat-icon>
+          {{ requeteStage.title }}
+        </td>
+        <td>{{ requeteStage.enterprise }}</td>
+        <td>{{ requeteStage.startDate }}</td>
+        <td>
+          <button type="button" class="btn btn-danger m-1">Refuser</button>
+          <button type="button" class="btn btn-success m-1">Accepter</button>
+          <mat-icon>visibility</mat-icon>
+          <mat-icon>create</mat-icon>
+          <mat-icon>delete</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

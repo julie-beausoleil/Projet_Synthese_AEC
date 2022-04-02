@@ -34,7 +34,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* Listes Des Composants  */
 import { BarreDeNavigationComponent } from './barre-de-navigation/barre-de-navigation.component';
@@ -69,6 +69,9 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { SelectionComponent } from './selection/selection.component';
 import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
+import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-demandes.component';
+import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
+import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 
 registerLocaleData(localeFr);
 
@@ -104,7 +107,10 @@ registerLocaleData(localeFr);
     TableInternshipRequestComponent,
     ChipInputComponent,
     SelectionComponent,
-    ListeCandidatComponent
+    ListeCandidatComponent,
+    DernieresDemandesComponent,
+    DernieresOffresComponent,
+    ListeOffreStageComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +131,8 @@ registerLocaleData(localeFr);
     MatDialogModule,
     MatCheckboxModule,  
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
     ],
 
   providers: [CandidatService,

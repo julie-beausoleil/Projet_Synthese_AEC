@@ -23,15 +23,22 @@ import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.co
 /* Liens pour la page s'accueil */
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
+import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
+import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
+import { EditerOffreStageComponent } from './editer-offre-stage/editer-offre-stage.component';
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
   { path: '', component: TableauDeBordComponent },
   { path: 'tableau-de-bord', component: TableauDeBordComponent },
   { path: 'demandes-de-stages', component: DemandesDeStagesComponent },
   { path: 'offres-de-stage', component: OffresDeStageComponent },   
+  { path: 'liste-offre-stage',  component: ListeOffreStageComponent },
+  { path: 'fiche-stage', component: FicheStageComponent},
+  { path: 'editer-offre-stage', component: EditerOffreStageComponent},   
   { path: 'candidats', component: ListeCandidatComponent },  
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
   { path: 'entreprises', component: ListeEntreprisesComponent },
+  { path: 'entreprises/:_id', component: FicheEntrepriseComponent}, /* ajouté ici SG */
 
    /* Route pour les boutons d'ajout */
   { path: 'ajout-candidat', component: AjoutCandidatComponent },

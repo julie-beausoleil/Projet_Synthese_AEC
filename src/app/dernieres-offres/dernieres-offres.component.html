@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Dernière offres de stage</h1>
+  <p>En attente de validation</p>
+  <button mat-stroked-button>Valider toutes les offres</button>
+
+  <table class="table">
+    <thead>
+      <tr class="title">
+        <th scope="col" class="d-none">ID</th>
+        <th class="col">Poste</th>
+        <th class="col">Ville</th>
+        <th class="col">Date</th>
+        <th class="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let offreStage of offresStages">
+        <td class="d-none">{{ offreStage._id }}</td>
+        <td>
+          <mat-icon>business_center</mat-icon>{{ offreStage.title }}
+          {{ offreStage.enterprise }}
+        </td>
+
+        <td>{{ offreStage.program }}</td>
+        <td>{{ offreStage.startDate }}</td>
+        <td>
+          <button type="button" class="btn btn-danger m-1">Refuser</button>
+          <button type="button" class="btn btn-success m-1">Accepter</button>
+          <mat-icon>visibility</mat-icon>
+          <a routerLink="/ajout-offre-stage"> <mat-icon>create</mat-icon></a>
+          <mat-icon>delete</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,20 +1,14 @@
-
 <!-- Début de la section 1 -->
-<div class="carte-candidat"  *ngIf="candidat"> <!-- nom de mon service(effacer) -->    
+<div class="carte-candidat" *ngIf="candidat">
+  <mat-card class="card">
+    <a routerLink="/fiche-candidat"> <mat-icon>person</mat-icon> </a>
 
-  <section class="">
-    <mat-card class="card"> 
-
-      <mat-icon>person</mat-icon> 
-        
-      <mat-card-title-group>
-        <mat-card-title>{{ candidat.name }}</mat-card-title>
-        <mat-card-subtitle>{{ candidat.jobTitle }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ candidat.email }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ candidat.phone }}</mat-card-subtitle>        
-      </mat-card-title-group>    
-
-    </mat-card>
-  </section>
+    <mat-card-title-group>
+      <mat-card-title>{{ candidat.name }}</mat-card-title>
+      <mat-card-subtitle>{{ candidat.jobTitle }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ candidat.email }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ candidat.phone }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card>
 </div>
 <!-- Fin de la section 1 -->

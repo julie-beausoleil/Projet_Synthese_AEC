@@ -1,4 +1,4 @@
-form {
+.form {
   min-width: 1000px;
   width: 1400px;
   max-width: 1500px;
@@ -14,8 +14,13 @@ form {
   width: 85%;
 }
 
+.body {
+  width: 75rem;
+  margin-left: 15rem;
+}
+
 .colonne1 {
-  margin-left: 2rem;
+  margin-left: 4rem;
   text-align: left;
   width: 12rem;
 }
@@ -26,13 +31,8 @@ form {
   width: 8rem;
 }
 
-.colonne3 {
-  margin-left: 1rem;
-  text-align: left;
+.btn__couleur {
+  color: white;
+  background-color: red;
 }
-
-h4 {
-  fontsize: 8px;
-  color: red;
-}
-/*# sourceMappingURL=offres-de-stage.component.css.map */
+/*# sourceMappingURL=liste-offre-stage.component.css.map */

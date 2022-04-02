@@ -13,4 +13,5 @@ export interface OffreStage {
   paid: String [],
   skills: String [],
   published: Boolean,
+  active: boolean,
 }

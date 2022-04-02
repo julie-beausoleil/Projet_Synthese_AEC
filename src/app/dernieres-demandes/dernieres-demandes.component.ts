@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequeteStage } from '../dossierDesInterfaces/requete-stage';
 import { RequetestagaService } from '../dossierDesServices/requetestaga.service';
-import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulaire est valide
 
 @Component({
   selector: 'app-dernieres-demandes',
@@ -9,12 +8,22 @@ import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulair
   styleUrls: ['./dernieres-demandes.component.sass']
 })
 export class DernieresDemandesComponent implements OnInit {
-  requetesStage: RequeteStage[] = [];
+  requetesStages: RequeteStage[] = [];
 
   constructor(private requetestagaService: RequetestagaService) { }
 
   ngOnInit(): void {
+    this.getReqStage();
   
+  }
+  getReqStage(): void {
+    this.requetestagaService.getReqStages()
+      .subscribe((_result: RequeteStage[]) => (this.requetesStages = _result));
+  }
+
+  onDelete(RequetesStages: RequeteStage): void {
+    this.requetestagaService.deleteReqStage(RequetesStages._id)
+      .subscribe(_result => this.requetesStages = this.requetesStages.filter(p => p !== RequetesStages));
   }
 
 

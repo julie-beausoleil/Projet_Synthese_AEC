@@ -13,5 +13,10 @@ export interface RequeteStage {
   paid: String [],
   skills: String [],
   published: Boolean,
+  active: boolean,
+  region: String,
+  activitySector: String,
+  city: String,
+  linkToResume: String,
 }
 

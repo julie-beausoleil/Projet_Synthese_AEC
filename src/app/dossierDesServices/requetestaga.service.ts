@@ -24,12 +24,12 @@ export class RequetestagaService {
     return this.http.post<RequeteStage>(this.reqstageUrl, reqstage, httpOptions);
   }
 
-  editRegion(reqstage: RequeteStage): Observable<RequeteStage> {
-    return this.http.put<RequeteStage>(this.reqstageUrl + "?id=" + reqstage._id, reqstage, httpOptions);
+  editReqStage(reqstage: RequeteStage): Observable<RequeteStage> {
+    return this.http.put<RequeteStage>(this.reqstageUrl + reqstage._id, reqstage, httpOptions);
   }
 
-  deleteRegion(id: String): Observable<RequeteStage> {
-    return this.http.delete<RequeteStage>(this.reqstageUrl + "?id=" + id);
+  deleteReqStage(_id: String): Observable<RequeteStage> {
+    return this.http.delete<RequeteStage>(this.reqstageUrl + _id);
   }
 
   

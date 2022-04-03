@@ -71,6 +71,7 @@ import { SelectionComponent } from './selection/selection.component';
 import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
 import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-demandes.component';
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
+import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 
 registerLocaleData(localeFr);
 
@@ -108,7 +109,8 @@ registerLocaleData(localeFr);
     SelectionComponent,
     ListeCandidatComponent,
     DernieresDemandesComponent,
-    DernieresOffresComponent
+    DernieresOffresComponent,
+    ListeOffreStageComponent
   ],
   imports: [
     BrowserModule,

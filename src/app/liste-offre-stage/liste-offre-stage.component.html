@@ -1,0 +1,19 @@
+<!-- la liste de stage -->
+<div class="body">
+    <h1>Liste Offre de Stages</h1><br><br>
+    <button class="btn__couleur" routerLink="/ajout-offre-stage" type="button">Ajouter une offre de stage</button><br><br>
+    
+    <!-- Boucle permettant d'afficher chaque offre de stage de l'API -->
+     <thead pb="3">
+      <tr>
+        <th><div class="colonne1">Poste</div></th>
+        <th><div class="colonne2">secteur d'activite</div></th>
+        <th><div class="colonne2">Region</div></th>
+        <th><div class="colonne2">Date de Publication</div></th>
+      </tr>
+    </thead>
+  <div>
+    <app-offres-de-stage *ngFor=" let offrestage  of offrestages " [offrestage] = "offrestage" ></app-offres-de-stage> 
+  </div>
+  <h1>fin de la liste offre de stage</h1>
+</div>

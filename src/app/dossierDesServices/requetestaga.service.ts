@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RequetestagaService {
-  reqstageUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/internship-request'; /*variable chemin vers l'API RequetStage par WC*/
+  reqstageUrl = 'https://projet-synthese-api.herokuapp.com/api/2096430/internship-request'; /*variable chemin vers l'API RequetStage par WC*/
 
   constructor(private http: HttpClient) { }
   

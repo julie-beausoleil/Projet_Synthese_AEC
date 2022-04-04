@@ -38,7 +38,8 @@ const routes: Routes = [
   { path: 'candidats', component: ListeCandidatComponent },  
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
   { path: 'entreprises', component: ListeEntreprisesComponent },
-  { path: 'entreprises/:_id', component: FicheEntrepriseComponent}, /* ajouté ici SG */
+  { path: 'entreprises/:_id', component: FicheEntrepriseComponent}, /* ROUTE POUR AFFICHER LA FICHE DE UNE ENTREPRISE - SG */
+  { path: 'candidats/:_id', component: FicheCandidatComponent}, /* ROUTE POUR AFFICHER LA FICHE DE UN CANDIDAT - SG */
 
    /* Route pour les boutons d'ajout */
   { path: 'ajout-candidat', component: AjoutCandidatComponent },

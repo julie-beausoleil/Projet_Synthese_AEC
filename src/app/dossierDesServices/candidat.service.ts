@@ -1,7 +1,7 @@
 /*ajout des entetes obligatoires pour le service candidat par WC*/
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Candidat } from '../dossierDesInterfaces/candidat';
+import { Candidat } from '../dossierDesInterfaces/candidat'; /* IMPORTATION DE MON INTERFACE - SG */
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -17,8 +17,14 @@ export class CandidatService {
 
   constructor(private http: HttpClient) { }
 
+  /* POUR AFFICHER TOUS LES CANDIDATS - SG*/
   getCandidats(): Observable<Candidat[]> {
     return this.http.get<Candidat[]>(this.candidatUrl);  
+  }
+
+  /* POUR AFFICHER LA FICHE DE UN CANDIDAT - SG */
+  getCandidat(_id:String): Observable<Candidat> {
+    return this.http.get<Candidat>(this.candidatUrl + "/" + _id);
   }
 
   addCandidat(candidat: Candidat): Observable<Candidat> {

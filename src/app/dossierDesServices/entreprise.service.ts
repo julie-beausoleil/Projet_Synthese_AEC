@@ -17,10 +17,13 @@ export class EntrepriseService {
 
   constructor(private http: HttpClient) { }
 
+  /* POUR AFFICHER TOUS LES ENTREPRISES - SG */
   getEntreprises(): Observable<Entreprise[]> {
     return this.http.get<Entreprise[]>(this.entrepriseUrl);  
   }
 
+
+/* POUR AFFICHER LA FICHES DE UNE ENTREPRISE - SG */
   getEntreprise(_id:String): Observable<Entreprise> {
     return this.http.get<Entreprise>(this.entrepriseUrl + "/" + _id);
   }
@@ -36,5 +39,7 @@ export class EntrepriseService {
   deleteEntreprise(_id: String): Observable<Entreprise> {
     return this.http.delete<Entreprise>(this.entrepriseUrl + "?id=" + _id);
   }
+
+ 
 
 }

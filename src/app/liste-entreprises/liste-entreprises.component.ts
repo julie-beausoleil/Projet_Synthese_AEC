@@ -25,10 +25,10 @@ export class ListeEntreprisesComponent implements OnInit {
       .subscribe(resultat => this.entreprises = resultat);
   }
 
+/* FONCTION QUI VA AFFICHER MA FICHE DE MON ENTREPRISE LORS DU CLICK */
   onClick(entrepriseId : String){
     this.router.navigate(['/entreprises', entrepriseId])
   }
 }
 
 
-/* Pour afficher mes cartes de visite de chaque compagnie */

@@ -11,13 +11,15 @@ import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /*
 export class EntreprisesComponent implements OnInit {
 
   @Input() entreprise? : Entreprise;    
-    entreprises : Entreprise[]= [] ;   
+    entreprises : Entreprise[] = [] ;   
     selectedEntreprise?: Entreprise; 
 
   constructor(private entrepriseService : EntrepriseService, router: Router) { }
 
   ngOnInit(): void {
+    
   }
+ 
 
   onSelect(entreprise: Entreprise): void {
     this.selectedEntreprise = entreprise; 

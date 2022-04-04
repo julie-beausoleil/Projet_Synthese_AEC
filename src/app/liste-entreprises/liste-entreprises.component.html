@@ -1,18 +1,11 @@
-<!-- PAGE ENTREPRISE, importation de mon composant entreprise pouraficher les cartes de visites en boucle -->
+<!-- PAGE ENTREPRISE, importation de mon composant entreprise pour afficher les cartes de visites en boucle - SG-->
 <h1>Entreprise</h1>
 
 <!-- Boutton pour ajouter une entreprise -->
 <button mat-stroked-button>
   <a routerLink="/ajout-entreprise">Ajouter une entreprise</a></button>
 
-
-<!-- Boucle pour afficher les cartes des entreprises de mon API -->
-<!--<div class="liste-entreprises">     
-  <div (click)="onClick(entreprise.id)" >
-    <app-entreprises *ngFor="let entreprise  of entreprises " [entreprise] = "entreprise" ></app-entreprises> 
-  </div>
-</div>   -->
-
+<!-- MA BOUCLE POUR L'AFFICHAGE DES CARTES DES ENTREPRISE - SG -->
 <div *ngFor="let entreprise of entreprises"> 
   <div (click)="onClick(entreprise._id)">
     <app-entreprises [entreprise] = "entreprise" ></app-entreprises>

@@ -1,17 +1,12 @@
-<!-- PAGE ENTREPRISE, importation de mon composant entreprise pouraficher les cartes de visites en boucle -->
+<!-- PAGE CANDIDAT - importation de mon composant candidat pour afFicher les cartes de visites en boucle - SG-->
 <h1>Candidat</h1>
 
-<!-- Boutton pour ajouter une entreprise -->
-<button mat-stroked-button>
-  <a routerLink="/ajout-candidat">Ajouter un candidat</a></button
-><br /><br />
+<!-- Boutton pour ajouter un candidat -->
+<button mat-stroked-button>  <a routerLink="/ajout-candidat">Ajouter un candidat</a></button>
 
-<!-- Boucle pour afficher les cartes des candidats de mon API -->
-<div class="liste-candidats">
-  <div>
-    <app-candidats
-      *ngFor="let candidat of candidats"
-      [candidat]="candidat"
-    ></app-candidats>
+<!-- Boucle pour afficher les cartes des candidats de mon API - SG-->
+<div class="liste-candidats" *ngFor="let candidat of candidats"> 
+  <div (click)="onClick(candidat._id)">    
+    <app-candidats [candidat]="candidat" ></app-candidats>
   </div>
 </div>

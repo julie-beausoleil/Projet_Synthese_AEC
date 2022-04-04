@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class CandidatService {
-  candidatUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/candidate'; /*variable chemin vers l'API candidat par WC*/
+  candidatUrl = 'https://projet-synthese-api.herokuapp.com/api/2096430/candidate'; /*variable chemin vers l'API candidat par WC*/
 
   constructor(private http: HttpClient) { }
 

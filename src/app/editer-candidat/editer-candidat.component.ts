@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-editer-candidat',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editer-candidat.component.sass']
 })
 export class EditerCandidatComponent implements OnInit {
-
-  constructor() { }
+  @Input() titre: String = "Annuler";
+  constructor(private Location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  annuler(): void {
+    this.Location.back();
   }
 
 }

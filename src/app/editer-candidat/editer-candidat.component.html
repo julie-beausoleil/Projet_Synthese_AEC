@@ -2,14 +2,46 @@
 <h1>Plume Latraverse</h1>
 <h5>UX Designer</h5>
 
-<button mat-stroked-button>
-  <a routerLink="/fiche-candidat"><mat-icon>done</mat-icon></a>
-</button>
+<h5>Informations personnelles</h5>
+<br />
+<form class="form1">
+  Adresse
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>3500 de Courval</mat-label>
+    <input matInput placeholder="3500 de Courval" />
+  </mat-form-field>
 
-<button mat-stroked-button>
-  <a routerLink="/editer-candidat"><mat-icon>create</mat-icon></a>
-</button>
+  Ville
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Trois-Rivières</mat-label>
+    <input matInput placeholder="Trois-Rivières" />
+  </mat-form-field>
 
-<button mat-stroked-button>
-  <mat-icon>close</mat-icon>
+  Province
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Province</mat-label>
+    <input matInput placeholder="Province" />
+  </mat-form-field>
+
+  Code postal
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Code postal</mat-label>
+    <input matInput placeholder="Code postal" />
+  </mat-form-field>
+
+  Téléphone
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>819 999 9999</mat-label>
+    <input matInput placeholder="819 999 9999" />
+  </mat-form-field>
+  <br />
+  Courriel
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>plume@latraverse.com</mat-label>
+    <input matInput placeholder="plume@latraverse.com" />
+  </mat-form-field>
+</form>
+<button type="button" class="btn" (click)="annuler()">
+  {{ titre }}
 </button>
+<button mat-stroked-button><mat-icon>save</mat-icon>Mettre à jour</button>

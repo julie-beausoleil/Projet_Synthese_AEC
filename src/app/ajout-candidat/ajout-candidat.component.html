@@ -1,5 +1,7 @@
 <h1>Ajouter un Candidat</h1>
-<button mat-stroked-button>Annuler</button>
+<button type="button" class="btn btn-danger" (click)="annuler()">
+  {{ titre }}
+</button>
 <button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
 <br /><br /><br />
 <form class="example-form">
@@ -51,6 +53,8 @@
     <input matInput placeholder="Courriel" value="Couriel" />
   </mat-form-field>
   <br />
-  <button mat-stroked-button>Annuler</button>
+  <button type="button" class="btn btn-danger" (click)="annuler()">
+    {{ titre }}
+  </button>
   <button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
 </form>

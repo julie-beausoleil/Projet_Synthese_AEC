@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-ajout-offre-stage',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout-offre-stage.component.sass']
 })
 export class AjoutOffreStageComponent implements OnInit {
-
-  constructor() { }
+  @Input() titre: String = "Annuler";
+  constructor(private Location: Location) { }
 
   ngOnInit(): void {
   }
 
+  annuler(): void {
+    this.Location.back();
+  }
 }

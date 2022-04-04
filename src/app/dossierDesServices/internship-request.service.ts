@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class InternshipRequestService {
 
-  InternshipRequestsUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/internship-request'; // Changer ici
+  InternshipRequestsUrl = 'https://projet-synthese-api.herokuapp.com/api/2096430/internship-request'; // Changer ici
 
   constructor(private http: HttpClient) { }
 

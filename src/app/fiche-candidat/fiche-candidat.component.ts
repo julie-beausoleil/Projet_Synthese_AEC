@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Candidat } from '../dossierDesInterfaces/candidat';
 import { CandidatService } from '../dossierDesServices/candidat.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-fiche-candidat',
@@ -8,6 +9,7 @@ import { CandidatService } from '../dossierDesServices/candidat.service';
   styleUrls: ['./fiche-candidat.component.sass']
 })
 export class FicheCandidatComponent implements OnInit {
+  @Input() titre: String = "Annuler";
   
   candidat: Candidat = {
     _id: "",
@@ -23,9 +25,13 @@ export class FicheCandidatComponent implements OnInit {
     published: false,
   };
 
-  constructor(private candidatService: CandidatService) { }
+  constructor(private candidatService: CandidatService,
+      private Location: Location) { }
 
   ngOnInit(): void {
+  }
+  annuler(): void {
+    this.Location.back();
   }
 
 }

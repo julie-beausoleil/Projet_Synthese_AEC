@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class EntrepriseService {
-  entrepriseUrl = 'https://projet-synthese-api.herokuapp.com/api/2096309/enterprise'; /*variable chemin vers l'API de l'entreprise par WC*/
+  entrepriseUrl = 'https://projet-synthese-api.herokuapp.com/api/2096430/enterprise'; /*variable chemin vers l'API de l'entreprise par WC*/
 
   constructor(private http: HttpClient) { }
 

@@ -26,6 +26,8 @@ import { ListeCandidatComponent } from './liste-candidat/liste-candidat.componen
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
 import { EditerOffreStageComponent } from './editer-offre-stage/editer-offre-stage.component';
+import { EditerCandidatComponent } from './editer-candidat/editer-candidat.component';
+
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
   { path: '', component: TableauDeBordComponent },
@@ -49,6 +51,9 @@ const routes: Routes = [
   /* Route pour les fiches */
   { path: 'fiche-candidat', component: FicheCandidatComponent },
   { path: 'fiche-entreprise', component: FicheEntrepriseComponent },
+
+  /* Route pour éditer */
+  { path: 'editer-candidat', component: EditerCandidatComponent},
 
   /* Voici la page d'acceuil */
   { path: 'accueil', component: AccueilComponent },

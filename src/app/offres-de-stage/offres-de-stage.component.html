@@ -12,7 +12,7 @@
               <td> <div class="colonne2">{{ offrestage.startDate | date: "EEEE, d MMMM, y" }} </div></td>
               <td> <div class="colonne3"><mat-icon><a routerLink="/fiche-stage"><i class="material-icons">pageview</i></a></mat-icon></div></td>
               <td> <div class="colonne3"><mat-icon><a routerLink="/editer-offre-stage"><i class="material-icons">edit</i></a></mat-icon></div></td>
-              <td> <div class="colonne3"><mat-icon><a routerLink="#"> <i class="material-icons">delete</i></a></mat-icon></div></td>
+              <td> <div class="colonne3"><mat-icon><a  (click)="Dialog()"> <i class="material-icons">delete</i></a></mat-icon></div></td>
           </tr>
         </tbody> 
       </table>

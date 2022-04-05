@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OffrestageService } from '../dossierDesServices/offrestage.service';
 import { OffreStage } from '../dossierDesInterfaces/offre-stage';
-
+import { DialogComponent, DialogModel } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class OffresDeStageComponent implements OnInit {
   offrestages : OffreStage[] = [];
   selectedOffrestage?: OffreStage;  
  
-  constructor(private offrestageService : OffrestageService) { }
+  constructor(public dialog: MatDialog, private offrestageService : OffrestageService) { }
     ngOnInit(): void {
   }
 
@@ -27,7 +28,24 @@ export class OffresDeStageComponent implements OnInit {
   onSelect(offrestage: OffreStage): void {
    this.selectedOffrestage = offrestage; 
  }
+ //  ajout d'une methode pour appeler la fenetre de dialogue
 
+ result: string = '';
+
+ Dialog(): void {
+   const message = `Voulez vous vraiment faire cette suppression?`;
+
+   const dialogData = new DialogModel("File Saving Message", message);
+
+   const dialogRef = this.dialog.open(DialogComponent, {
+     maxWidth: "600px",
+     data: dialogData
+   });
+
+   dialogRef.afterClosed().subscribe(dialogResult => {
+     this.result = dialogResult;
+   });
+ }
 }
 
 

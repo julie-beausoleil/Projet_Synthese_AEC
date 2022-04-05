@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editer-offre-stage',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editer-offre-stage.component.sass']
 })
 export class EditerOffreStageComponent implements OnInit {
+  @Input() titre: String = "Annuler";
+
   longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
   dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
   nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
@@ -23,9 +26,12 @@ export class EditerOffreStageComponent implements OnInit {
                purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur`
 
   
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
 
+  annuler(): void {
+    this.location.back();
+  }
 }

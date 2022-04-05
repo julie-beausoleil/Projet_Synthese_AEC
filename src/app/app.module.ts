@@ -72,6 +72,7 @@ import { ListeCandidatComponent } from './liste-candidat/liste-candidat.componen
 import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-demandes.component';
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 registerLocaleData(localeFr);
 
@@ -110,7 +111,8 @@ registerLocaleData(localeFr);
     ListeCandidatComponent,
     DernieresDemandesComponent,
     DernieresOffresComponent,
-    ListeOffreStageComponent
+    ListeOffreStageComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

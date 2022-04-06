@@ -32,9 +32,9 @@
 
       <mat-label> Personne contact</mat-label>
       <mat-form-field class="example-full-width" appearance="fill">        
-          <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text" matInput/>
+        <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text" matInput/>
         <mat-error *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">Le nom de la personne contact est obligatoire.</mat-error>  
-      </mat-form-field>  
+      </mat-form-field> 
 
 
     <h4>Informations personnelles</h4>

@@ -1,5 +1,5 @@
-<!-- Affichage des données pour les fiches d'entreprise -->
 
+<<<<<<< Updated upstream
 <div ngFor="let entreprise of entreprise">
   <img src="" alt="" />
   <!-- Mettre le log de l'entreprise -->
@@ -56,3 +56,139 @@
     </section>
   </div>
 </div>
+=======
+<div ngFor= "let entreprise of entreprise" >
+
+<!-- SECTION EN-TÊTE AVEC LE LOGO ET LE NOM DE L'ENTREPRISE - SG-->
+    <img src="" alt="">  <!-- @Julie Mettre le logo de l'entreprise - SG -->
+    <h4>Entreprise</h4>
+
+<!-- SECTION DE NOM DU CONTACT - SG -->
+    <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+      <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editDestination;" class="input-full-width">
+        <input name="name" [(ngModel)]="entreprise.name" #name="ngModel" required type="text" matInput/>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Le nom de l'entreprise est obligatoire.</mat-error>
+      </mat-form-field>
+    </form>
+    <ng-template #editDestination><h1 (click)="onSelect(entreprise)">{{entreprise.name}}</h1></ng-template>
+
+    
+<!-- SECTION DES BOUTONS - ÉDITER - SUPPRIMER - MISE À JOUR -->
+    <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editButton;" color="primary" form="entrepriseFormEdition" mat-button>
+        <i class="material-icons">done</i>
+    </button>
+                
+    <ng-template #editButton>
+        <form (ngSubmit)="onSelect(entreprise)">
+            <button mat-button><i class="material-icons">edit</i></button>
+        </form>
+    </ng-template>
+
+    <form (ngSubmit)="onDelete(entreprise)">
+        <button mat-button ><i class="material-icons">delete</i></button>
+    </form>
+
+<!-- ICI IL MANQUE LE INPUT POUR LE LOGO, MATTHIEU DEVRAIT ME REVENIR AVEC DE L'INFORMATION -->
+
+
+<!-- SECTION DE LA COURTE PRÉSENTATION - SG -->
+    <h2>Courte présentation</h2>    
+        <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+            <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editDescription;" class="input-full-width">
+                <textarea name="description" [(ngModel)]="entreprise.description" #description="ngModel" required type="text" matInput ></textarea>
+            <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">La description est obligatoire.</mat-error>
+            </mat-form-field>
+        </form>
+        <ng-template #editDescription><p (click)="onSelect(entreprise)">{{entreprise.description}}</p></ng-template>
+
+<!-- SECTION PERSONNE CONTACT NAME - SG -->
+    <h4>Personne contact</h4>    
+    <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+        <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editContactName;" class="input-full-width">
+        <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text" matInput/>
+         <mat-error *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">Le nom de la personne contact est obligatoire.</mat-error>  
+        </mat-form-field>
+    </form>
+    <ng-template #editContactName><p (click)="onSelect(entreprise)">{{entreprise.contactName}}</p></ng-template>
+
+<!-- SECTION DES COORDONNÉES - SG -->
+    <h4>Information personnelles</h4>    
+
+<!-- ADRESSE -->
+    <h4>Adresse</h4>  
+    <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+        <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editAddress;" class="input-full-width">
+        <input name="address" [(ngModel)]="entreprise.address" #address="ngModel" required type="text" matInput/>
+         <mat-error *ngIf="address.invalid && (address.dirty || address.touched) && address.hasError('required')">L'adresse est obligatoire.</mat-error>  
+        </mat-form-field>
+    </form>
+    <ng-template #editAddress><p (click)="onSelect(entreprise)">{{entreprise.address}}</p></ng-template>
+
+ <!-- TÉLÉPHONE -->   
+    <h4>Téléphone</h4>  
+    <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+        <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editContactPhone;" class="input-full-width">
+            <input name="contactPhone" [(ngModel)]="entreprise.contactPhone" #contactPhone="ngModel" required type="text" matInput/>
+            <mat-error *ngIf="contactPhone.invalid && (contactPhone.dirty || contactPhone.touched) && contactPhone.hasError('required')">Le numéro de téléphone.</mat-error>  
+        </mat-form-field>
+    </form>
+    <ng-template #editContactPhone><p (click)="onSelect(entreprise)">{{entreprise.contactPhone}}</p></ng-template>
+
+<!-- VILLE -->   
+     <h4>Ville</h4>  
+     <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+         <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editCity;" class="input-full-width">
+            <input name="city" [(ngModel)]="entreprise.city" #city="ngModel" required type="text" matInput/>
+            <mat-error *ngIf="city.invalid && (city.dirty || city.touched) && city.hasError('required')">La ville est obligatoire.</mat-error>   
+         </mat-form-field>
+     </form>
+     <ng-template #editCity><p (click)="onSelect(entreprise)">{{entreprise.city}}</p></ng-template>
+
+<!-- COURRIEL -->   
+     <h4>Courriel</h4>  
+     <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+         <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editContactEmail;" class="input-full-width">
+            <input name="contactEmail" [(ngModel)]="entreprise.contactEmail" #contactEmail="ngModel" required type="email" matInput/>
+            <mat-error *ngIf="contactEmail.invalid && (contactEmail.dirty || contactEmail.touched) && contactEmail.hasError('required')">Le courriel est obligatoire.</mat-error>  
+         </mat-form-field>
+     </form>
+     <ng-template #editContactEmail><p (click)="onSelect(entreprise)">{{entreprise.contactEmail}}</p></ng-template>
+
+<!-- PROVINCE -->   
+     <h4>Province</h4>  
+     <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+         <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editProvince;" class="input-full-width">
+            <input name="province" [(ngModel)]="entreprise.province" #province="ngModel" required type="text" matInput/>
+            <mat-error *ngIf="province.invalid && (province.dirty || province.touched) && province.hasError('required')">La province est obligatoire.</mat-error>   
+         </mat-form-field>
+     </form>
+     <ng-template #editProvince><p (click)="onSelect(entreprise)">{{entreprise.province}}</p></ng-template>
+
+<!-- CODE POSTAL -->   
+     <h4>Code Postal</h4>  
+     <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+         <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editCodePostal;" class="input-full-width">
+            <input name="postalCode" [(ngModel)]="entreprise.postalCode" #postalCode="ngModel" required type="text" matInput/>
+            <mat-error *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched) && postalCode.hasError('required')">Le code postal est obligatoire.</mat-error> 
+         </mat-form-field>
+     </form>
+     <ng-template #editCodePostal><p (click)="onSelect(entreprise)">{{entreprise.postalCode}}</p></ng-template>
+  
+  
+<!-- SECTION DES BOUTONS - ÉDITER - SUPPRIMER - MISE À JOUR (DU BAS DE PAGE) -->
+    <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editButton;" color="primary" form="entrepriseFormEdition" mat-button>
+        <i class="material-icons">done</i>
+    </button>
+                    
+    <ng-template #editButton>
+        <form (ngSubmit)="onSelect(entreprise)">
+            <button mat-button><i class="material-icons">edit</i></button>
+        </form>
+    </ng-template>
+  
+    <form (ngSubmit)="onDelete(entreprise)">
+        <button mat-button ><i class="material-icons">delete</i></button>
+    </form>  
+</div>
+    
+>>>>>>> Stashed changes

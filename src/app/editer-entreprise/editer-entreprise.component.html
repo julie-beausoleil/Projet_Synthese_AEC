@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <h1>Entreprise</h1>
 
 <button mat-stroked-button>Annuler</button>
@@ -56,3 +57,37 @@
   <button mat-stroked-button>Annuler</button>
   <button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
 </form>
+=======
+
+
+<div ngFor= "let entreprise of entreprise" >
+
+  <form #entrepriseFormEdition="ngForm" id="entrepriseFormEdition" (ngSubmit)="entrepriseFormEdition.form.valid && onEdit(entrepriseFormEdition)">
+    <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editDestination;" class="input-full-width">
+      <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text" matInput/>
+      <mat-error *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">Le nom de la personne contact est obligatoire.</mat-error>  
+    </mat-form-field>
+  </form>
+    <ng-template #editDestination><span (click)="onSelect(entreprise)">{{entreprise.contactName}}</span></ng-template>
+       
+
+
+
+
+      <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editButton;" color="primary" form="entrepriseFormEdition" mat-button>
+          <i class="material-icons">done</i>
+      </button>
+                  
+      <ng-template #editButton>
+          <form (ngSubmit)="onSelect(entreprise)">
+              <button mat-button><i class="material-icons">edit</i></button>
+          </form>
+      </ng-template>
+
+      <form (ngSubmit)="onDelete(entreprise)">
+          <button mat-button ><i class="material-icons">delete</i></button>
+      </form>
+
+    </div>
+  
+>>>>>>> Stashed changes

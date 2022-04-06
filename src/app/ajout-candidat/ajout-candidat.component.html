@@ -100,7 +100,7 @@
         [(ngModel)]="candidat.phone"
         #phone="ngModel"
         required
-        type="text"
+        type="tel"
         matInput
       />
       <mat-error
@@ -109,7 +109,7 @@
           (phone.dirty || phone.touched) &&
           phone.hasError('required')
         "
-        >Le numéro de téléphone.</mat-error
+        >Le numéro de téléphone est obligatoire.</mat-error
       >
     </mat-form-field>
 

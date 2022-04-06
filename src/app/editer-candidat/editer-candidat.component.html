@@ -1,23 +1,10 @@
-<h4>Candidat</h4>
 <h1>Plume Latraverse</h1>
 <h5>UX Designer</h5>
 
-<button mat-stroked-button>
-  <a routerLink="/fiche-candidat"><mat-icon>done</mat-icon></a>
+<button type="button" class="btn btnAnnuler" (click)="annuler()">
+  {{ titre }}
 </button>
-
-<button mat-stroked-button>
-  <a routerLink="/editer-candidat"><mat-icon>create</mat-icon></a>
-</button>
-
-<button mat-stroked-button>
-  <mat-icon>close</mat-icon>
-</button>
-
-<h1>Ajouter un Candidat</h1>
-
-<button mat-stroked-button>Annuler</button>
-<button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
+<button mat-stroked-button><mat-icon>save</mat-icon>Mettre a jour</button>
 
 <br /><br /><br />
 <form class="example-form">
@@ -33,7 +20,9 @@
   <br />
   <h2>Courte présentation</h2>
   <mat-form-field class="example-full-width" appearance="fill">
-    <textarea matInput placeholder=""></textarea>
+    <textarea matInput placeholder="">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatem alias labore optio doloremque dignissimos harum dolor ut laborum nemo vero, ab quod accusantium ducimus non illum iure cupiditate culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatem alias labore optio doloremque dignissimos harum dolor ut laborum nemo vero, ab quod accusantium ducimus non illum iure cupiditate culpa.</textarea
+    >
   </mat-form-field>
   <br /><br />
   <h4>Informations personnelles</h4>
@@ -69,6 +58,9 @@
     <input matInput placeholder="Courriel" value="Couriel" />
   </mat-form-field>
   <br />
-  <button mat-stroked-button>Annuler</button>
-  <button mat-stroked-button><mat-icon>save</mat-icon>Sauvegarde</button>
+  <button type="button" class="btn btnAnnuler" (click)="annuler()">
+    {{ titre }}
+  </button>
+
+  <button mat-stroked-button><mat-icon>save</mat-icon>Mettre a jour</button>
 </form>

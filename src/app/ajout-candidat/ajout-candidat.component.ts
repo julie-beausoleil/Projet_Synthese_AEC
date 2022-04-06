@@ -25,7 +25,7 @@ export class AjoutCandidatComponent implements OnInit {
     published: false,
   };
   @Output() majTableau = new EventEmitter();
-  constructor(private candidatService: CandidatService,
+  constructor( private candidatService: CandidatService,
   private router : Router) { }
 
   ngOnInit(): void {

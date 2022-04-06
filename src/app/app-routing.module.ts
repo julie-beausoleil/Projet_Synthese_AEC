@@ -57,6 +57,11 @@ const routes: Routes = [
   { path: 'fiche-entreprise', component: FicheEntrepriseComponent },
 
 
+  /* Route pour les Édites */
+  { path: 'editer-candidat', component: EditerCandidatComponent },
+  { path: 'editer-entreprise', component: FicheEntrepriseComponent},
+
+
   /* Voici la page d'acceuil */
   { path: 'accueil', component: AccueilComponent },
 ];

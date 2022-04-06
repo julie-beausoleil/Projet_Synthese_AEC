@@ -28,7 +28,7 @@ export class EntrepriseService {
     return this.http.get<Entreprise>(this.entrepriseUrl + "/" + _id);
   }
 
-  addEntreprise(entreprise: Entreprise): Observable<Entreprise> {
+  addEntreprise(entreprise: Omit<Entreprise, "_id">): Observable<Entreprise> {
     return this.http.post<Entreprise>(this.entrepriseUrl, entreprise, httpOptions);
   }
 

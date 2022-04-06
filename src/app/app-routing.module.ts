@@ -30,7 +30,10 @@ import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
 import { EditerCandidatComponent } from './editer-candidat/editer-candidat.component';
 import { EditerOffreStageComponent } from './editer-offre-stage/editer-offre-stage.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
   { path: '', component: TableauDeBordComponent },
@@ -56,9 +59,12 @@ const routes: Routes = [
   { path: 'fiche-candidat', component: FicheCandidatComponent },
   { path: 'fiche-entreprise', component: FicheEntrepriseComponent },
 
+<<<<<<< Updated upstream
   /* Route pour les Édites */
   { path: 'editer-candidat', component: EditerCandidatComponent },
   { path: 'editer-entreprise', component: FicheEntrepriseComponent},
+=======
+>>>>>>> Stashed changes
 
   /* Voici la page d'acceuil */
   { path: 'accueil', component: AccueilComponent },

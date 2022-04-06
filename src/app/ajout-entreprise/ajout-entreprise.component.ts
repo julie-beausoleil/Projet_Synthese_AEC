@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, } from '@angular/core';
 import { NgForm } from '@angular/forms';  
 import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service */
 import { Entreprise } from "../dossierDesInterfaces/entreprise";/* Importation de mon interface */
@@ -12,11 +12,10 @@ import { Router } from '@angular/router';
 export class AjoutEntrepriseComponent implements OnInit {
 
    /*  entreprise : Entreprise [] = []; */
-   @Input() entreprise : Entreprise = {
-    _id: " ",
+   @Input() entreprise : Omit<Entreprise, "_id"> = {
     name: "",
     description: "",
-    imageUrl: "",
+    imageUrl: "allo",
     contactName: "",
     contactEmail: "",
     contactPhone: "",
@@ -25,8 +24,7 @@ export class AjoutEntrepriseComponent implements OnInit {
     province: "",
     postalCode: "",
     published: false,
-  };  
-  @Output() majTableau = new EventEmitter();
+  };   
 
   constructor(private entrepriseService : EntrepriseService,
                 private router : Router) { }
@@ -38,7 +36,6 @@ export class AjoutEntrepriseComponent implements OnInit {
 
   saveEntreprise() : void {
     this.entrepriseService.addEntreprise(this.entreprise)
-      .subscribe(resultat => this.entreprise = resultat);      
-    this.router.navigate(["entreprises"]);
+      .subscribe(() => this.router.navigate(["entreprises"]));
   }
 }

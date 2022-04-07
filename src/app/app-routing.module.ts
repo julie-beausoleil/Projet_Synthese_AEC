@@ -33,20 +33,20 @@ import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise
 
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
-  { path: '', component: TableauDeBordComponent },
+  { path: '', component: AccueilComponent },
   { path: 'tableau-de-bord', component: TableauDeBordComponent },
   { path: 'demandes-de-stages', component: DemandesDeStagesComponent },
-  { path: 'offres-de-stage', component: OffresDeStageComponent },   
-  { path: 'liste-offre-stage',  component: ListeOffreStageComponent },
-  { path: 'fiche-stage', component: FicheStageComponent},
-  { path: 'editer-offre-stage', component: EditerOffreStageComponent},   
-  { path: 'candidats', component: ListeCandidatComponent },  
+  { path: 'offres-de-stage', component: OffresDeStageComponent },
+  { path: 'liste-offre-stage', component: ListeOffreStageComponent },
+  { path: 'fiche-stage', component: FicheStageComponent },
+  { path: 'editer-offre-stage', component: EditerOffreStageComponent },
+  { path: 'candidats', component: ListeCandidatComponent },
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
   { path: 'entreprises', component: ListeEntreprisesComponent },
-  { path: 'entreprises/:_id', component: FicheEntrepriseComponent}, /* ROUTE POUR AFFICHER LA FICHE DE UNE ENTREPRISE - SG */
-  { path: 'candidats/:_id', component: FicheCandidatComponent}, /* ROUTE POUR AFFICHER LA FICHE DE UN CANDIDAT - SG */
+  { path: 'entreprises/:_id', component: FicheEntrepriseComponent }, /* ROUTE POUR AFFICHER LA FICHE DE UNE ENTREPRISE - SG */
+  { path: 'candidats/:_id', component: FicheCandidatComponent }, /* ROUTE POUR AFFICHER LA FICHE DE UN CANDIDAT - SG */
 
-   /* Route pour les boutons d'ajout */
+  /* Route pour les boutons d'ajout */
   { path: 'ajout-candidat', component: AjoutCandidatComponent },
   { path: 'ajout-demande-stage', component: AjoutDemandeStageComponent },
   { path: 'ajout-entreprise', component: AjoutEntrepriseComponent },
@@ -59,7 +59,7 @@ const routes: Routes = [
 
   /* Route pour les Édites */
   { path: 'editer-candidat', component: EditerCandidatComponent },
-  { path: 'editer-entreprise', component: FicheEntrepriseComponent},
+  { path: 'editer-entreprise', component: FicheEntrepriseComponent },
 
 
   /* Voici la page d'acceuil */

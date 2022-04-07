@@ -1,29 +1,35 @@
-<h1>identification</h1>
-<img src="/image1.png" alt="image1" />
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam tempora
-  eum.
-</p>
-<p>
-  quibusdam ad sed, sequi possimus maiores quasi voluptates eligendi quidem
-  sint?
-</p>
-<br />
-<form class="form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <input
-      matInput
-      placeholder="Votre nom et prénom"
-      value="Votre nom et prénom"
-    />
-  </mat-form-field>
-  <br />
-  <mat-form-field class="example-full-width" appearance="fill">
-    <input matInput placeholder="Votre courriel" value="Votre courriel" />
-  </mat-form-field>
-  <br />
-</form>
+<div id="window" class="container-fluid g-0">
+  <header class="row">
+    <img src="../../assets/img/logo.svg" alt="Logo de la compagnie eStage." title="Logo de la compagnie eStage."
+      class="col-6 col-md-2 align-self-center">
+  </header>
+  <main class="row">
+    <!-- Image d'accueil -->
+    <aside class="col-12 col-md-6">
+    </aside>
 
-<button mat-stroked-button>
-  <a routerLink="/tableau-de-bord">Accéder maintenant</a>
-</button>
+    <section class="col-12 col-md-6 d-flex align-items-center">
+      <div class="col-md-8 offset-md-1 ">
+        <h1>Identification</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam tempora
+          eum.
+        </p>
+        <!-- Formulaire d'accès -->
+        <form class="form contour">
+          <mat-form-field class="">
+            <input matInput value="Votre nom et prénom" class="form--input__placeholder"/>
+          </mat-form-field>
+          <br />
+          <mat-form-field>
+            <input matInput value="Votre courriel" class="form--input__placeholder"/>
+          </mat-form-field>
+          <br />
+          <button [routerLink]="['/tableau-de-bord']">
+            Accéder maintenant
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>

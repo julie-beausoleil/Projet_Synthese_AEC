@@ -1,11 +1,6 @@
-/* You can add global styles to this file, and also import other style files * */
-/* You can add global styles to this file, and also import other style files */
-body {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+:host {
+  font-family: "Open Sans", sans-serif !important;
+  color: #111111 !important;
   height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

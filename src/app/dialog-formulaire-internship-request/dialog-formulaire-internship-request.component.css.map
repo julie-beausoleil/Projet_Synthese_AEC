@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "dialog-formulaire-internship-request.component.sass"
-    ],
-    "names": [],
-    "file": "dialog-formulaire-internship-request.component.css"
-}
+{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"dialog-formulaire-internship-request.component.css"}

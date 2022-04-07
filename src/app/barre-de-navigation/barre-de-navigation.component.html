@@ -1,22 +1,22 @@
-<div class="button-row">
-    <mat-icon>sort</mat-icon>
-    <button mat-stroked-button>
-      <a routerLink="/ajout-offre-stage">+ Ajouter une offre de stage</a>
-    </button>
-    <button mat-stroked-button>
-      <a routerLink="/ajout-demande-stage">+ Ajouter une demandes de stage </a>
-    </button>
-    <button mat-stroked-button>
-      <a routerLink="/ajout-entreprise">+ Ajouter une entreprise </a>
-    </button>
-    <button mat-stroked-button>
-      <a routerLink="/ajout-candidat">+ Ajouter un candidat</a>
-    </button>
-    <h3>
-      John Doe
-      <h4>
-        Admin<mat-icon><a routerLink="/accueil">circle</a></mat-icon>
-      </h4>
-    </h3>
+<div class="container-fluid g-0 py-2">
+  <div class="button-row d-flex d-none d-md-flex">
+    <div class="col-10 align-items-center">
+      <mat-icon class="mat-icon">sort</mat-icon>
+      <button [routerLink]="['/ajout-offre-stage']" class="btn__ajoutoffre">+ Ajouter une offre de stage</button>
+      <button [routerLink]="['/ajout-demande-stage']" class="btn__ajoutdemande">
+        + Ajouter une demande de stage
+      </button>
+      <button [routerLink]="['/ajout-entreprise']" class="btn__ajoutentreprise">
+        + Ajouter une entreprise
+      </button>
+      <button [routerLink]="['/ajout-candidat']" class="btn__ajoutcandidat">+ Ajouter un candidat</button>
+    </div>
+    <div class="col-2 ms-auto align-items-center">
+      <div class="d-flex ms-auto text-end justify-content-end pe-3">
+      <p class="nom">John Doe<br>
+        Admin</p>
+      <mat-icon>circle</mat-icon>
+    </div>
+    </div>
   </div>
-  
+</div>

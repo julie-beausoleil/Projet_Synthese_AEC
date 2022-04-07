@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,iFAAiF;AACjF,+EAA+E;AAC/E,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,IAAI;CAAG;;AAEjB,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,CAAC;EACT,WAAW,EAAE,oCAAoC;CAAG",
-    "sources": [
-        "styles.sass"
-    ],
-    "names": [],
-    "file": "styles.css"
-}
+{"version":3,"sourceRoot":"","sources":["sass/utilis/_variables.sass","styles.sass"],"names":[],"mappings":"AAAQ;ACER;EACE;EACA;EACA","file":"styles.css"}

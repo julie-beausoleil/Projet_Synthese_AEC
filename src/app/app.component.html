@@ -1,5 +1,23 @@
-<app-barre-de-navigation></app-barre-de-navigation>
+<div class="container-fluid g-0">
+  <div class="row">
+    <!-- Barre de navigation latérale -->
+    <div id="sidebar" class="col-12 col-md-4 col-lg-2">
 
-<app-side-barre></app-side-barre>
+      <app-side-barre></app-side-barre>
+    </div>
 
-<router-outlet></router-outlet>
+    <div class="col-12 col-md-8 col-lg-10">
+      
+      <header>
+          <!-- Navigation ajouts -->
+        <nav id="ajout" class="row my-3">
+          <app-barre-de-navigation></app-barre-de-navigation>
+        </nav>
+      </header>
+      <main>
+        <section class="row py-5" id="pages">
+          <router-outlet></router-outlet>
+        </section>
+      </main>
+    </div>
+  </div>

@@ -48,13 +48,6 @@ export class OffresDeStageComponent implements OnInit {
    //this.deleteOffreStage;
  }
 
- // fonction permettant de faire la suppression
-  // deleteOffreStage(offrestage: OffreStage): void {
-  //   if(offrestage._id){
-  //     this.offrestageService.deleteOffreStage(offrestage._id)
-  //     .subscribe(result => this.offrestages = this.offrestages.filter(p => p !== offrestage));
-  //   }
-  // }
 }
 
 

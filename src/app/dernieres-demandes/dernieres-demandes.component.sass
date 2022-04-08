@@ -1,0 +1,30 @@
+@import ../../styles.sass
+
+$theme: $tableau-de-bord
+$theme-dark: $tableau-de-bord_dark
+
+#dernieresoffres
+    @include bg
+
+span
+    color: $demande-de-stage
+    font-weight: $bold
+
+.btn__valider
+    @include btn
+
+.btn__accepter
+    @include btn-action
+    color: $btn__accepter_texte
+    background-color: $btn__accepter_bg
+    &:hover
+        background-color: $btn__accepter_texte
+        color: $btn__accepter_bg
+
+.btn__refuser
+    @include btn-action
+    color: $btn__refuser_texte
+    background-color: $btn__refuser_bg
+    &:hover
+        background-color: $btn__refuser_texte
+        color: $btn__refuser_bg

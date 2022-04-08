@@ -1,9 +1,17 @@
-<div class="container">
-  <h1>Dernière demandes de stage</h1>
-  <p>En attente de validation</p>
-  <button mat-stroked-button>Valider toutes les demandes</button>
+<div id="dernieresoffres" class="container">
+  <div class="row mb-5 py-3 d-flex align-items-center">
+    <div class="col-9">
+      <h1>Dernière <span>demandes</span> de stage</h1>
+      <h2>En attente de validation</h2>
+    </div>
+    <div class="col-3 ms-auto text-end">
+    <button class="btn__valider">Valider toutes les offres</button>
+  </div>
+  </div>
 
+<!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
+    <!-- Entete du tableau -->
     <thead>
       <tr class="title">
         <th class="col" class="d-none">ID</th>
@@ -13,6 +21,7 @@
         <th class="col">Actions</th>
       </tr>
     </thead>
+    <!-- Affichage des dernières offres de stage dans la liste -->
     <tbody>
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
@@ -21,17 +30,17 @@
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
-        <td>{{ requeteStage.startDate }}</td>
+        <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
         <td>
-          <button type="button" class="btn btn-danger m-1">Refuser</button>
-          <button type="button" class="btn btn-success m-1">Accepter</button>
+          <button type="button" class="btn__refuser">Refuser</button>
+          <button type="button" class="btn__accepter">Accepter</button>
           <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon>visibility</mat-icon></a
-          >
+            <mat-icon class="btn__vue">visibility</mat-icon></a>          
           <a routerLink="/administrationInternshipRequestComponent"
-            ><mat-icon>create</mat-icon></a
-          >
-          <mat-icon>delete</mat-icon>
+            ><mat-icon class="btn__modifier">create</mat-icon></a>          
+            <a routerLink="">
+              <mat-icon class="btn__supprimer">delete</mat-icon>
+            </a>
         </td>
       </tr>
     </tbody>

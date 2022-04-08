@@ -1,1 +1,64 @@
-/* No CSS *//*# sourceMappingURL=side-barre.component.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+:host {
+  font-family: "Open Sans", sans-serif !important;
+  color: #111111 !important;
+  height: 100%;
+}
+
+/* Test */
+.contourrouge {
+  border: 1px solid red;
+}
+
+.contourbleu {
+  border: 1px solid blue;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+mat-icon {
+  margin-right: 0.65rem;
+}
+
+li {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
+
+.nav__li--tableau-bord, #tableaubord {
+  color: #0c9da4;
+}
+
+.nav__li--demandes-stage, #demandesstage {
+  color: #cd9635;
+}
+
+.nav__li--offres-stage, #offresstage {
+  color: #bb2026;
+}
+
+.nav__li--candidats, #candidats {
+  color: #7f2987;
+}
+
+.nav__li--entreprises, #entreprises {
+  color: #86a9e6;
+}
+
+img {
+  /* width: 165px */
+  margin: 2rem 0 4rem 2rem;
+}
+
+a:hover {
+  font-weight: 700;
+}/*# sourceMappingURL=side-barre.component.css.map */

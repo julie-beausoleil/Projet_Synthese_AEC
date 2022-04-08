@@ -1,15 +1,66 @@
-<h4>Candidat</h4>
 <h1>Plume Latraverse</h1>
 <h5>UX Designer</h5>
 
-<button mat-stroked-button>
-  <a routerLink="/fiche-candidat"><mat-icon>done</mat-icon></a>
+<button type="button" class="btn btnAnnuler" (click)="annuler()">
+  {{ titre }}
 </button>
+<button mat-stroked-button><mat-icon>save</mat-icon>Mettre a jour</button>
 
-<button mat-stroked-button>
-  <a routerLink="/editer-candidat"><mat-icon>create</mat-icon></a>
-</button>
+<br /><br /><br />
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nom et Prénom: </mat-label>
+    <input matInput placeholder="Nom et Prénom" value="Nom et Prénom" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Poste</mat-label>
+    <input matInput placeholder="Poste" value="Poste" />
+  </mat-form-field>
+  <br />
+  <h2>Courte présentation</h2>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <textarea matInput placeholder="">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatem alias labore optio doloremque dignissimos harum dolor ut laborum nemo vero, ab quod accusantium ducimus non illum iure cupiditate culpa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatem alias labore optio doloremque dignissimos harum dolor ut laborum nemo vero, ab quod accusantium ducimus non illum iure cupiditate culpa.</textarea
+    >
+  </mat-form-field>
+  <br /><br />
+  <h4>Informations personnelles</h4>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Adresse</mat-label>
+    <input matInput placeholder="Adresse" value="Adresse" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Ville</mat-label>
+    <input matInput placeholder="Ville" value="Ville" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Province</mat-label>
+    <input matInput placeholder="Province" value="Province" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Code Postal</mat-label>
+    <input matInput placeholder="Code Postal" value="Code Postal" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Telephone</mat-label>
+    <span matPrefix>+1 &nbsp;</span>
+    <input type="tel" matInput placeholder="555-555-1234" />
+    <mat-icon matSuffix>mode_edit</mat-icon></mat-form-field
+  ><br />
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Courriel</mat-label>
+    <input matInput placeholder="Courriel" value="Couriel" />
+  </mat-form-field>
+  <br />
+  <button type="button" class="btn btnAnnuler" (click)="annuler()">
+    {{ titre }}
+  </button>
 
-<button mat-stroked-button>
-  <mat-icon>close</mat-icon>
-</button>
+  <button mat-stroked-button><mat-icon>save</mat-icon>Mettre a jour</button>
+</form>

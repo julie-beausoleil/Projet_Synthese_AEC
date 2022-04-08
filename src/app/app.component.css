@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+:host {
+  font-family: "Open Sans", sans-serif !important;
+  color: #111111 !important;
+  height: 100%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #bb2026;
+}
+
+#pages {
+  background-color: #f6f6f6 !important;
+}/*# sourceMappingURL=app.component.css.map */

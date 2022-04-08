@@ -1,4 +1,48 @@
-<ul>
+
+<nav class="navbar navbar-expand-md navbar-light">
+  <div class="container-fluid d-md-block">
+    <a routerLink="/tableau-de-bord" class="navbar-brand "><img src="../../assets/img/logo.svg"
+      alt="Logo de l'entreprise eStage." title="Logo de l'entreprise eStage." class="img-fluid "></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="sidebar">
+        <li class="nav__li--tableau-bord">
+
+          <a id="tableaubord" routerLink="/tableau-de-bord">
+            <mat-icon>av_timer</mat-icon>Tableau de bord
+          </a>
+        </li>
+        <li class="nav__li--demandes-stage nav-item">
+          <a id="demandesstage" routerLink="/administrationInternshipRequestComponent" routerLinkActive="active">
+            <mat-icon>date_range</mat-icon>Demandes de stages
+          </a>
+        </li>
+        <li class="nav__li--offres-stage">
+          <a id="offresstage" routerLink="/offres-de-stage">
+            <mat-icon>send</mat-icon>Offres de stage
+          </a>
+        </li>
+        <li class="nav__li--candidats">
+          <a id="candidats" routerLink="/candidats">
+            <mat-icon>person</mat-icon>Candidats
+          </a>
+        </li>
+        <li class="nav__li--entreprises">
+          <a id="entreprises" routerLink="/entreprises">
+            <mat-icon>business</mat-icon>Entreprises
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
+<!-- <ul>
   <li><a routerLink="/tableau-de-bord">Tableau de bord</a></li>
   <li><a routerLink="/administrationInternshipRequestComponent" routerLinkActive="active"> Demandes de stages</a></li>
   <li>
@@ -9,6 +53,4 @@
   <li>
     <mat-icon>business</mat-icon> <a routerLink="/entreprises">Entreprises</a>
   </li>
-</ul>
-
-
+</ul> -->

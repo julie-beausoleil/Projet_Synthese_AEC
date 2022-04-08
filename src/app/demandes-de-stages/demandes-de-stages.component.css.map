@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "demandes-de-stages.component.sass"
-    ],
-    "names": [],
-    "file": "demandes-de-stages.component.css"
-}
+{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"demandes-de-stages.component.css"}

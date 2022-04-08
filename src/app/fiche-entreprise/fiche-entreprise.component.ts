@@ -39,8 +39,12 @@ export class FicheEntrepriseComponent implements OnInit {
     .subscribe(resultat => this.entreprise = resultat);
   }
 
+  onSelect(entreprise: Entreprise): void {
+    this.selectedEntreprise = entreprise; 
+  }
 
-  deleteEntreprise(entreprise: Entreprise ): void {
+
+  onDelete(entreprise: Entreprise ): void {
     this.entrepriseService.deleteEntreprise(entreprise._id)
       .subscribe(() => this.router.navigate(['/']));
   } 

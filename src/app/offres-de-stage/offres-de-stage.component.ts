@@ -4,13 +4,14 @@ import { OffreStage } from '../dossierDesInterfaces/offre-stage';
 import { DialogComponent, DialogModel } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
-
 @Component({
   selector: 'app-offres-de-stage',
   templateUrl: './offres-de-stage.component.html',
   styleUrls: ['./offres-de-stage.component.sass']
 })
+
 export class OffresDeStageComponent implements OnInit {
+
   @Input() offrestage? : OffreStage; 
 
   offrestages : OffreStage[] = [];
@@ -28,24 +29,25 @@ export class OffresDeStageComponent implements OnInit {
   onSelect(offrestage: OffreStage): void {
    this.selectedOffrestage = offrestage; 
  }
+
  //  ajout d'une methode pour appeler la fenetre de dialogue
 
  result: string = '';
 
- Dialog(): void {
-   const message = `Voulez vous vraiment faire cette suppression?`;
+  Dialog(): void {
+    const message = `Voulez-vous vraiment faire cette suppression?`;
 
-   const dialogData = new DialogModel("File Saving Message", message);
+    const dialogData = new DialogModel("Suppression d'un enregistrement", message);
 
-   const dialogRef = this.dialog.open(DialogComponent, {
-     maxWidth: "600px",
-     data: dialogData
-   });
+    const dialogRef = this.dialog.open(DialogComponent, {
+      maxWidth: "1000px",
+      data: dialogData
+    });
 
-   dialogRef.afterClosed().subscribe(dialogResult => {
-     this.result = dialogResult;
-   });
- }
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.result = dialogResult;
+    });
+  }
 }
 
 

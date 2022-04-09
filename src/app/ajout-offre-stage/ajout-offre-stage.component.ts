@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-offre-stage.component.sass']
 })
 export class AjoutOffreStageComponent implements OnInit {
+  @Input() titre: String = "Annuler";
 
   @Input() offrestage: OffreStage = {
     _id: "",
@@ -29,7 +30,7 @@ export class AjoutOffreStageComponent implements OnInit {
   }
 
   @Output() majTableau = new EventEmitter();
-  @Input() titre: String = "Annuler";
+  //@Input() titre: String = "Annuler";
 
   constructor(private offrestageService: OffrestageService, private router : Router) { }
 

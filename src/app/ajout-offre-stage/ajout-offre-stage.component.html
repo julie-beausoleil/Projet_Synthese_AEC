@@ -1,130 +1,124 @@
 <!-- partie entete de la page -->
 
 <div>
-  <div class="body__form">
-    <h1 class="titre__entete">Offre de stage</h1>
+  <form>
+    <div class="body__form">
+        
+      <h1 class="titre__entete">Offre de stage</h1>
+    
+      <div class="btn__align">
+        <button mat-button>Annuler</button>
+        <button class="btn__align--color" mat-stroked-button  type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
+      </div><br><br>
 
-    <div class="btn__align">
-      <button type="button" class="btn btnAnnuler" (click)="annuler()">
-        {{ titre }}
-      </button>
-      <button class="btn__align--color" mat-button>Mettre A jour</button>
-    </div>
-    <br /><br />
-
-    <div>
-      <div class="pt3">
-        <div><label for="fname">Titre :</label></div>
-        <div class="position">
-          <input size="100" type="text" id="fname" name="fname" />
+      <div>  
+        <div class="pt3">
+          <div><label for="fname">Titre :</label></div>
+          <div class="position"><input  name="titre" [(ngModel)]="offrestage.title"  #name="ngModel" size= 100 type="text" id="ngModel" required></div><br>
+          
+          <div><label for="lname">Entreprise:</label></div>
+          <div class="position">
+            <select class="position__select" name="stage" [(ngModel)]="offrestage.enterprise" type="text" id="stage" required>
+              <option> Veuillez efffectuer un choix</option>
+              <option value="volvo">CEGEP Trois riviere</option>
+              <option value="saab">Desjardins</option>
+              <option value="mercedes">Toyota</option>
+              <option value="audi">Audi</option>
+            </select>
+          </div>
+          <!-- <div class="position"><input size= 100 type="text" id="lname" name="lname" /></div>   -->
         </div>
-        <br />
+        <br><br>
 
-        <div><label for="lname">Entreprise:</label></div>
-        <div class="position">
-          <select class="position__select" name="stage" id="stage">
-            <option>Veuillez efffectuer un choix</option>
-            <option value="volvo">CEGEP Trois riviere</option>
-            <option value="saab">Desjardins</option>
-            <option value="mercedes">Toyota</option>
-            <option value="audi">Audi</option>
-          </select>
-        </div>
-        <!-- <div class="position"><input size= 100 type="text" id="lname" name="lname" /></div>   -->
-      </div>
-      <br /><br />
-
-      <!-- fin -->
-      <!-- partie description de la tacha -->
-
-      <!-- debut zone de texte -->
-      <div>
-        <h1 class="titre1 pt 3">Description de la tâche</h1>
-        <br />
-        <div class="champ__zone__text"><textarea matInput></textarea></div>
-        <br /><br />
-
-        <h2 class="titre2">Programme de Formation</h2>
-        <div class="champ__formation"><textarea matInput></textarea></div>
-        <br /><br />
-
-        <h2 class="titre2">Exigences</h2>
-        <br />
-        <div class="champ__zone__text"><textarea matInput></textarea></div>
-        <br /><br />
-
+        <!-- fin -->
+        <!-- partie description de la tacha -->
+        
+        <!-- debut zone de texte -->
+        <div>
+          <h1 class="titre1 pt 3">Description de la tâche</h1><br><br><br>
+          <div class="champ__zone__text">
+            <textarea matInput name="description" [(ngModel)]="offrestage.description"  name="description" id="description" required></textarea>
+          </div><br><br>
+          
+      
+          <h2 class="titre2">Programme de Formation</h2>
+          <div class="champ__formation">
+            <textarea matInput name="programme" [(ngModel)]="offrestage.program"  name="programme" id="programme" required></textarea>
+          </div><br><br>
+          
+      
+          <h2 class="titre2">Exigences</h2>
+          
+          <div class="champ__zone__text">
+            <textarea matInput name="exigences" [(ngModel)]="offrestage.requirements"  name="exigence" id="programme" required></textarea>
+          </div><br><br>
+        </div>  
+    
         <!-- fin zone de texte-->
-
+    
         <!-- partie information sur le stage recherchee -->
-
-        <h2 class="titre3">Information sur le stage recherché</h2>
-        <br />
-
+    
+        <h2 class="titre3">Information sur le stage recherché</h2><br>
+        
         <div>
           <div>
             <h5>Type de stage</h5>
             <app-selection></app-selection>
           </div>
-
+    
           <div class="datepicker__align">
             <h5>Date de debut</h5>
             <app-date-picker></app-date-picker>
           </div>
-        </div>
-        <br />
-
+        </div><br>
+        
         <div>
           <div>
             <h5>Nombre d'heures par semaine</h5>
             <app-selection></app-selection>
           </div>
-
+    
           <div class="datepicker__align">
             <h5>Date de fin</h5>
             <app-date-picker></app-date-picker>
           </div>
         </div>
-
+    
         <!-- fin -->
-
+    
         <!-- partie remuneration jusqu'à la fin de la page -->
-
+    
         <div class="pt 3">
-          <form action="/action_page.php">
+          <form action="">
             <Label> Remuneration </Label><br /><br />
-            <input type="checkbox" name="choix1" value="valuer1" />
+            <input type="checkbox" name="choix1" value="valuer1" [(ngModel)]="offrestage.stageType"   id="choix1" />
             <label for="choix1"> A discuter</label><br /><br />
-            <input type="checkbox" name="choix2" value="valeur2" />
+            <input type="checkbox" name="choix2" value="valeur2" [(ngModel)]="offrestage.stageType"   id="choix2"/>
             <label for="choix2"> Stage remunéré</label><br /><br />
-            <input type="checkbox" name="choix3" value="value3" checked />
+            <input type="checkbox" name="choix3" value="value3" checked [(ngModel)]="offrestage.stageType"   id="choix3"/>
             <label for="choix3"> Stage non remunéré </label><br /><br />
           </form>
         </div>
-
+    
         <div class="pt 4">
           <h1 class="titre4">Informations supppementaires</h1>
-          <br />
-          <div class="champ__zone__text"><textarea matInput></textarea></div>
-          <br /><br />
+          <br>
+          <div class="champ__zone__text"><textarea matInput name="plusinfo" [(ngModel)]="offrestage.additionalInfo"  name="plusinfo" id="plusinfo" required></textarea></div>
+          <br><br>
         </div>
 
         <div>
           <mat-card-actions class="btn__align">
             <div class="btn__align">
-              <button type="button" class="btn btnAnnuler" (click)="annuler()">
-                {{ titre }}
-              </button>
-              <button class="btn__align--color" mat-button>
-                Mettre A jour
-              </button>
-            </div>
-            <br /><br />
+              <button mat-button>Annuler</button>
+              <button class="btn__align--color" mat-stroked-button type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
+            </div><br><br>
           </mat-card-actions>
         </div>
-        <br /><br />
+        <br><br>
       </div>
     </div>
-  </div>
-
-  <!-- fin -->
+  </form>
 </div>
+
+<!-- fin -->

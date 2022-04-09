@@ -1,0 +1,35 @@
+//Arrière-plan des zones
+@mixin bg
+    background-color: $blanc
+    border-radius: 2rem
+    padding: 2rem
+
+// Bouton validation
+/* Changer la couleur du theme et du theme-dark dans les variables */        
+@mixin btn
+    background-color: $theme
+    font-family: $font-stack
+    font-size: $taille-defaut
+    font-weight: $bold
+    color: $blanc
+    padding: $taille-defaut
+    border: none
+    border-radius: 0.75rem
+    padding: 1rem
+    &:hover
+        background-color: $theme-dark
+
+@mixin btn-action
+    font-family: $font-stack
+    font-size: $taille-defaut * 0.875
+    padding: 6px 15px
+    border: none
+    border-radius: 6px
+    margin-right: 1rem
+
+/* Ajouter color et bgcolor */
+@mixin icone-categorie
+    border-radius: 5px
+    padding: 0.75rem
+    text-align: center
+    margin-right: 0.75rem

@@ -35,19 +35,17 @@ export class OffresDeStageComponent implements OnInit {
  Dialog(): void {
    const message = `Voulez vous vraiment faire cette suppression?`;
 
-   const dialogData = new DialogModel("Suppression d'un enregistrement", message);
+   const dialogData = new DialogModel("File Saving Message", message);
 
    const dialogRef = this.dialog.open(DialogComponent, {
-     maxWidth: "1000px",
+     maxWidth: "600px",
      data: dialogData
    });
 
    dialogRef.afterClosed().subscribe(dialogResult => {
      this.result = dialogResult;
    });
-   //this.deleteOffreStage;
  }
-
 }
 
 

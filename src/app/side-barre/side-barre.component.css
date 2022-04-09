@@ -1,4 +1,80 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+/* Changer la couleur du theme et du theme-dark dans les variables */        
+/* Ajouter color et bgcolor */
+/* Test */
+.contourrouge {
+  border: 1px solid red;
+}
+
+.contourbleu {
+  border: 1px solid blue;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #bb2026;
+}
+
+.button-accueil {
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.125rem;
+  letter-spacing: 20;
+  background-color: #0c9da4;
+  padding: 1.25rem 0.875rem;
+  border-radius: 0.25rem;
+}
+
+.button-accueil:hover {
+  color: #ffffff;
+  opacity: 70%;
+}
+
+.btn__vue {
+  color: #0c9da4;
+}
+.btn__vue:hover {
+  color: #07575c;
+}
+
+.btn__modifier {
+  color: #f89747;
+}
+.btn__modifier:hover {
+  color: #ad6932;
+}
+
+.btn__supprimer {
+  color: #f26689;
+}
+.btn__supprimer:hover {
+  color: #a84860;
+}
+
+.icone-demande-stage {
+  color: #70582E;
+  background-color: #D6B477;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+.icone-offre-stage {
+  color: #FF9FA3;
+  background-color: #bb2026;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
 :host {
   font-family: "Open Sans", sans-serif !important;
   color: #111111 !important;

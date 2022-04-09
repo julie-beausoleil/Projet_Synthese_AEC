@@ -12,7 +12,7 @@
 <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
-    <thead>
+    <thead >
       <tr class="title">
         <th class="col" class="d-none">ID</th>
         <th class="col">Profil</th>
@@ -26,13 +26,13 @@
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
         <td>
-          <mat-icon>school</mat-icon>
+          <mat-icon class="icone-demande-stage" aria-hidden="true">school</mat-icon>
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
         <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
-        <td>
-          <button type="button" class="btn__refuser">Refuser</button>
+        <td class="d-flex justify-content-between"> <!-- Actions-->
+          <button type="button" class="btn__refuser align-items-center">Refuser</button>
           <button type="button" class="btn__accepter">Accepter</button>
           <a routerLink="/administrationInternshipRequestComponent">
             <mat-icon class="btn__vue">visibility</mat-icon></a>          

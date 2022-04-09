@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { OffreStage } from '../dossierDesInterfaces/offre-stage';
+import { OffrestageService } from '../dossierDesServices/offrestage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-offre-stage',
@@ -9,12 +11,38 @@ import { Location } from '@angular/common';
 export class AjoutOffreStageComponent implements OnInit {
   @Input() titre: String = "Annuler";
 
-  constructor(private location: Location) { }
+  @Input() offrestage: OffreStage = {
+    _id: "",
+    title: "",
+    description: "",
+    enterprise: "",
+    startDate: new Date(),
+    endDate: new Date(),
+    program: "",
+    requirements: "",
+    stageType: "",
+    hoursPerWeek: 0,
+    additionalInfo: "",
+    paid: [],
+    skills: [],
+    published: false,
+    active: false,
+  }
+
+  @Output() majTableau = new EventEmitter();
+  //@Input() titre: String = "Annuler";
+
+  constructor(private offrestageService: OffrestageService, private router : Router) { }
 
   ngOnInit(): void {
   }
 
-  annuler(): void {
-    this.location.back();
+  onSave() : void {
+    this.offrestageService.addOffreStage(this.offrestage)
+    .subscribe(resultat => this.offrestage = resultat);      
+    this.router.navigate(["liste-offre-stage"]);
   }
+  // annuler(): void {
+  //   this.location.back();
+  // }
 }

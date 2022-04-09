@@ -5,13 +5,13 @@
         <tbody>
           <tr>
             <mat-icon>school</mat-icon>
-              <td> <div class="colonne1">{{ offrestage.title }} </div></td>
-              <td> <div class="colonne2">{{ offrestage.program }} </div></td>
-              <td> <div class="colonne2">{{ offrestage.stageType }} </div></td>
-              <td> <div class="colonne2">{{ offrestage.startDate | date: "EEEE, d MMMM, y" }} </div></td>
-              <td> <div class="colonne3"><mat-icon><a routerLink="/fiche-stage"><i class="material-icons">pageview</i></a></mat-icon></div></td>
-              <td> <div class="colonne3"><mat-icon><a routerLink="/editer-offre-stage"><i class="material-icons">edit</i></a></mat-icon></div></td>
-              <td> <div class="colonne3"><mat-icon><a  (click)="Dialog()"> <i class="material-icons">delete</i></a></mat-icon></div></td>
+              <td> <div class="colonne2">{{ offrestage.title }} </div></td>
+              <td> <div class="colonne3">{{ offrestage.program }} </div></td>
+              <td> <div class="colonne3">{{ offrestage.stageType }} </div></td>
+              <td> <div class="colonne3">{{ offrestage.startDate | date: "EEEE, d MMMM, y" }} </div></td>
+              <td> <div class="colonne4"><mat-icon><a routerLink="/fiche-stage"><i class="material-icons">pageview</i></a></mat-icon></div></td>
+              <td> <div class="colonne4"><mat-icon><a routerLink="/editer-offre-stage"><i class="material-icons">edit</i></a></mat-icon></div></td>
+              <td> <div class="colonne4"><mat-icon><a  (click)="Dialog()"> <i class="material-icons">delete</i></a></mat-icon></div></td>
           </tr>
         </tbody> 
       </table>

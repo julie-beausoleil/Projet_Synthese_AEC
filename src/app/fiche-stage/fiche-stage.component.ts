@@ -1,5 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
+import { OffrestageService } from '../dossierDesServices/offrestage.service';
+import { OffreStage } from '../dossierDesInterfaces/offre-stage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fiche-stage',
@@ -7,39 +9,21 @@ import { Location } from '@angular/common';
   styleUrls: ['./fiche-stage.component.sass']
 })
 export class FicheStageComponent implements OnInit {
-  @Input() titre: String = "Annuler";
+ 
+  @Input() offrestage? : OffreStage; 
+  offrestages : OffreStage[] = [];
+  selectedCandidat?: OffreStage;
+ 
 
-  longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
-  dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
-  nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur,
-  venenatis purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.<br><br>
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
-  dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
-  nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur.`;
-
-  TexteCourt = `Diplôme d'études collégiales ou équivalent`;
-
-  TexteCourt2 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
-  dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
-  nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur,
-  venenatis purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur.<br><br>
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
-  dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
-  nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur.`;
-      
-  longText2 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
-dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
-nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur,
-venenatis purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur`
-
-  constructor(private location: Location) { }
+constructor(private offrestageService : OffrestageService, router: Router) { }
 
   ngOnInit(): void {
+    this.getOffreStages();
   }
 
-  annuler(): void {
-    this.location.back();
+  getOffreStages(): void {
+    this.offrestageService.getOffreStages()
+    .subscribe(resultat => this.offrestages = resultat);
   }
+
 }

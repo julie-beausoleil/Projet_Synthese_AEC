@@ -1,15 +1,16 @@
-<div>
-    <h1 mat-dialog-title>
-      {{title}}
-      </h1>
-      
-      <div mat-dialog-content>
-      <p>{{message}}</p>
-      </div>
-      
-      <div mat-dialog-actions>
-        <button mat-button (click)="onDelete()">Annuler</button>
-        <button mat-raised-button (click)="onCommand()">Supprimer</button>
-      </div>
+  <h1 mat-dialog-title>
+    {{title}}
+  </h1>
+    
+  <div mat-dialog-content>
+    <p>{{message}}</p>
   </div>
-  
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onDelete()">Annuler</button>
+    <button mat-button (click)="deleteOffreStage(id)">Supprimer</button>
+  </div>
+    
+    
+
+

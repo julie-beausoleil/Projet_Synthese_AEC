@@ -10,6 +10,7 @@ import { Candidat } from '../dossierDesInterfaces/candidat';
 })
 export class EditerCandidatComponent implements OnInit {
   @Input() titre: String = "Annuler";
+  
   @Input() candidat: Candidat = {
     _id: " ",
     name: " ",

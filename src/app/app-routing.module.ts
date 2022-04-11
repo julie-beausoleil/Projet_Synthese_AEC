@@ -19,6 +19,7 @@ import { AjoutOffreStageComponent } from './ajout-offre-stage/ajout-offre-stage.
 /* Liens pour la liste des fiches */
 import { FicheCandidatComponent } from './fiche-candidat/fiche-candidat.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
+import { FicheDemandeComponent } from './fiche-demande/fiche-demande.component';
 
 /* Liens pour la page s'accueil */
 import { AccueilComponent } from './accueil/accueil.component';
@@ -30,6 +31,7 @@ import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
 import { EditerCandidatComponent } from './editer-candidat/editer-candidat.component';
 import { EditerOffreStageComponent } from './editer-offre-stage/editer-offre-stage.component';
 import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
+import { EditerDemandeStageComponent } from './editer-demande-stage/editer-demande-stage.component';
 
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
@@ -39,9 +41,12 @@ const routes: Routes = [
   { path: 'offres-de-stage', component: OffresDeStageComponent },
   { path: 'liste-offre-stage', component: ListeOffreStageComponent },
   { path: 'fiche-stage', component: FicheStageComponent },
+  { path: 'fiche-demande', component: FicheDemandeComponent},
   { path: 'editer-offre-stage', component: EditerOffreStageComponent },
+  { path: 'editer-demande-stage', component: EditerDemandeStageComponent},
   { path: 'candidats', component: ListeCandidatComponent },
-  { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },
+  /*
+  { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },*/
   { path: 'entreprises', component: ListeEntreprisesComponent },
   { path: 'entreprises/:_id', component: FicheEntrepriseComponent }, /* ROUTE POUR AFFICHER LA FICHE DE UNE ENTREPRISE - SG */
   { path: 'candidats/:_id', component: FicheCandidatComponent }, /* ROUTE POUR AFFICHER LA FICHE DE UN CANDIDAT - SG */

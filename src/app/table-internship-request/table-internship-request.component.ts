@@ -15,7 +15,7 @@ export class TableInternshipRequestComponent implements OnInit {
   isDisabled:boolean= false;
   internshipRequests: InternshipRequest[] = [];
   selectedInternshipRequest?: InternshipRequest;
-  columnsToDisplay = ['profil', 'etablissement', 'dateDebut', 'actions'];
+  columnsToDisplay = ['profil', 'enterprise', 'program', 'dateDebut', 'actions'];
 
   constructor(private internshipRequestService: InternshipRequestService, public dialog: MatDialog) { }
 

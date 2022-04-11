@@ -1,96 +1,227 @@
 <form #internshipRequestForm="ngForm">
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Titre</mat-label>
+    <input
+      name="title"
+      [(ngModel)]="internshipRequest.title"
+      #title="ngModel"
+      matInput
+      required
+      placeholder="Ex. titre"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        title.invalid &&
+        (title.dirty || title.touched) &&
+        title.hasError('required')
+      "
+    >
+      Le titre est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Titre</mat-label>
-        <input name="title" [(ngModel)]="internshipRequest.title" #title="ngModel" matInput required
-            placeholder="Ex. titre" [disabled]="isDisabled">
-        <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('required')">
-            Le titre est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Description</mat-label>
+    <input
+      name="description"
+      [(ngModel)]="internshipRequest.description"
+      #description="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        description.invalid &&
+        (description.dirty || description.touched) &&
+        description.hasError('required')
+      "
+    >
+      La description est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Description</mat-label>
-        <input name="description" [(ngModel)]="internshipRequest.description" #description="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
-            La description est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Entreprise</mat-label>
+    <input
+      name="entreprise"
+      [(ngModel)]="internshipRequest.enterprise"
+      #enterprise="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        enterprise.invalid &&
+        (enterprise.dirty || enterprise.touched) &&
+        enterprise.hasError('required')
+      "
+    >
+      L'entreprise est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Entreprise</mat-label>
-        <input name="entreprise" [(ngModel)]="internshipRequest.enterprise" #enterprise="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="enterprise.invalid && (enterprise.dirty || enterprise.touched) && enterprise.hasError('required')">
-            L'entreprise est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Date de début</mat-label>
+    <input
+      name="startDate"
+      [(ngModel)]="internshipRequest.startDate"
+      #startDate="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        startDate.invalid &&
+        (startDate.dirty || startDate.touched) &&
+        startDate.hasError('required')
+      "
+    >
+      La date de début est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Date de début</mat-label>
-        <input name="startDate" [(ngModel)]="internshipRequest.startDate" #startDate="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="startDate.invalid && (startDate.dirty || startDate.touched) && startDate.hasError('required')">
-            La date de début est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Date de fin</mat-label>
+    <input
+      name="endDate"
+      [(ngModel)]="internshipRequest.endDate"
+      #endDate="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        endDate.invalid &&
+        (description.dirty || endDate.touched) &&
+        endDate.hasError('required')
+      "
+    >
+      La date de fin est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Date de fin</mat-label>
-        <input name="endDate" [(ngModel)]="internshipRequest.endDate" #endDate="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error *ngIf="endDate.invalid && (description.dirty || endDate.touched) && endDate.hasError('required')">
-            La date de fin est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Programme</mat-label>
+    <input
+      name="program"
+      [(ngModel)]="internshipRequest.program"
+      #program="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        program.invalid &&
+        (description.dirty || program.touched) &&
+        program.hasError('required')
+      "
+    >
+      Le programme est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Qualités Requises</mat-label>
+    <input
+      name="requirements"
+      [(ngModel)]="internshipRequest.requirements"
+      #requirements="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        requirements.invalid &&
+        (description.dirty || requirements.touched) &&
+        requirements.hasError('required')
+      "
+    >
+      Les qualités requises sont obligatoires.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Programme</mat-label>
-        <input name="program" [(ngModel)]="internshipRequest.program" #program="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error *ngIf="program.invalid && (description.dirty || program.touched) && program.hasError('required')">
-            Le programme est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Type de stage</mat-label>
+    <input
+      name="stageType"
+      [(ngModel)]="internshipRequest.stageType"
+      #stageType="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        stageType.invalid &&
+        (description.dirty || stageType.touched) &&
+        stageType.hasError('required')
+      "
+    >
+      Le type de stage est obligatoire.</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Qualités Requises</mat-label>
-        <input name="requirements" [(ngModel)]="internshipRequest.requirements" #requirements="ngModel" matInput
-            required placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="requirements.invalid && (description.dirty || requirements.touched) && requirements.hasError('required')">
-            Les qualités requises sont obligatoires.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Nombre d'heures par semaine</mat-label>
+    <input
+      name="Nombre_heures_par_semaine"
+      [(ngModel)]="internshipRequest.hoursPerWeek"
+      #hoursPerWeek="ngModel"
+      required
+      type="number"
+      step=".1"
+      matInput
+      placeholder="Ex. 40"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        hoursPerWeek.invalid &&
+        (description.dirty || hoursPerWeek.touched) &&
+        hoursPerWeek.hasError('required')
+      "
+    >
+      Le nombre d'heures par semaine est obligatoire</mat-error
+    >
+  </mat-form-field>
 
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Type de stage</mat-label>
-        <input name="stageType" [(ngModel)]="internshipRequest.stageType" #stageType="ngModel" matInput required
-            placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="stageType.invalid && (description.dirty || stageType.touched) && stageType.hasError('required')">
-            Le type de stage est obligatoire.</mat-error>
-    </mat-form-field>
+  <mat-form-field required appearance="fill" class="full-width">
+    <mat-label>Informations supplémentaires</mat-label>
+    <input
+      name="additionalInfo"
+      [(ngModel)]="internshipRequest.additionalInfo"
+      #additionalInfo="ngModel"
+      matInput
+      required
+      placeholder="Ex. -----"
+      [disabled]="isDisabled"
+    />
+    <mat-error
+      *ngIf="
+        additionalInfo.invalid &&
+        (description.dirty || additionalInfo.touched) &&
+        additionalInfo.hasError('required')
+      "
+    >
+      Les informations supplémentaires sont obligatoires.</mat-error
+    >
+  </mat-form-field>
 
-
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Nombre d'heures par semaine</mat-label>
-        <input name="Nombre_heures_par_semaine" [(ngModel)]="internshipRequest.hoursPerWeek" #hoursPerWeek="ngModel"
-            required type="number" step=".1" matInput placeholder="Ex. 40" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="hoursPerWeek.invalid && (description.dirty || hoursPerWeek.touched) && hoursPerWeek.hasError('required')">
-            Le nombre d'heures par semaine est obligatoire</mat-error>
-    </mat-form-field>
-
-    <mat-form-field required appearance="fill" class="full-width">
-        <mat-label>Informations supplémentaires</mat-label>
-        <input name="additionalInfo" [(ngModel)]="internshipRequest.additionalInfo" #additionalInfo="ngModel" matInput
-            required placeholder="Ex. -----" [disabled]="isDisabled">
-        <mat-error
-            *ngIf="additionalInfo.invalid && (description.dirty || additionalInfo.touched) && additionalInfo.hasError('required')">
-            Les informations supplémentaires sont obligatoires.</mat-error>
-    </mat-form-field>
-
-
-    <!--  
+  <!--  
     <mat-form-field required appearance="fill" class="full-width">
         <mat-label>Compétences</mat-label>
         <input name="skills" [(ngModel)]="internshipRequest.skills" #skills="ngModel" matInput required
@@ -100,31 +231,50 @@
     </mat-form-field>
     -->
 
-    <app-chip-input [listeItems]="internshipRequest.skills" (listeItemsChange)="updateSkills($event)">
-    </app-chip-input>
+  <app-chip-input
+    [listeItems]="internshipRequest.skills"
+    (listeItemsChange)="updateSkills($event)"
+  >
+  </app-chip-input>
 
-    <div id="divPublished">
-        <mat-checkbox [(ngModel)]="internshipRequest.published" name="{{internshipRequest.published}}"
-            [disabled]="isDisabled">Publié
-        </mat-checkbox>
-    </div>
+  <div id="divPublished">
+    <mat-checkbox
+      [(ngModel)]="internshipRequest.published"
+      name="{{ internshipRequest.published }}"
+      [disabled]="isDisabled"
+      >Publié
+    </mat-checkbox>
+  </div>
 
-    <app-chip-input [listeItems]="internshipRequest.paid" (listeItemsChange)="updatePaid($event)">
-    </app-chip-input>
+  <app-chip-input
+    [listeItems]="internshipRequest.paid"
+    (listeItemsChange)="updatePaid($event)"
+  >
+  </app-chip-input>
 
-    <div id="divActive">
-        <mat-checkbox [(ngModel)]="internshipRequest.active" name="{{internshipRequest.active}}"
-            [disabled]="isDisabled">Actif</mat-checkbox>
-    </div>
+  <div id="divActive">
+    <mat-checkbox
+      [(ngModel)]="internshipRequest.active"
+      name="{{ internshipRequest.active }}"
+      [disabled]="isDisabled"
+      >Actif</mat-checkbox
+    >
+  </div>
 
-
-    <div>
-        <button matSuffix type=" submit" mat-raised-button (click)="onCancel()">Annuler</button>&nbsp;
-        <button matSuffix type="submit" mat-raised-button [disabled]="!internshipRequestForm.form.valid"
-            (click)="onSave(internshipRequestForm)">ok</button>
-    </div>
-
+  <div>
+    <button matSuffix type=" submit" mat-raised-button (click)="onCancel()">
+      Annuler</button
+    >&nbsp;
+    <button
+      matSuffix
+      type="submit"
+      mat-raised-button
+      [disabled]="!internshipRequestForm.form.valid"
+      (click)="onSave(internshipRequestForm)"
+    >
+      Sauvegarder
+    </button>
+  </div>
 </form>
-
 
 <!-- https://stackblitz.com/edit/angular-nuifjo-dxlxrp?file=app%2Fchips-input-example.ts -->

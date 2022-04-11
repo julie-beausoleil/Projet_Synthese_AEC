@@ -1,1 +1,140 @@
-<p>ajout-demande-stage works!</p>
+<!-- partie entete de la page JG-->
+<div>
+  <div class="body__form">
+    <h1 class="titre__entete">Ajouter une demande</h1>
+
+    <button type="button" class="btn btnAnnuler">Annuler</button>
+
+    <button class="btn__align--color" mat-button>
+      <mat-icon>save</mat-icon>Sauvegarder
+    </button>
+
+    <br /><br />
+
+    <div>
+      <div class="pt3">
+        <div>
+          <label for="fname">Titre :</label>
+        </div>
+        <div class="position">
+          <input size="100" type="text" id="fname" name="fname" />
+        </div>
+        <br />
+
+        <h4>Nom et prénom</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <input matInput placeholder /> </mat-form-field
+        ><br />
+        <h4>Présentation</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <textarea matInput placeholder></textarea>
+        </mat-form-field>
+
+        <div><label for="lname">Entreprise:</label></div>
+        <div class="position">
+          <select class="position__select" name="stage" id="stage">
+            <option>Veuillez efffectuer un choix</option>
+            <option value="volvo">CEGEP Trois riviere</option>
+            <option value="saab">Desjardins</option>
+            <option value="mercedes">Toyota</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        <!-- <div class="position"><input size= 100 type="text" id="lname" name="lname" /></div>   -->
+      </div>
+      <br /><br />
+
+      <!-- fin -->
+      <!-- partie description de la tache -->
+
+      <!-- debut zone de texte -->
+      <div>
+        <h1 class="titre1 pt 3">Description de la tâche</h1>
+        <br />
+        <div class="champ__zone__text"><textarea matInput></textarea></div>
+        <br /><br />
+
+        <h2 class="titre2">Programme de Formation</h2>
+        <div class="champ__formation"><textarea matInput></textarea></div>
+        <br /><br />
+
+        <h2 class="titre2">Exigences</h2>
+        <br />
+        <div class="champ__zone__text"><textarea matInput></textarea></div>
+        <br /><br />
+
+        <!-- fin zone de texte-->
+
+        <!-- partie information sur le stage recherchee -->
+
+        <h2 class="titre3">Informations sur le stage recherché</h2>
+        <br />
+
+        <div>
+          <div>
+            <h5>Type de stage</h5>
+            <app-selection></app-selection>
+          </div>
+
+          <div class="datepicker__align">
+            <h5>Date de debut</h5>
+            <app-date-picker></app-date-picker>
+          </div>
+        </div>
+        <br />
+
+        <div>
+          <div>
+            <h5>Nombre d'heures par semaine</h5>
+            <app-selection></app-selection>
+          </div>
+
+          <div class="datepicker__align">
+            <h5>Date de fin</h5>
+            <app-date-picker></app-date-picker>
+          </div>
+        </div>
+
+        <!-- fin -->
+
+        <!-- partie remuneration jusqu'à la fin de la page -->
+
+        <div class="pt 3">
+          <form action="/action_page.php">
+            <Label> Remuneration </Label><br /><br />
+            <input type="checkbox" name="choix1" value="valuer1" />
+            <label for="choix1"> A la discrétion de l'entreprise</label
+            ><br /><br />
+            <input type="checkbox" name="choix2" value="valeur2" />
+            <label for="choix2"> Stage remunéré</label><br /><br />
+            <input type="checkbox" name="choix3" value="value3" checked />
+            <label for="choix3"> Stage non remunéré </label><br /><br />
+          </form>
+        </div>
+
+        <div class="pt 4">
+          <h1 class="titre4">Informations supppementaires</h1>
+          <br />
+          <div class="champ__zone__text"><textarea matInput></textarea></div>
+          <br /><br />
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <input matInput placeholder />
+        </mat-form-field>
+        <button type="button" class="btn btnParcourir">Parcourir</button>
+
+        <div class="btn__align">
+          <button type="button" class="btn btnAnnuler">Annuler</button>
+
+          <button class="btn__align--color" mat-button>
+            <mat-icon>save</mat-icon>Sauvegarder
+          </button>
+        </div>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+
+  <!-- fin -->
+</div>

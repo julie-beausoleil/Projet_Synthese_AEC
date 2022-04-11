@@ -20,17 +20,10 @@
         <h1>{{entreprise.name}}</h1>
       </ng-template>
 
-      <!-- ICI IL MANQUE LE INPUT POUR LE LOGO, MATTHIEU DEVRAIT ME REVENIR AVEC DE L'INFORMATION -->
-      <!-- ###################################################################################### -->
-      <!-- ###################################################################################### -->
-      <!-- ###################################################################################### -->
       <h4>Personne contact</h4>
       <label for="Logo"></label>
       <input type="text" name="Logo">
       <button>Parcourir</button>
-      <!-- ###################################################################################### -->
-
-
 
       <!-- SECTION DES BOUTONS - ÉDITER - SUPPRIMER - MISE À JOUR -->
       <!-- BOUTON DONE QUI RETOURNE À LA PAGE ENTREPRISE OU QUI VA DEVENIR ANNULER LORS DU CLICK POUR ÉDITER -->
@@ -61,13 +54,46 @@
       <!-- ############################################################################################## -->
 
 
-      <!-- ctrl z -->
       <!-- BOUTON SUPPRIMER DE LA FICHE-ENTREPRISE NE SERA PAS DISPONIBLE LORS DU CLICK SUR ÉDITE -->
       <ng-template #deleteButton>
         <button (click)="openConfirmationDialog(entreprise)" mat-button><i class="material-icons">delete</i></button>
       </ng-template>
 
+      <!-- BOUTON DELETE QUI S'EFFACE LORS DU CLICK SUR ÉDITER -->
+      <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else deleteButton;" color="primary"
+        form="entrepriseFormEdition" mat-button> </button>
+      <!-- ############################################################################################## -->
 
+
+
+      <!-- DÉBUT DU FORMUALIRE -->
+      <!-- SECTION DE LA COURTE PRÉSENTATION - SG -->
+      <h2>Courte présentation</h2>
+      <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editDescription;"
+        class="input-full-width">
+        <textarea name="description" [(ngModel)]="entreprise.description" #description="ngModel" required type="text"
+          matInput></textarea>
+        <mat-error
+          *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
+          La description est obligatoire.</mat-error>
+      </mat-form-field>
+      <ng-template #editDescription>
+        <p>{{entreprise.description}}</p>
+      </ng-template>
+
+      <!-- SECTION PERSONNE CONTACT NAME - SG -->
+      <h4>Personne contact</h4>
+      <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editContactName;"
+        class="input-full-width">
+        <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text"
+          matInput />
+        <mat-error
+          *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">
+          Le nom de la personne contact est obligatoire.</mat-error>
+      </mat-form-field>
+      <ng-template #editContactName>
+        <p>{{entreprise.contactName}}</p>
+      </ng-template>
 
       <!-- BOUTON DELETE QUI S'EFFACE LORS DU CLICK SUR ÉDITER -->
       <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else deleteButton;" color="primary"
@@ -82,7 +108,7 @@
         <h2>Courte présentation</h2>
         <mat-form-field *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else editDescription;"
           class="input-full-width">
-          <textarea  name="description" [(ngModel)]="entreprise.description" #description="ngModel" required type="text"
+          <textarea name="description" [(ngModel)]="entreprise.description" #description="ngModel" required type="text"
             matInput></textarea>
           <mat-error
             *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
@@ -189,6 +215,51 @@
           <p class="texte-fiche">{{entreprise.postalCode}}</p>
         </ng-template>
       </section>
+
+
+
+
+
+
+      <!-- SECTION DES BOUTONS - ÉDITER - SUPPRIMER - MISE À JOUR -->
+      <!-- BOUTON DONE QUI RETOURNE À LA PAGE ENTREPRISE OU QUI VA DEVENIR ANNULER LORS DU CLICK POUR ÉDITER -->
+      <ng-template #ANNULERButton>
+        <button mat-button routerLink="/entreprises"><i class="material-icons">done</i></button>
+      </ng-template>
+
+      <!-- BOUTON DONE QUI VA DEVENIR ANNULER LORS DU CLICK SUR ÉDITER -->
+      <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else ANNULERButton;" color="primary"
+        form="entrepriseForm" routerLink="/entreprises" mat-button>
+        Annuler
+      </button>
+      <!-- ############################################################################################## -->
+
+
+
+      <!-- BOUTON MISE À JOUR QUI VA APPARAÎTRE LORS DU CLICK SUR ÉDITER -->
+      <button type="submit" *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else MAJButton;"
+        (click)="onSave(entrepriseForm)" color="primary" mat-button>
+        <i class="material-icons">save</i> Mise à jour </button>
+
+      <!-- BOUTON EDITE DE LA FICHE-ENTREPRISE VA DEVENIR MISE À JOUR LORSQUE QUE NOUS ALLONS ÉDITER UNE ENTREPRISE-->
+      <ng-template #MAJButton>
+        <form (ngSubmit)="onSelect(entreprise)">
+          <button type="submit" mat-button><i class="material-icons">edit</i></button>
+        </form>
+      </ng-template>
+      <!-- ############################################################################################## -->
+
+
+      <!-- BOUTON SUPPRIMER DE LA FICHE-ENTREPRISE NE SERA PAS DISPONIBLE LORS DU CLICK SUR ÉDITE -->
+      <ng-template #deleteButton>
+        <button (click)="openConfirmationDialog(entreprise)" mat-button><i class="material-icons">delete</i></button>
+      </ng-template>
+
+      <!-- BOUTON DELETE QUI S'EFFACE LORS DU CLICK SUR ÉDITER -->
+      <button *ngIf="(selectedEntreprise && selectedEntreprise === entreprise);else deleteButton;" color="primary"
+        form="entrepriseFormEdition" mat-button> </button>
+      <!-- ############################################################################################## -->
+
     </form>
 
   </div>

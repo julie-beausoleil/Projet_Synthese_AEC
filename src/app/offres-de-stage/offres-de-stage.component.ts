@@ -3,6 +3,7 @@ import { OffrestageService } from '../dossierDesServices/offrestage.service';
 import { OffreStage } from '../dossierDesInterfaces/offre-stage';
 import { DialogComponent, DialogModel } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-offres-de-stage',
@@ -17,8 +18,14 @@ export class OffresDeStageComponent implements OnInit {
   offrestages: OffreStage[] = [];
   selectedOffrestage?: OffreStage;
 
-  constructor(public dialog: MatDialog, private offrestageService: OffrestageService) { }
+  constructor(public dialog: MatDialog, private offrestageService: OffrestageService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
   ngOnInit(): void {
+    const id = String(this.route.snapshot.params['_id']);
+    this.offrestageService.deleteOffreStage(id)
+      .subscribe(resultat => this.offrestage = resultat);
   }
 
   getOffreStages(): void {
@@ -26,12 +33,18 @@ export class OffresDeStageComponent implements OnInit {
       .subscribe(resultat => this.offrestages = resultat);
   }
 
-  onSelect(offrestage: OffreStage): void {
-    this.selectedOffrestage = offrestage;
-  }
+  //   onSelect(offrestage: OffreStage): void {
+  //   this.selectedOffrestage = offrestage; 
+  // }
+
+  // onDelete(offrestage: OffreStage ): void {
+  //   this.offrestageService.deleteOffreStage(offrestage._id)
+  //   .subscribe(result => this.offrestages = this.offrestages.filter(p => p !== this.offrestage));
+  // } 
 
   //  ajout d'une methode pour appeler la fenetre de dialogue
 
+  //  ajout d'une methode pour appeler la fenetre de dialogue
   result: string = '';
 
   Dialog(): void {

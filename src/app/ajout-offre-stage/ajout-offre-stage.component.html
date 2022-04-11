@@ -2,7 +2,7 @@
   <h1 class="h1_ajouter bordure-gauche">Offre de stage</h1>
 
   <!-- Formulaire pour ajouter une offre de stage -->
-  <form class="example-form">
+  <form class="example-form" #ajoutOffrestage="ngForm" (ngSubmit)="ajoutOffreStage()">
     <!-- <div class="btn__align">
         <button mat-button>Annuler</button>
         <button class="btn__align--color" mat-stroked-button  type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
@@ -13,7 +13,7 @@
       <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
         <button class="btn__annuler me-3">Annuler</button>
 
-        <button class="btn__sauvegarde d-flex" type="submit" (click)="onSave()">
+        <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutOffreStage()">
           <mat-icon class="me-3">save</mat-icon> Sauvegarder
         </button>
       </div>
@@ -113,7 +113,7 @@
       <div class="row g-0">
         <div class="col-lg-6 pe-4">
           <div class="bordure-input">
-            <mat-label>Adresse</mat-label><br>
+            <mat-label>Type de stage</mat-label><br>
             <app-selection></app-selection>
           </div>
         </div>
@@ -122,10 +122,17 @@
         <div class="col-lg-6 pe-4">
           <div class="bordure-input">
             <mat-label>Date de debut</mat-label><br>
-            <app-date-picker></app-date-picker>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" name="datedebut" [(ngModel)]="offrestage.startDate" type="text"
+                id="datedebut" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-date-picker ></app-date-picker> -->
           </div>
         </div>
       </div>
+
 
       <div class="row g-0">
         <div class="col-lg-6 pe-4">
@@ -137,8 +144,14 @@
 
         <div class="col-lg-6 pe-4">
           <div class="bordure-input">
-            <mat-label>Date de fin</mat-label><br>
-            <app-date-picker></app-date-picker>
+            <mat-label>Date de fin</mat-label>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" name="datefin" [(ngModel)]="offrestage.endDate" type="text"
+                id="datefin" required />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-date-picker></app-date-picker> -->
           </div>
         </div>
       </div>
@@ -152,12 +165,14 @@
           <div class="bordure-input">
             <form action="" class="pb-0">
               <mat-label class="d-block mb-3">Remuneration</mat-label>
-              <input type="checkbox" name="choix1" value="valeur1" [(ngModel)]="offrestage.stageType" id="choix1" class="me-3"/>
+              <input type="checkbox" name="choix1" value="valeur1" [(ngModel)]="offrestage.stageType" id="choix1"
+                class="me-3" />
               <label for="choix1">À discuter</label><br /><br />
-              <input type="checkbox" name="choix2" value="valeur2" [(ngModel)]="offrestage.stageType" id="choix2" class="me-3" />
+              <input type="checkbox" name="choix2" value="valeur2" [(ngModel)]="offrestage.stageType" id="choix2"
+                class="me-3" />
               <label for="choix2"> Stage remunéré</label><br /><br />
-              <input type="checkbox" name="choix3" value="value3" checked [(ngModel)]="offrestage.stageType"
-                id="choix3" class="me-3"/>
+              <input type="checkbox" name="choix3" value="value3" checked [(ngModel)]="offrestage.stageType" id="choix3"
+                class="me-3" />
               <label for="choix3"> Stage non remunéré </label><br /><br />
             </form>
           </div>
@@ -179,7 +194,7 @@
       <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
         <button class="btn__annuler me-3">Annuler</button>
 
-        <button class="btn__sauvegarde d-flex" type="submit" (click)="onSave()">
+        <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutOffreStage()">
           <mat-icon class="me-3">save</mat-icon> Sauvegarder
         </button>
       </div>

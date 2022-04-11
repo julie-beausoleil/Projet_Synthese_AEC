@@ -27,9 +27,8 @@ import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.
 import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
 
 /* Liens pour les pages éditer */
-import { EditerCandidatComponent } from './editer-candidat/editer-candidat.component';
 import { EditerOffreStageComponent } from './editer-offre-stage/editer-offre-stage.component';
-import { EditerEntrepriseComponent } from './editer-entreprise/editer-entreprise.component';
+
 
 const routes: Routes = [
   /* On laisse vide pour définir la page du tableau de bord par défaut lors de l'ouverture  */
@@ -58,7 +57,7 @@ const routes: Routes = [
 
 
   /* Route pour les Édites */
-  { path: 'editer-candidat', component: EditerCandidatComponent },
+  { path: 'editer-candidat', component: FicheCandidatComponent},
   { path: 'editer-entreprise', component: FicheEntrepriseComponent },
 
 

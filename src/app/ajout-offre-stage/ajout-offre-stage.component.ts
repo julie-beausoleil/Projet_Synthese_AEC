@@ -30,19 +30,15 @@ export class AjoutOffreStageComponent implements OnInit {
   }
 
   @Output() majTableau = new EventEmitter();
-  //@Input() titre: String = "Annuler";
-
   constructor(private offrestageService: OffrestageService, private router : Router) { }
 
   ngOnInit(): void {
   }
 
-  onSave() : void {
+  ajoutOffreStage() : void {
     this.offrestageService.addOffreStage(this.offrestage)
     .subscribe(resultat => this.offrestage = resultat);      
     this.router.navigate(["liste-offre-stage"]);
   }
-  // annuler(): void {
-  //   this.location.back();
-  // }
+  
 }

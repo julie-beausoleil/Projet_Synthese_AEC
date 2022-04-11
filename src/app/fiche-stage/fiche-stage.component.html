@@ -5,38 +5,41 @@
     <h1 class="card__entete">Offre de Stage</h1>
     <h2 class="card__sousentete">Intégrateur Web junior</h2>
     <mat-card class="largeur__card">acolyte communication</mat-card>
-    <mat-card-actions class="btn__align">
-      <button type="button" class="btn btnAnnuler" (click)="annuler()">
-        {{ titre }}
-      </button>
+    <!-- <mat-card-actions class="btn__align">
+      <button mat-button>Annuler</button>
       <button class="btn__align--color" mat-button>Mettre A jour</button>
-    </mat-card-actions>
+    </mat-card-actions> -->
   </mat-card>
 
   <!-- fin -->
   <!-- partie description de la tacha -->
   <br />
-  <div class="body__form">
-    <h1 class="titre1">Description de la tâche</h1>
-    <br />
-    <div class="card__size1">
-      <p>{{ longText }}</p>
+  
+  <div *ngFor="let offrestage of offrestages"> 
+    <div *ngIf="((offrestage?._id) !== '')">
+        <div class="body__form">
+          <h1 class="titre1">Description de la tâche</h1>
+          <br />
+          <div class="card__size1">
+              <p>{{ offrestage.description }}</p>
+          </div>
+          <br><br>
+      
+          <h2 class="titre2">Formation Demandée</h2>
+          <br />
+          <div class="card__size2">
+            <p>{{ offrestage.program }}</p> 
+          </div><br><br>
+      
+          <h2 class="titre2">Exigences</h2>
+          <div class="card__size2">
+              <p>{{ offrestage.skills }}</p>
+          </div>
+        </div>
     </div>
-    <br /><br />
-
-    <h2 class="titre2">Formation Demandée</h2>
-    <br />
-    <div class="card__size2">
-      <p>{{ TexteCourt }}</p>
-    </div>
-    <br /><br />
-
-    <h2 class="titre2">Exigences</h2>
-    <div class="card__size2">
-      <p>{{ TexteCourt2 }}</p>
-    </div>
-    <br /><br />
-
+  
+    <br><br>
+  
     <!-- fin -->
 
     <!-- partie information sur le stage recherchee -->
@@ -44,55 +47,56 @@
     <h2 class="titre3">Information sur le stage recherché</h2>
     <br />
 
-    <div>
+    <div class="position">
       <div>
-        <h5>Type de stage</h5>
-        <app-selection></app-selection>
-      </div>
-
-      <div class="datepicker__align">
-        <h5>Date de debut</h5>
-        <app-date-picker></app-date-picker>
-      </div>
-    </div>
-    <br />
-
-    <div>
+        <div>
+          <h5>Type de stage</h5>
+          Type de Stage : {{offrestage.stageType}}
+          <!-- <app-selection></app-selection> -->
+        </div><br><br><br>
+  
+        <div class="datepicker__align">
+          <h5>Date de debut</h5>
+          Debuter: {{offrestage.startDate}}
+          <!-- <app-date-picker></app-date-picker> -->
+        </div>
+      </div><br><br><br><br><br>
+    
       <div>
-        <h5>Nombre d'heures par semaine</h5>
-        <app-selection></app-selection>
+        <div>
+          <h5>Nombre d'heures par semaine</h5>
+          Nombre Heure: {{offrestage.hoursPerWeek}}
+          <!-- <app-selection></app-selection> -->
+        </div><br><br><br>
+  
+        <div class="datepicker__align">
+          <h5>Date de fin</h5>
+          Fin : {{offrestage.endDate}}
+          <!-- <app-date-picker></app-date-picker> -->
+        </div>
       </div>
-
-      <div class="datepicker__align">
-        <h5>Date de fin</h5>
-        <app-date-picker></app-date-picker>
-      </div>
-    </div>
-
+    </div><br><br><br><br>
     <!-- fin -->
 
     <!-- partie remuneration jusqu'à la fin de la page -->
 
-    <div class="pt 3">
-      <form action="/action_page.php">
-        <Label> Remuneration </Label><br /><br />
-        <input type="checkbox" name="choix1" value="valuer1" />
-        <label for="choix1"> A discuter</label><br /><br />
-        <input type="checkbox" name="choix2" value="valeur2" />
-        <label for="choix2"> Stage remunéré</label><br /><br />
-        <input type="checkbox" name="choix3" value="value3" checked />
-        <label for="choix3"> Stage non remunéré </label><br /><br />
-      </form>
-    </div>
+    <div class="position">
+      <div class="pt 3">
+        Remuneration: {{offrestage.paid}}
+      </div><br><br><br><br><br>
 
-    <div class="pt 3">
-      <h1 class="titre4">Informations supppementaires</h1>
-      <div class="card__size1">
-        <p>{{ longText2 }}</p>
+      <div class="pt 3">
+        <h1 class="titre4">Informations supppementaires</h1>
+          <div  class="card__size1">
+            <div *ngIf="offrestage" ></div>
+            <p>{{offrestage.additionalInfo }}</p>
+          </div>
+          <div>
       </div>
     </div>
-    <br /><br />
+    <br><br><br><br><br><br>
   </div>
 </div>
 
 <!-- fin -->
+ <!-- *ngFor="let offrestage of offrestages"  -->

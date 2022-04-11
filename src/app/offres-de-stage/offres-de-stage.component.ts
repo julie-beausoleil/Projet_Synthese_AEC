@@ -4,48 +4,50 @@ import { OffreStage } from '../dossierDesInterfaces/offre-stage';
 import { DialogComponent, DialogModel } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
-
 @Component({
   selector: 'app-offres-de-stage',
   templateUrl: './offres-de-stage.component.html',
   styleUrls: ['./offres-de-stage.component.sass']
 })
-export class OffresDeStageComponent implements OnInit {
-  @Input() offrestage? : OffreStage; 
 
-  offrestages : OffreStage[] = [];
-  selectedOffrestage?: OffreStage;  
- 
-  constructor(public dialog: MatDialog, private offrestageService : OffrestageService) { }
-    ngOnInit(): void {
+export class OffresDeStageComponent implements OnInit {
+
+  @Input() offrestage?: OffreStage;
+
+  offrestages: OffreStage[] = [];
+  selectedOffrestage?: OffreStage;
+
+  constructor(public dialog: MatDialog, private offrestageService: OffrestageService) { }
+  ngOnInit(): void {
   }
 
- getOffreStages(): void {
-   this.offrestageService.getOffreStages()
-   .subscribe(resultat => this.offrestages = resultat);
- }
- 
+  getOffreStages(): void {
+    this.offrestageService.getOffreStages()
+      .subscribe(resultat => this.offrestages = resultat);
+  }
+
   onSelect(offrestage: OffreStage): void {
-   this.selectedOffrestage = offrestage; 
- }
- //  ajout d'une methode pour appeler la fenetre de dialogue
+    this.selectedOffrestage = offrestage;
+  }
 
- result: string = '';
+  //  ajout d'une methode pour appeler la fenetre de dialogue
 
- Dialog(): void {
-   const message = `Voulez vous vraiment faire cette suppression?`;
+  result: string = '';
 
-   const dialogData = new DialogModel("File Saving Message", message);
+  Dialog(): void {
+    const message = `Voulez-vous vraiment faire cette suppression?`;
 
-   const dialogRef = this.dialog.open(DialogComponent, {
-     maxWidth: "600px",
-     data: dialogData
-   });
+    const dialogData = new DialogModel("Suppression d'un enregistrement", message);
 
-   dialogRef.afterClosed().subscribe(dialogResult => {
-     this.result = dialogResult;
-   });
- }
+    const dialogRef = this.dialog.open(DialogComponent, {
+      maxWidth: "1000px",
+      data: dialogData
+    });
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.result = dialogResult;
+    });
+  }
 }
 
 

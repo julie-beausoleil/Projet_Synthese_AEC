@@ -7,8 +7,16 @@
 @import sass/modules/_headings
 @import sass/modules/_buttons
 @import sass/modules/_icones
+@import sass/modules/_forms
 
 :host
   font-family: $font-stack !important
   color: $texte_noir !important
   height: 100%
+
+// Pour enlever les lignes dans les input  
+::ng-deep .mat-form-field-underline
+  display: none
+
+::ng-deep .mat-form-field-ripple
+  display: none

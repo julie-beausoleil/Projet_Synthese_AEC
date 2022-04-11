@@ -31,9 +31,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table'; /* ajouté ici */
+import { MatTableModule } from '@angular/material/table'; /* ajouté ici */
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 
 /* Listes Des Composants  */
@@ -73,6 +73,9 @@ import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-deman
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { CounterEntreprisesComponent } from './counter-entreprises/counter-entreprises.component';
+import { CountersComponent } from './counters/counters.component';
+import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppression.component';
 
 registerLocaleData(localeFr);
 
@@ -112,7 +115,10 @@ registerLocaleData(localeFr);
     DernieresDemandesComponent,
     DernieresOffresComponent,
     ListeOffreStageComponent,
-    DialogComponent
+    DialogComponent,
+    CounterEntreprisesComponent,
+    CountersComponent,
+    DialogSuppressionComponent
   ],
   imports: [
     BrowserModule,
@@ -124,26 +130,27 @@ registerLocaleData(localeFr);
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    MatDatepickerModule,    
+    MatDatepickerModule,
     MatInputModule,
     NoopAnimationsModule,
     MatChipsModule,
     FormsModule,
-    MatFormFieldModule,    
+    MatFormFieldModule,
     MatDialogModule,
-    MatCheckboxModule,  
+    MatCheckboxModule,
     MatNativeDateModule,
     MatSelectModule,
     ReactiveFormsModule
-    ],
+  ],
 
   providers: [CandidatService,
     EntrepriseService,
     OffrestageService,
     RegionService,
-    RequetestagaService,  
+    RequetestagaService,
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
 })
 export class AppModule { }

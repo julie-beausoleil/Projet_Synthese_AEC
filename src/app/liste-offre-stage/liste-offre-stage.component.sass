@@ -1,27 +1,17 @@
+@import ../../styles.sass
 
-.full-width 
-    width: 95%
-  
-.half-width 
-    width: 85%
+$theme: $offre-de-stage
+$theme-dark: $offre-de-stage_dark
 
-.body 
-    width: 65rem
-    margin-left: 5rem
-  
-.colonne1
-  margin-left: 6rem
-  text-align: left
-  width: 13rem 
-  
+section
+  @include bg
 
-.colonne2
-  margin-left: 3rem
-  text-align: left
-  width: 8rem 
+.btn__ajouter
+  @include btn
+  text-align: center
 
-.btn__couleur
-    color: white
-    background-color: red
-
-  
+tr
+  width: initial
+  height: initial
+  line-height: 1.5rem
+  vertical-align: initial

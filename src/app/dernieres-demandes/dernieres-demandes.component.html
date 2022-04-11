@@ -5,23 +5,23 @@
       <h2>En attente de validation</h2>
     </div>
     <div class="col-3 ms-auto text-end">
-    <button class="btn__valider">Valider toutes les offres</button>
-  </div>
+      <button class="btn__valider">Valider toutes les offres</button>
+    </div>
   </div>
 
-<!-- Tableau afichant les dernières demandes de stage -->
+  <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
-    <thead >
+    <thead>
       <tr class="title">
         <th class="col" class="d-none">ID</th>
-        <th class="col">Profil</th>
-        <th class="col">Établissement</th>
-        <th class="col">Date</th>
-        <th class="col">Actions</th>
+        <th class="col col-lg-5">Profil</th>
+        <th class="col col-lg-2">Établissement</th>
+        <th class="col col-lg-2">Date</th>
+        <th class="col col-lg-3">Actions</th>
       </tr>
     </thead>
-    <!-- Affichage des dernières offres de stage dans la liste -->
+    <!-- Affichage des dernières demandes de stage dans la liste -->
     <tbody>
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
@@ -31,16 +31,19 @@
         </td>
         <td>{{ requeteStage.city }}</td>
         <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
-        <td class="d-flex justify-content-between"> <!-- Actions-->
+        <td class="d-flex justify-content-between">
+          <!-- Actions-->
           <button type="button" class="btn__refuser align-items-center">Refuser</button>
           <button type="button" class="btn__accepter">Accepter</button>
           <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon class="btn__vue">visibility</mat-icon></a>          
-          <a routerLink="/administrationInternshipRequestComponent"
-            ><mat-icon class="btn__modifier">create</mat-icon></a>          
-            <a routerLink="">
-              <mat-icon class="btn__supprimer">delete</mat-icon>
-            </a>
+            <mat-icon class="btn__vue">visibility</mat-icon>
+          </a>
+          <a routerLink="/administrationInternshipRequestComponent">
+            <mat-icon class="btn__modifier">create</mat-icon>
+          </a>
+          <a routerLink="">
+            <mat-icon class="btn__supprimer">delete</mat-icon>
+          </a>
         </td>
       </tr>
     </tbody>

@@ -1,37 +1,32 @@
-form {
-  min-width: 1000px;
-  width: 1400px;
-  max-width: 1500px;
-  width: 100%;
-  background-color: cadetblue;
-}
-
-.full-width {
-  width: 95%;
-}
-
-.half-width {
-  width: 85%;
-}
-
-.colonne1 {
-  margin-left: 2rem;
-  text-align: left;
-  width: 12rem;
-}
-
-.colonne2 {
-  margin-left: 3rem;
-  text-align: left;
-  width: 8rem;
-}
-
-.colonne3 {
-  margin-left: 1rem;
-  text-align: left;
-}
-
-h4 {
-  fontsize: 8px;
-  color: red;
-}/*# sourceMappingURL=offres-de-stage.component.css.map */
+/* form 
+ * min-width: 1000px
+ * width: 1400px
+ * max-width: 1500px
+ * width: 100%
+ * background-color: cadetblue  */
+/* .full-width
+ * width: 95%
+ * */
+/* .half-width
+ * width: 85% */
+/* .colonne1
+ * margin-right: 2rem
+ * text-align: left
+ * width: 5rem */
+/* .colonne2
+ * margin-left: 3rem
+ * text-align: left
+ * width: 13rem */
+/* .colonne3
+ * margin-left: 3rem
+ * text-align: left
+ * width: 8rem
+ * */
+/* .colonne4
+ * margin-left: .5em
+ * text-align: left
+ * */
+/* h4
+ * fontsize: 8px
+ * color: red
+ * *//*# sourceMappingURL=offres-de-stage.component.css.map */

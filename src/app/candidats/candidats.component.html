@@ -1,14 +1,28 @@
 <!-- AFFICHAGE DES INFORMATIONS DE CHAQUE CARTE D'UN CANDIDAT -  SG -->
-<div class="carte-candidat" *ngIf="candidat">
-  <mat-card class="card">
-    <mat-icon>person</mat-icon>
+<div class="container-fluid carte-candidat" *ngIf="candidat">
+  <mat-card class="card-reset row d-flex">
 
-    <mat-card-title-group>
-      <mat-card-title>{{ candidat.name }}</mat-card-title>
-      <mat-card-subtitle>{{ candidat.jobTitle }}</mat-card-subtitle>
-      <mat-card-subtitle>{{ candidat.email }}</mat-card-subtitle>
-      <mat-card-subtitle>{{ candidat.phone }}</mat-card-subtitle>
-    </mat-card-title-group>
+    <!-- ICONE DROITE -->
+    <div class="col-3">
+      <mat-icon class="card-icon" aria-hidden="true">person</mat-icon>
+    </div>
+
+    <!-- INFORMATIONS CANDIDAT -->
+    <div class="col-9 ps-4">
+      <mat-card-title-group>
+        <div class="container-fluid g-0">
+          <div class="row mb-2">
+            <!-- Identification candidat -->
+            <mat-card-title>{{ candidat.name }}</mat-card-title>
+            <mat-card-subtitle>{{ candidat.jobTitle }}</mat-card-subtitle>
+          </div>
+          <!-- Contact candidat -->
+          <div class="row align-items-bottom">
+            <mat-card-subtitle class="mb-1">{{ candidat.email }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ candidat.phone }}</mat-card-subtitle>
+          </div>
+        </div>
+      </mat-card-title-group>
+    </div>
   </mat-card>
 </div>
-

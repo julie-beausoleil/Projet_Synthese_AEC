@@ -1,7 +1,7 @@
 //Arrière-plan des zones
 @mixin bg
     background-color: $blanc
-    border-radius: 2rem
+    border-radius: 1rem
     padding: 2rem
 
 // Bouton validation
@@ -33,3 +33,40 @@
     padding: 0.75rem
     text-align: center
     margin-right: 0.75rem
+
+@mixin btn-annuler
+    font-family: $font-stack
+    font-size: $taille-defaut
+    color: $texte-gris
+    background-color: none
+    padding: $taille-defaut
+    border: 1px solid $texte-gris
+    border-radius: 0.75rem
+    padding: 1rem
+    &:hover
+        background-color: $gris_dark
+        color: $admin
+
+// Formulaires
+
+@mixin mat-form-field
+    width: 100%
+    font-family: $font-stack
+    background-color: $blanc
+    border: 1px solid $admin
+    margin-top: $taille-defaut *1.25
+
+@mixin mat-label
+    font-size: $taille-defaut * 1.5
+    font-weight: $bold
+    color: $texte-gris
+
+@mixin bordure-gauche
+    border-left: 10px solid $theme
+    padding-left: 1rem
+    margin: 4rem 0 6rem
+
+@mixin bordure-input
+    border-left: 10px solid $texte-gris
+    padding-left: 1rem
+    margin-bottom: 3rem

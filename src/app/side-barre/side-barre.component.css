@@ -20,6 +20,29 @@ h2 {
   color: #bb2026;
 }
 
+section h2 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin: 3rem 0 2rem;
+  font-weight: 700;
+}
+
+.demandes, .h1_ajouter {
+  color: #707070;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.h1_ajouter {
+  line-height: 3.75rem;
+}
+
 .button-accueil {
   border: none;
   text-decoration: none;
@@ -75,10 +98,25 @@ h2 {
   margin-right: 0.75rem;
 }
 
+input {
+  color: #707070;
+  align-items: center;
+  padding: 0rem 0.75rem;
+  line-height: 0.5rem;
+}
+
 :host {
   font-family: "Open Sans", sans-serif !important;
   color: #111111 !important;
   height: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-ripple {
+  display: none;
 }
 
 /* Test */

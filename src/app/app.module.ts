@@ -73,6 +73,9 @@ import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-deman
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { CounterEntreprisesComponent } from './counter-entreprises/counter-entreprises.component';
+import { CountersComponent } from './counters/counters.component';
+import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppression.component';
 
 registerLocaleData(localeFr);
 
@@ -112,7 +115,10 @@ registerLocaleData(localeFr);
     DernieresDemandesComponent,
     DernieresOffresComponent,
     ListeOffreStageComponent,
-    DialogComponent
+    DialogComponent,
+    CounterEntreprisesComponent,
+    CountersComponent,
+    DialogSuppressionComponent
   ],
   imports: [
     BrowserModule,
@@ -144,6 +150,7 @@ registerLocaleData(localeFr);
     RequetestagaService,  
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
 })
 export class AppModule { }

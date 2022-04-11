@@ -15,7 +15,7 @@ export class AjoutEntrepriseComponent implements OnInit {
    @Input() entreprise : Omit<Entreprise, "_id"> = {
     name: "",
     description: "",
-    imageUrl: "allo",
+    imageUrl: "Section non fonctionnel / pas obligatoire",
     contactName: "",
     contactEmail: "",
     contactPhone: "",

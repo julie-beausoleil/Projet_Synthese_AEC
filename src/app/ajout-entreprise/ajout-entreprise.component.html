@@ -1,27 +1,29 @@
+  <h1>Ajouter une entreprise</h1>
 
-  <form class="example-form" #entrepriseForm="ngForm" (ngSubmit)="saveEntreprise()" >
+  <form class="example-form" #entrepriseForm="ngForm" >
 
-
+<!-- BOUTON ANNULET ET SAUVEGARDE - SG -->
     <a routerLink="/entreprises"> <button mat-stroked-button> Annuler </button>  </a>  
     <button mat-stroked-button type="submit" [disabled]="!entrepriseForm.form.valid" (click)="saveEntreprise()"> <mat-icon>save</mat-icon> Sauvegarde</button>
     
-
-    <mat-label>Entreprise</mat-label>
+<!-- SECTION POUR LE NOM ET JOINDRE LE LOGO DE LENTREPRISE - SG-->
+    <h4>Entreprise</h4>
     <mat-form-field required class="example-full-width" appearance="fill">      
       <input name="name" [(ngModel)]="entreprise.name" #name="ngModel" required type="text" matInput/>
       <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Le nom de l'entreprise est obligatoire.</mat-error>
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('minlength')">Minimum de 2 caractères.</mat-error>
     </mat-form-field> 
 
-<!--  
-    <mat-form-field required class="example-full-width" appearance="fill">
-      <mat-label>Logo</mat-label>
-      <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" required type="image" matInput/>
-      <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">L'importation du logo est obligatoire.</mat-error>  
-    </mat-form-field>  
+<!-- Cette section n'est pas obligatoi pour le moment, j'attends une réponse de Mathieu -->   
+    <h4>Logo</h4>
+    <mat-form-field required class="example-full-width" appearance="fill">      
+      <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" type="text" matInput/>
+     <!--  <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">.</mat-error>  -->
+    </mat-form-field> 
     <button>Parcourir</button>
--->
 
-  <div>
+
+  <div> <!-- SECTION BLANCHE AVEC LE FORMULAIRE - SG -->
 
     <h2>Courte présentation</h2> 
       <mat-form-field required class="example-full-width" appearance="fill">
@@ -30,7 +32,7 @@
         <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">La description est obligatoire.</mat-error>
       </mat-form-field>
 
-      <mat-label> Personne contact</mat-label>
+      <h4> Personne contact</h4>
       <mat-form-field class="example-full-width" appearance="fill">        
         <input name="contactName" [(ngModel)]="entreprise.contactName" #contactName="ngModel" required type="text" matInput/>
         <mat-error *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">Le nom de la personne contact est obligatoire.</mat-error>  
@@ -39,43 +41,45 @@
 
     <h4>Informations personnelles</h4>
 
-    <mat-label>Adresse</mat-label>
+    <h4>Adresse</h4>
     <mat-form-field class="example-full-width" appearance="fill">      
       <input name="address" [(ngModel)]="entreprise.address" #address="ngModel" required type="text" matInput/>
       <mat-error *ngIf="address.invalid && (address.dirty || address.touched) && address.hasError('required')">L'adresse est obligatoire.</mat-error>  
     </mat-form-field>  
 
-    <mat-label>Telephone</mat-label>    
+    <h4>Telephone</h4>    
     <mat-form-field class="example-full-width" appearance="fill">      
       <input name="contactPhone" [(ngModel)]="entreprise.contactPhone" #contactPhone="ngModel" required type="text" matInput/>
       <mat-error *ngIf="contactPhone.invalid && (contactPhone.dirty || contactPhone.touched) && contactPhone.hasError('required')">Le numéro de téléphone.</mat-error>  
+      <mat-error *ngIf="contactPhone.invalid && (contactPhone.dirty || contactPhone.touched) && contactPhone.hasError('minlength')">Minimum 12 caractères.</mat-error>
     </mat-form-field>  
    
-    <mat-label>Ville</mat-label>    
+    <h4>Ville</h4>    
     <mat-form-field class="example-full-width" appearance="fill">
       <input name="city" [(ngModel)]="entreprise.city" #city="ngModel" required type="text" matInput/>
       <mat-error *ngIf="city.invalid && (city.dirty || city.touched) && city.hasError('required')">La ville est obligatoire.</mat-error>  
     </mat-form-field>
 
-    <mat-label>Courriel</mat-label>
+    <h4>Courriel</h4>
     <mat-form-field class="example-full-width" appearance="fill">      
       <input name="contactEmail" [(ngModel)]="entreprise.contactEmail" #contactEmail="ngModel" required type="email" matInput/>
       <mat-error *ngIf="contactEmail.invalid && (contactEmail.dirty || contactEmail.touched) && contactEmail.hasError('required')">Le courriel est obligatoire.</mat-error>  
     </mat-form-field>
 
-    <mat-label>Province</mat-label>
+    <h4>Province</h4>
     <mat-form-field class="example-full-width" appearance="fill">      
       <input name="province" [(ngModel)]="entreprise.province" #province="ngModel" required type="text" matInput/>
       <mat-error *ngIf="province.invalid && (province.dirty || province.touched) && province.hasError('required')">La province est obligatoire.</mat-error>  
     </mat-form-field>
   
-    <mat-label>Code Postal</mat-label>
+    <h4>Code Postal</h4>
     <mat-form-field class="example-full-width" appearance="fill">      
       <input name="postalCode" [(ngModel)]="entreprise.postalCode" #postalCode="ngModel" required type="text" matInput/>
       <mat-error *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched) && postalCode.hasError('required')">Le code postal est obligatoire.</mat-error>  
     </mat-form-field>
   </div>
 
+<!-- BOUTON ANNULER ET SAUVEGARDE - SG -->
   <a routerLink="/entreprises"> <button mat-stroked-button> Annuler </button>  </a>  
   <button mat-stroked-button type="submit" [disabled]="!entrepriseForm.form.valid" (click)="saveEntreprise()"> <mat-icon>save</mat-icon> Sauvegarde</button>
 

@@ -1,20 +1,22 @@
 <!-- partie entete de la page -->
 
 <div>
-  <form>
+  <form #ajoutOffrestage="ngForm" (ngSubmit)="ajoutOffreStage()">
     <div class="body__form">
         
       <h1 class="titre__entete">Offre de stage</h1>
     
       <div class="btn__align">
         <button mat-button>Annuler</button>
-        <button class="btn__align--color" mat-stroked-button  type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
+        <button class="btn__align--color" mat-stroked-button  type="submit" 
+        (click)="ajoutOffreStage()">Enregistrer Offres Stages</button>
       </div><br><br>
 
       <div>  
         <div class="pt3">
           <div><label for="fname">Titre :</label></div>
-          <div class="position"><input  name="titre" [(ngModel)]="offrestage.title"  #name="ngModel" size= 100 type="text" id="ngModel" required></div><br>
+          <div class="position"><input  name="titre" [(ngModel)]="offrestage.title"  
+          size= 100 type="text" id="titre" required></div><br>
           
           <div><label for="lname">Entreprise:</label></div>
           <div class="position">
@@ -37,13 +39,15 @@
         <div>
           <h1 class="titre1 pt 3">Description de la tâche</h1><br><br><br>
           <div class="champ__zone__text">
-            <textarea matInput name="description" [(ngModel)]="offrestage.description"  name="description" id="description" required></textarea>
+            <textarea matInput name="description" [(ngModel)]="offrestage.description"  
+            name="description" id="description" required></textarea>
           </div><br><br>
           
       
           <h2 class="titre2">Programme de Formation</h2>
           <div class="champ__formation">
-            <textarea matInput name="programme" [(ngModel)]="offrestage.program"  name="programme" id="programme" required></textarea>
+            <textarea matInput name="programme" [(ngModel)]="offrestage.program"  
+            name="programme" id="programme" required></textarea>
           </div><br><br>
           
       
@@ -68,7 +72,13 @@
 
           <div class="datepicker__align">
             <h5>Date de debut</h5>
-            <app-date-picker></app-date-picker>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" name="datedebut" [(ngModel)]="offrestage.startDate"  type="text" id="datedebut" required/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-date-picker ></app-date-picker> -->
           </div>
         </div><br>
         
@@ -80,7 +90,13 @@
 
           <div class="datepicker__align">
             <h5>Date de fin</h5>
-            <app-date-picker></app-date-picker>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" name="datefin" [(ngModel)]="offrestage.endDate"  type="text" id="datefin" required/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <app-date-picker></app-date-picker> -->
           </div>
         </div>
 
@@ -103,7 +119,8 @@
         <div class="pt 4">
           <h1 class="titre4">Informations supppementaires</h1>
           <br>
-          <div class="champ__zone__text"><textarea matInput name="plusinfo" [(ngModel)]="offrestage.additionalInfo"  name="plusinfo" id="plusinfo" required></textarea></div>
+          <div class="champ__zone__text"><textarea matInput name="plusinfo" [(ngModel)]="offrestage.additionalInfo"  
+            name="plusinfo" id="plusinfo" required></textarea></div>
           <br><br>
         </div>
 
@@ -111,7 +128,7 @@
           <mat-card-actions class="btn__align">
             <div class="btn__align">
               <button mat-button>Annuler</button>
-              <button class="btn__align--color" mat-stroked-button type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
+              <button class="btn__align--color" mat-stroked-button type="submit" (click)="ajoutOffreStage()">Enregistrer Offres Stages</button>
             </div><br><br>
           </mat-card-actions>
         </div>

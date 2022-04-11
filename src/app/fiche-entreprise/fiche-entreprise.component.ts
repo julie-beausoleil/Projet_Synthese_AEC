@@ -76,7 +76,7 @@ export class FicheEntrepriseComponent implements OnInit {
     if (entrepriseForm.valid) {
       if (this.entreprise._id != null && this.entreprise._id != '') {
         // Si on a un id, on doit modifier l'entreprise
-        this.entrepriseService.editEntreprise(this.entreprise).subscribe(_ => {});
+        this.entrepriseService.editEntreprise(this.entreprise).subscribe(() => this.router.navigate(['/entreprises']));;
       }    
     }    
       

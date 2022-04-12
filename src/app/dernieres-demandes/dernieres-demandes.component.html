@@ -12,33 +12,32 @@
   <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
-    <thead >
+    <thead>
       <tr class="title">
         <th class="col" class="d-none">ID</th>
-        <th class="col">Profil</th>
-        <th class="col">Établissement</th>
-        <th class="col">Date</th>
-        <th class="col">Actions</th>
+        <th class="col col-lg-5">Profil</th>
+        <th class="col col-lg-2">Établissement</th>
+        <th class="col col-lg-2">Date</th>
+        <th class="col col-lg-3">Actions</th>
       </tr>
     </thead>
-    <!-- Affichage des dernières offres de stage dans la liste -->
+    <!-- Affichage des dernières demandes de stage dans la liste -->
     <tbody>
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
         <td>
-          <mat-icon class="icone-demande-stage" aria-hidden="true">school</mat-icon>
+          <mat-icon class="icone-demande-stage" aria-hidden="true"
+            >school</mat-icon
+          >
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
-<<<<<<< HEAD
-        <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
-        <td class="d-flex justify-content-between"> <!-- Actions-->
-          <button type="button" class="btn__refuser align-items-center">Refuser</button>
-=======
         <td>{{ requeteStage.startDate | date: "yyyy-mm-dd" }}</td>
-        <td>
-          <button type="button" class="btn__refuser">Refuser</button>
->>>>>>> section-demande-stage
+        <td class="d-flex justify-content-between">
+          <!-- Actions-->
+          <button type="button" class="btn__refuser align-items-center">
+            Refuser
+          </button>
           <button type="button" class="btn__accepter">Accepter</button>
           <a routerLink="/fiche-demande">
             <mat-icon class="btn__vue">visibility</mat-icon></a

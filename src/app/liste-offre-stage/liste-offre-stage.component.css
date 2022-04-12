@@ -1,37 +1,149 @@
-.form {
-  min-width: 1000px;
-  width: 1400px;
-  max-width: 1500px;
-  width: 100%;
-  background-color: cadetblue;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+/* Changer la couleur du theme et du theme-dark dans les variables */        
+/* Ajouter color et bgcolor */
+/* Test */
+.contourrouge {
+  border: 1px solid red;
 }
 
-.full-width {
-  width: 95%;
+.contourbleu {
+  border: 1px solid blue;
 }
 
-.half-width {
-  width: 85%;
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.body {
-  width: 75rem;
-  margin-left: 15rem;
+h2 {
+  font-size: 1rem;
+  color: #bb2026;
 }
 
-.colonne1 {
-  margin-left: 4rem;
-  text-align: left;
-  width: 12rem;
+section h2 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin-bottom: 2rem;
 }
 
-.colonne2 {
-  margin-left: 3rem;
-  text-align: left;
-  width: 8rem;
+section h3 {
+  font-size: 1.5rem;
+  margin: 3rem 0 2rem;
+  font-weight: 700;
 }
 
-.btn__couleur {
-  color: white;
-  background-color: red;
+.demandes, .h1_ajouter {
+  color: #707070;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.h1_ajouter {
+  line-height: 3.75rem;
+}
+
+.button-accueil {
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.125rem;
+  letter-spacing: 20;
+  background-color: #0c9da4;
+  padding: 1.25rem 0.875rem;
+  border-radius: 0.25rem;
+}
+
+.button-accueil:hover {
+  color: #ffffff;
+  opacity: 70%;
+}
+
+.btn__vue {
+  color: #0c9da4;
+}
+.btn__vue:hover {
+  color: #07575c;
+}
+
+.btn__modifier {
+  color: #f89747;
+}
+.btn__modifier:hover {
+  color: #ad6932;
+}
+
+.btn__supprimer {
+  color: #f26689;
+}
+.btn__supprimer:hover {
+  color: #a84860;
+}
+
+.icone-demande-stage {
+  color: #70582E;
+  background-color: #D6B477;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+.icone-offre-stage {
+  color: #FF9FA3;
+  background-color: #bb2026;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+input {
+  color: #707070;
+  align-items: center;
+  padding: 0rem 0.75rem;
+  line-height: 0.5rem;
+}
+
+:host {
+  font-family: "Open Sans", sans-serif !important;
+  color: #111111 !important;
+  height: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-ripple {
+  display: none;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.btn__ajouter {
+  background-color: #bb2026;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+.btn__ajouter:hover {
+  background-color: #821519;
+}
+
+tr {
+  width: initial;
+  height: initial;
+  line-height: 1.5rem;
+  vertical-align: initial;
 }/*# sourceMappingURL=liste-offre-stage.component.css.map */

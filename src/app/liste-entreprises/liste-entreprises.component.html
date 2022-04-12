@@ -1,16 +1,22 @@
 <!-- PAGE ENTREPRISE, importation de mon composant entreprise pour afficher les cartes de visites en boucle - SG-->
-<h1>Entreprise</h1>
+<div id="candidats" class="container justify-items-start">
+  <header class="row g-0">
+    <h1 class="demandes">Entreprises</h1>
 
-<!-- Boutton pour ajouter une entreprise -->
-<button mat-stroked-button>
-  <a routerLink="/ajout-entreprise">Ajouter une entreprise</a></button>
-
-<!-- MA BOUCLE POUR L'AFFICHAGE DES CARTES DES ENTREPRISE - SG -->
-<div *ngFor="let entreprise of entreprises"> 
-  <div (click)="onClick(entreprise._id)">
-    <app-entreprises [entreprise] = "entreprise" ></app-entreprises>
+    <!-- Boutton pour ajouter une entreprise -->
+    <div class="col-12 col-lg-3 mb-5">
+      <button routerLink="/ajout-entreprise" class="btn__valider">Ajouter une entreprise</button>
   </div>
+</header>
+
+    <!-- MA BOUCLE POUR L'AFFICHAGE DES CARTES DES ENTREPRISE - SG -->
+    <main class="row g-0">
+    <div *ngFor="let entreprise of entreprises" class="liste-candidats col-12 col-lg-6">
+      <div (click)="onClick(entreprise._id)">
+        <div class="carte-candidat ms-auto mt-auto m-5">
+        <app-entreprises [entreprise]="entreprise"></app-entreprises>
+      </div>
+    </div>
+    </div>
+  </main>
 </div>
-
-
-

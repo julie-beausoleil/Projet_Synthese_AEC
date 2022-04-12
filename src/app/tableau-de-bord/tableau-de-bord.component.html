@@ -1,32 +1,38 @@
 <div class="container">
   <!-- Vignettes d'affichage des cumuls -->
+
+<!-- SECTION DU COMPTEUR POUR DEMANDES DE STAGES - SG -->   
   <header class="container-fluid mb-5">
     <div class="row g-5">
       <div id="demandestagetotales" class="col-4 d-flex">
         <div class="col-10 bg_demande d-flex align-items-center">
           <mat-icon>date_range</mat-icon>
           <p class="categorie">Demandes de stage</p><br>
-         <p class="cumul">125</p>
+         <app-counter-demandes-stages></app-counter-demandes-stages>
         </div>
         <div class="col-2 bg_demande_dark"></div>
       </div>
 
+<!-- SECTION DU COMPTEUR POUR OFFRES DE STAGES - SG -->   
       <div id="demandestagetotales" class="col-4 d-flex">
         <div class="col-10 bg_demande d-flex align-items-center">
           <mat-icon>date_range</mat-icon>
-          <p class="categorie">Demandes de stage</p><br>
-         <p class="cumul">125</p>
+          <p class="categorie">Offres de stage</p><br>
+         <app-counter-offres-stages></app-counter-offres-stages>
         </div>
-        <div class="col-2 bg_demande_dark"></div>
+        <div class="col-2 bg_offre_dark"></div>
       </div>
   
   
+<!-- SECTION DU COMPTEUR POUR CANDIDATS ET ENTREPRISES - SG -->      
       <div id="candidat_entreprise" class="col-4">
         <div class="row g-0">
-          <p class="col-6 contourrouge">TEST 3</p>
-          <p class="col-6 contourrouge">TEST 3</p>
+          <p class="categorie">Candidats</p><br>
+          <app-counter-candidats></app-counter-candidats>
+          <hr> <!-- @Julie, tu peux effacer ça je crois, c'étais pour les séparer pour le visuel -->
+          <p class="categorie">Entreprises/p><br>
+          <app-counter-entreprises></app-counter-entreprises>          
         </div>
-
       </div>
     </div>
   </header>
@@ -40,7 +46,4 @@
   <section class="mb-5">
     <app-dernieres-offres></app-dernieres-offres>
   </section>
-<div class="container">  
-  <app-dernieres-demandes></app-dernieres-demandes>
-  <app-dernieres-offres></app-dernieres-offres>
-</div>
+

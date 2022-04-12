@@ -26,9 +26,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table'; 
+import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -67,13 +67,14 @@ import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-deman
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { DialogComponent } from './dialog/dialog.component';
-<<<<<<< HEAD
+
 import { CounterEntreprisesComponent } from './counter-entreprises/counter-entreprises.component';
-import { CountersComponent } from './counters/counters.component';
 import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppression.component';
-=======
-import { FicheDemandeComponent } from './fiche-demande/fiche-demande.component';
->>>>>>> section-demande-stage
+
+import { CounterCandidatsComponent } from './counter-candidats/counter-candidats.component';
+import { CounterOffresStagesComponent } from './counter-offres-stages/counter-offres-stages.component';
+import { CounterDemandesStagesComponent } from './counter-demandes-stages/counter-demandes-stages.component';
+
 
 registerLocaleData(localeFr);
 
@@ -84,7 +85,7 @@ registerLocaleData(localeFr);
     CandidatsComponent,
     DemandesDeStagesComponent,
     EntreprisesComponent,
-    OffresDeStageComponent,    
+    OffresDeStageComponent,
     SideBarreComponent,
     TableauDeBordComponent,
     FicheCVComponent,
@@ -94,9 +95,9 @@ registerLocaleData(localeFr);
     FicheStageComponent,
     EditerOffreStageComponent,
     AjoutOffreStageComponent,
-    FicheCandidatComponent,    
+    FicheCandidatComponent,
     AjoutCandidatComponent,
-    AjoutEntrepriseComponent,    
+    AjoutEntrepriseComponent,
     FicheEntrepriseComponent,
     ListeEntreprisesComponent,
     AccueilComponent,
@@ -111,13 +112,15 @@ registerLocaleData(localeFr);
     DernieresOffresComponent,
     ListeOffreStageComponent,
     DialogComponent,
-<<<<<<< HEAD
     CounterEntreprisesComponent,
-    CountersComponent,
-    DialogSuppressionComponent
-=======
-    FicheDemandeComponent
->>>>>>> section-demande-stage
+    
+    DialogSuppressionComponent,
+    
+    DialogSuppressionComponent,
+    CounterCandidatsComponent,
+    CounterOffresStagesComponent,
+    CounterDemandesStagesComponent
+
   ],
   imports: [
     BrowserModule,
@@ -129,27 +132,27 @@ registerLocaleData(localeFr);
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    MatDatepickerModule,    
+    MatDatepickerModule,
     MatInputModule,
     NoopAnimationsModule,
     MatChipsModule,
     FormsModule,
-    MatFormFieldModule,    
+    MatFormFieldModule,
     MatDialogModule,
-    MatCheckboxModule,  
+    MatCheckboxModule,
     MatNativeDateModule,
     MatSelectModule,
     ReactiveFormsModule
-    ],
+  ],
 
   providers: [CandidatService,
     EntrepriseService,
     OffrestageService,
     RegionService,
-    RequetestagaService,  
+    RequetestagaService,
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
   bootstrap: [AppComponent],
-  entryComponents : [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
+  entryComponents: [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
 })
 export class AppModule { }

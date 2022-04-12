@@ -1,141 +1,217 @@
-<!-- partie entete de la page -->
+<main class="container">
+  <h1 class="h1_ajouter bordure-gauche">Offre de stage</h1>
 
-<div>
-  <form #ajoutOffrestage="ngForm" (ngSubmit)="ajoutOffreStage()">
-    <div class="body__form">
-        
-      <h1 class="titre__entete">Offre de stage</h1>
-    
-      <div class="btn__align">
+  <!-- Formulaire pour ajouter une offre de stage -->
+  <form class="example-form" #ajoutOffrestage="ngForm" (ngSubmit)="ajoutOffreStage()">
+    <!-- <div class="btn__align">
         <button mat-button>Annuler</button>
-        <button class="btn__align--color" mat-stroked-button  type="submit" 
-        (click)="ajoutOffreStage()">Enregistrer Offres Stages</button>
-      </div><br><br>
+        <button class="btn__align--color" mat-stroked-button  type="submit" (click)="onSave()">Enregistrer Offres Stages</button>
+      </div> -->
+    <!-- Boutons annuler / sauvegarder -->
+    <!-- Voir candidat pour validation formulaire -->
+    <div class="row">
+      <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
+        <button class="btn__annuler me-3">Annuler</button>
 
-      <div>  
-        <div class="pt3">
-          <div><label for="fname">Titre :</label></div>
-          <div class="position"><input  name="titre" [(ngModel)]="offrestage.title"  
-          size= 100 type="text" id="titre" required></div><br>
-          
-          <div><label for="lname">Entreprise:</label></div>
-          <div class="position">
-            <select class="position__select" name="stage" [(ngModel)]="offrestage.enterprise" type="text" id="stage" required>
-              <option> Veuillez efffectuer un choix</option>
+        <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutOffreStage()">
+          <mat-icon class="me-3">save</mat-icon> Sauvegarder
+        </button>
+      </div>
+    </div>
+
+    <!-- Identification -->
+    <div id="identification" class="container mb-5">
+      <div class="row d-flex g-0 align-items-center">
+        <!-- Titre -->
+        <div class="col-lg-3">
+          <mat-label for="fname">Titre&thinsp;:</mat-label>
+        </div>
+        <!-- Entreprise -->
+        <div class="col-lg-9">
+          <mat-form-field required class="example-full-width">
+            <input name="titre" [(ngModel)]="offrestage.title" #name="ngModel" size=100 type="text" id="ngModel"
+              required matInput>
+            <!--! Devrait-on le rajouter pour la validation ? -->
+            <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Le nom de
+                l'entreprise est obligatoire.</mat-error> -->
+          </mat-form-field>
+        </div>
+
+        <div class="row d-flex g-0 align-items-center">
+          <!-- Entreprise -->
+          <div class="col-lg-3">
+            <mat-label for="lname">Entreprise&thinsp;:</mat-label>
+          </div>
+          <div class="col-lg-9">
+            <!--     <label for="lname">Entreprise:</label></div> -->
+
+            <select class="hauteurChamps" name="stage" [(ngModel)]="offrestage.enterprise" type="text" id="stage"
+              required>
+              <option>Veuillez effectuer un choix</option>
               <option value="volvo">CEGEP Trois riviere</option>
               <option value="saab">Desjardins</option>
               <option value="mercedes">Toyota</option>
               <option value="audi">Audi</option>
             </select>
+
           </div>
-          <!-- <div class="position"><input size= 100 type="text" id="lname" name="lname" /></div>   -->
         </div>
-        <br><br>
+      </div>
+    </div>
+    <!-- fin -->
+    <!-- partie description de la tacha -->
 
-        <!-- fin -->
-        <!-- partie description de la tacha -->
-        
-        <!-- debut zone de texte -->
-        <div>
-          <h1 class="titre1 pt 3">Description de la tâche</h1><br><br><br>
-          <div class="champ__zone__text">
-            <textarea matInput name="description" [(ngModel)]="offrestage.description"  
-            name="description" id="description" required></textarea>
-          </div><br><br>
-          
-      
-          <h2 class="titre2">Programme de Formation</h2>
-          <div class="champ__formation">
-            <textarea matInput name="programme" [(ngModel)]="offrestage.program"  
-            name="programme" id="programme" required></textarea>
-          </div><br><br>
-          
-      
-          <h2 class="titre2">Exigences</h2>
-          
-          <div class="champ__zone__text">
-            <textarea matInput name="exigences" [(ngModel)]="offrestage.requirements"  name="exigence" id="programme" required></textarea>
-          </div><br><br>
-        </div>  
-    
-        <!-- fin zone de texte-->
+    <!-- debut zone de texte -->
+    <section>
+      <h2>Description de la tâche</h2>
+      <!-- Champs de saisie de texte -->
+      <mat-form-field required class="example-full-width mb-5">
+        <textarea matInput name="description" rows="10" [(ngModel)]="offrestage.description" name="description"
+          id="description" required></textarea>
+        <!--    <mat-error
+        *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')">
+        La description est obligatoire.</mat-error> -->
+      </mat-form-field>
 
-        <!-- partie information sur le stage recherchee -->
-    
-        <h2 class="titre3">Information sur le stage recherché</h2><br>
-        
-        <div>
-          <div>
-            <h5>Type de stage</h5>
+
+      <!-- Programme de formation -->
+      <div class="row g-0 mb-3">
+        <div class="col-lg-6 bordure-input pe-lg-4">
+          <mat-label>Programme de formation</mat-label>
+          <mat-form-field class="example-full-width">
+            <input matInput name="programme" [(ngModel)]="offrestage.program" name="programme" id="programme" required>
+            <!--      <mat-error
+              *ngIf="contactName.invalid && (contactName.dirty || contactName.touched) && contactName.hasError('required')">
+              Le nom de la personne contact est obligatoire.</mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+
+      <!--      <h3 class="titre2">Programme de Formation</h3>
+      <div class="champ__formation">
+        <textarea matInput name="programme" [(ngModel)]="offrestage.program" name="programme" id="programme"
+          required></textarea>
+      </div> -->
+
+
+      <div class="row g-0 mb-3">
+        <div class="col-lg-12 bordure-input">
+          <mat-label>Exigences</mat-label>
+          <mat-form-field class="example-full-width">
+            <textarea matInput name="exigences" rows="5" [(ngModel)]="offrestage.requirements" name="exigence"
+              id="programme" required></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <!-- fin zone de texte-->
+      <!-- partie information sur le stage recherchee -->
+
+      <h3 class="mb-5">Informations sur le stage recherché</h3>
+
+      <div class="row g-0">
+        <div class="col-lg-6 pe-4">
+          <div class="bordure-input">
+            <mat-label>Type de stage</mat-label><br>
             <app-selection></app-selection>
           </div>
+        </div>
 
-          <div class="datepicker__align">
-            <h5>Date de debut</h5>
-            <mat-form-field appearance="fill">
-              <mat-label>Choose a date</mat-label>
-              <input matInput [matDatepicker]="picker" name="datedebut" [(ngModel)]="offrestage.startDate"  type="text" id="datedebut" required/>
+
+        <div class="col-lg-6 pe-4">
+          <div class="bordure-input">
+            <mat-label>Date de debut</mat-label><br>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" name="datedebut" [(ngModel)]="offrestage.startDate" type="text"
+                id="datedebut" required />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <!-- <app-date-picker ></app-date-picker> -->
           </div>
-        </div><br>
-        
-        <div>
-          <div>
-            <h5>Nombre d'heures par semaine</h5>
+        </div>
+      </div>
+
+
+      <div class="row g-0">
+        <div class="col-lg-6 pe-4">
+          <div class="bordure-input">
+            <mat-label>Nombre d'heures par semaine</mat-label><br>
             <app-selection></app-selection>
           </div>
+        </div>
 
-          <div class="datepicker__align">
-            <h5>Date de fin</h5>
-            <mat-form-field appearance="fill">
-              <mat-label>Choose a date</mat-label>
-              <input matInput [matDatepicker]="picker" name="datefin" [(ngModel)]="offrestage.endDate"  type="text" id="datefin" required/>
+        <div class="col-lg-6 pe-4">
+          <div class="bordure-input">
+            <mat-label>Date de fin</mat-label>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" name="datefin" [(ngModel)]="offrestage.endDate" type="text"
+                id="datefin" required />
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <!-- <app-date-picker></app-date-picker> -->
           </div>
         </div>
+      </div>
 
-        <!-- fin -->
+      <!-- fin -->
 
-        <!-- partie remuneration jusqu'à la fin de la page -->
+      <!-- partie remuneration jusqu'à la fin de la page -->
 
-        <div class="pt 3">
-          <form action="">
-            <Label> Remuneration </Label><br /><br />
-            <input type="checkbox" name="choix1" value="valuer1" [(ngModel)]="offrestage.stageType"   id="choix1" />
-            <label for="choix1"> A discuter</label><br /><br />
-            <input type="checkbox" name="choix2" value="valeur2" [(ngModel)]="offrestage.stageType"   id="choix2"/>
-            <label for="choix2"> Stage remunéré</label><br /><br />
-            <input type="checkbox" name="choix3" value="value3" checked [(ngModel)]="offrestage.stageType"   id="choix3"/>
-            <label for="choix3"> Stage non remunéré </label><br /><br />
-          </form>
+      <div class="row g-0">
+        <div class="col-lg-6 pe-lg-4">
+          <div class="bordure-input">
+            <form action="" class="pb-0">
+              <mat-label class="d-block mb-3">Remuneration</mat-label>
+              <input type="checkbox" name="choix1" value="valeur1" [(ngModel)]="offrestage.stageType" id="choix1"
+                class="me-3" />
+              <label for="choix1">À discuter</label><br /><br />
+              <input type="checkbox" name="choix2" value="valeur2" [(ngModel)]="offrestage.stageType" id="choix2"
+                class="me-3" />
+              <label for="choix2"> Stage remunéré</label><br /><br />
+              <input type="checkbox" name="choix3" value="value3" checked [(ngModel)]="offrestage.stageType" id="choix3"
+                class="me-3" />
+              <label for="choix3"> Stage non remunéré </label><br /><br />
+            </form>
+          </div>
         </div>
+      </div>
 
-        <div class="pt 4">
-          <h1 class="titre4">Informations supppementaires</h1>
-          <br>
-          <div class="champ__zone__text"><textarea matInput name="plusinfo" [(ngModel)]="offrestage.additionalInfo"  
-            name="plusinfo" id="plusinfo" required></textarea></div>
-          <br><br>
-        </div>
+      <div class="pt 4">
+        <h3>Informations supppementaires</h3>
+        <mat-form-field class="example-full-width">
+          <textarea matInput name="plusinfo" rows="10" [(ngModel)]="offrestage.additionalInfo" name="plusinfo"
+            id="plusinfo" required></textarea>
+        </mat-form-field>
+      </div>
+    </section>
 
-        <div>
-          <mat-card-actions class="btn__align">
-            <div class="btn__align">
-              <button mat-button>Annuler</button>
-              <button class="btn__align--color" mat-stroked-button type="submit" (click)="ajoutOffreStage()">Enregistrer Offres Stages</button>
-            </div><br><br>
-          </mat-card-actions>
-        </div>
-        <br /><br />
+    <!-- Boutons annuler / sauvegarder -->
+    <!-- Voir candidat pour validation formulaire -->
+    <div class="row">
+      <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
+        <button class="btn__annuler me-3">Annuler</button>
+
+        <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutOffreStage()">
+          <mat-icon class="me-3">save</mat-icon> Sauvegarder
+        </button>
       </div>
     </div>
+
+    <!--     <div>
+      <mat-card-actions class="btn__align">
+        <div class="btn__align">
+          <button mat-button>Annuler</button>
+          <button class="btn__align--color" mat-stroked-button type="submit" (click)="onSave()">Enregistrer Offres
+            Stages</button>
+        </div><br><br>
+      </mat-card-actions>
+    </div> -->
+
+
   </form>
-</div>
+</main>
 
 <!-- fin -->

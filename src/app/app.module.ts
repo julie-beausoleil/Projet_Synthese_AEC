@@ -67,11 +67,14 @@ import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-deman
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { DialogComponent } from './dialog/dialog.component';
+
 import { CounterEntreprisesComponent } from './counter-entreprises/counter-entreprises.component';
 import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppression.component';
+
 import { CounterCandidatsComponent } from './counter-candidats/counter-candidats.component';
 import { CounterOffresStagesComponent } from './counter-offres-stages/counter-offres-stages.component';
 import { CounterDemandesStagesComponent } from './counter-demandes-stages/counter-demandes-stages.component';
+
 
 registerLocaleData(localeFr);
 
@@ -109,8 +112,15 @@ registerLocaleData(localeFr);
     DernieresOffresComponent,
     ListeOffreStageComponent,
     DialogComponent,
-    CounterEntreprisesComponent,    
-    DialogSuppressionComponent, CounterCandidatsComponent, CounterOffresStagesComponent, CounterDemandesStagesComponent
+    CounterEntreprisesComponent,
+    
+    DialogSuppressionComponent,
+    
+    DialogSuppressionComponent,
+    CounterCandidatsComponent,
+    CounterOffresStagesComponent,
+    CounterDemandesStagesComponent
+
   ],
   imports: [
     BrowserModule,

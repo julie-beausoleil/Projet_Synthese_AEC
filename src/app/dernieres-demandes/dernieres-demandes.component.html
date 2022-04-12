@@ -26,21 +26,25 @@
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
         <td>
-          <mat-icon class="icone-demande-stage" aria-hidden="true">school</mat-icon>
+          <mat-icon class="icone-demande-stage" aria-hidden="true"
+            >school</mat-icon
+          >
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
-        <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
+        <td>{{ requeteStage.startDate | date: "yyyy-mm-dd" }}</td>
         <td class="d-flex justify-content-between">
           <!-- Actions-->
-          <button type="button" class="btn__refuser align-items-center">Refuser</button>
+          <button type="button" class="btn__refuser align-items-center">
+            Refuser
+          </button>
           <button type="button" class="btn__accepter">Accepter</button>
-          <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon class="btn__vue">visibility</mat-icon>
-          </a>
-          <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon class="btn__modifier">create</mat-icon>
-          </a>
+          <a routerLink="/fiche-demande">
+            <mat-icon class="btn__vue">visibility</mat-icon></a
+          >
+          <a routerLink="/editer-demande-stage"
+            ><mat-icon class="btn__modifier">create</mat-icon></a
+          >
           <a routerLink="">
             <mat-icon class="btn__supprimer">delete</mat-icon>
           </a>

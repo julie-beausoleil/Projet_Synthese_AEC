@@ -16,15 +16,15 @@
           eum.
         </p>
         <!-- Formulaire d'accès -->
-        <form class="form contour">
-          <mat-form-field class="">
-            <input matInput value="Votre nom et prénom" class="form--input__placeholder"/>
-          </mat-form-field>
-          <br />
+        <form>
           <mat-form-field>
-            <input matInput value="Votre courriel" class="form--input__placeholder"/>
+            <input matInput value="Votre nom et prénom"/>
           </mat-form-field>
-          <br />
+
+          <mat-form-field>
+            <input matInput value="Votre courriel"/>
+          </mat-form-field>
+  
           <button [routerLink]="['/tableau-de-bord']" class="button-accueil">
             Accéder maintenant
           </button>

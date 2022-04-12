@@ -1,22 +1,39 @@
-<!-- Début de la section 1 -->
-<div class="carte-entreprise" *ngIf="entreprise">
- 
-  <section class="">
-    <mat-card class="example-card">
-      <mat-icon>person</mat-icon>
-      <!--  À Julie - ici il faudrait ajouter le logo de l'entreprise à la place de l'icone - SG-->
+<!-- AFFICHAGE DES INFORMATIONS DE CHAQUE CARTE D'UNE ENTREPRISE -  SG -->
+<main class="carte-entreprise" *ngIf="entreprise">
 
-      <mat-card-title-group>
-        <mat-card-title>{{ entreprise.name }}</mat-card-title>
-        <mat-card-subtitle>{{ entreprise.address }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ entreprise.city }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ entreprise.province }}</mat-card-subtitle>
-        <br />
-        <mat-card-subtitle>
-          Téléphone : {{ entreprise.contactPhone }}
-        </mat-card-subtitle>
-      </mat-card-title-group>
+  <section class="container-fluid" *ngIf="entreprise">
+    <mat-card class="card-reset row d-flex">
+      <!-- IMAGE DROITE -->
+      <div class="col-4 d-flex align-items-center">
+        <!-- <div aria-hidden="true">{{ entreprise.imageUrl }}</div> -->
+        <img src="../../assets/img/mediavox.svg" alt="Logo de l'entreprise Mediavox." class="img-fluid m-3">
+        
+      </div>
+      <!--  À Julie - ici il faudrait ajouter le logo de l'entreprise à la place de l'icone - SG-->
+      <!-- Il n'y en a qu'une seule et mettre tel quel selon Mathieu -JB -->
+
+      <!-- INFORMATIONS ENTREPRISE -->
+      <div class="col-8 ps-4 my-3">
+        <mat-card-title-group>
+          <div class="container-fluid g-0">
+            <div class="row mb-2">
+              <!-- Identification de l'entreprise -->
+              <mat-card-title>{{ entreprise.name }}</mat-card-title>
+              <mat-card-subtitle>{{ entreprise.address }}</mat-card-subtitle>
+              <mat-card-subtitle class="mb-1">{{ entreprise.city }}</mat-card-subtitle>
+            </div>
+            <!-- Contact candidat -->
+            <div class="row align-items-bottom">
+
+              <mat-card-subtitle>{{ entreprise.province }}</mat-card-subtitle>
+              <mat-card-subtitle>
+                Téléphone : {{ entreprise.contactPhone }}
+              </mat-card-subtitle>
+            </div>
+          </div>
+        </mat-card-title-group>
+      </div>
     </mat-card>
   </section>
-</div>
+</main>
 <!-- Fin de la section 1 -->

@@ -1,0 +1,30 @@
+@import ../../styles.sass
+
+$theme: $entreprise
+$theme-dark: $entreprise_dark
+
+section
+    @include bg
+    margin-bottom: 4rem
+
+section h2, section h3
+    color: $theme
+
+.btn__sauvegarde
+    @include btn
+    align-content: center
+
+.btn__annuler
+    @include btn-annuler
+
+mat-form-field
+    @include mat-form-field
+
+mat-label
+    @include mat-label
+
+.bordure-gauche
+    @include bordure-gauche
+
+.bordure-input
+    @include bordure-input

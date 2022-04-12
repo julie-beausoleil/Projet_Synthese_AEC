@@ -1,0 +1,15 @@
+@import ../../styles.sass
+
+$theme: $entreprise
+$theme-dark: $entreprise_dark
+
+.btn__valider
+    @include btn
+
+.btn__accepter
+    @include btn-action
+    color: $btn__accepter_texte
+    background-color: $btn__accepter_bg
+    &:hover
+        background-color: $btn__accepter_texte
+        color: $btn__accepter_bg

@@ -13,26 +13,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class OffresDeStageComponent implements OnInit {
 
-  @Input() offrestage? : OffreStage; 
+  @Input() offrestage?: OffreStage;
 
-  offrestages : OffreStage[] = [];
-  selectedOffrestage?: OffreStage;  
- 
-  constructor(public dialog: MatDialog, private offrestageService : OffrestageService, 
+  offrestages: OffreStage[] = [];
+  selectedOffrestage?: OffreStage;
+
+  constructor(public dialog: MatDialog, private offrestageService: OffrestageService,
     private route: ActivatedRoute,
     private router: Router) { }
 
-    ngOnInit(): void {
-      const id = String (this.route.snapshot.params['_id']);
-      this.offrestageService.deleteOffreStage(id)
+  ngOnInit(): void {
+    const id = String(this.route.snapshot.params['_id']);
+    this.offrestageService.deleteOffreStage(id)
       .subscribe(resultat => this.offrestage = resultat);
-    }
+  }
 
   getOffreStages(): void {
     this.offrestageService.getOffreStages()
-    .subscribe(resultat => this.offrestages = resultat);
+      .subscribe(resultat => this.offrestages = resultat);
   }
-    
+
   //   onSelect(offrestage: OffreStage): void {
   //   this.selectedOffrestage = offrestage; 
   // }
@@ -42,9 +42,10 @@ export class OffresDeStageComponent implements OnInit {
   //   .subscribe(result => this.offrestages = this.offrestages.filter(p => p !== this.offrestage));
   // } 
 
- //  ajout d'une methode pour appeler la fenetre de dialogue
+  //  ajout d'une methode pour appeler la fenetre de dialogue
 
- result: string = '';
+  //  ajout d'une methode pour appeler la fenetre de dialogue
+  result: string = '';
 
   Dialog(): void {
     const message = `Voulez-vous vraiment faire cette suppression?`;

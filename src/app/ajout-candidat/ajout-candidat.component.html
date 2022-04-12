@@ -1,206 +1,162 @@
-<h1>Ajouter un Candidat</h1>
-<form class="example-form" #candidatForm="ngForm" (ngSubmit)="saveCandidat()">
-  <button mat-stroked-button>Annuler</button>
+<main class="container">
+  <h1 class="h1_ajouter bordure-gauche">Ajouter un candidat</h1>
 
-  <button
-    mat-stroked-button
-    type="submit"
-    [disabled]="!candidatForm.form.valid"
-    (click)="saveCandidat()"
-  >
-    <mat-icon>save</mat-icon> Sauvegarde
-  </button>
-  <div>
-    <mat-label>Nom et prénom :</mat-label>
-    <mat-form-field required class="example-full-width" appearance="fill">
-      <input
-        name="name"
-        [(ngModel)]="candidat.name"
-        #name="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+  <!-- Formulaire pour ajouter un candidat -->
+  <form class="example-form" #candidatForm="ngForm" (ngSubmit)="saveCandidat()">
+    <!-- Boutons annuler / sauvegarder -->
+    <div class="row">
+      <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
+        <button class="btn__annuler me-3">Annuler</button>
+
+        <button class="btn__sauvegarde d-flex" type="submit" [disabled]="!candidatForm.form.valid"
+          (click)="saveCandidat()">
+          <mat-icon class="me-3">save</mat-icon> Sauvegarder
+        </button>
+      </div>
+    </div>
+
+    <!-- Identification -->
+    <div id="identification" class="container mb-5">
+      <div class="row d-flex g-0 align-items-center">
+        <!-- Prénom et nom -->
+        <div class="col-lg-3">
+          <mat-label>Nom et prénom&thinsp;:</mat-label>
+        </div>
+        <div class="col-lg-9">
+          <mat-form-field required class="example-full-width">
+            <input name="name" [(ngModel)]="candidat.name" #name="ngModel" required type="text" matInput />
+            <mat-error *ngIf="
           name.invalid &&
           (name.dirty || name.touched) &&
           name.hasError('required')
-        "
-        >Le nom du candidat est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">Le nom du candidat est obligatoire.</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
 
-    <mat-label>Poste :</mat-label>
-    <mat-form-field required class="example-full-width" appearance="fill">
-      <input
-        name="jobTitle"
-        [(ngModel)]="candidat.jobTitle"
-        #jobTitle="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <div class="row d-flex g-0 align-items-center">
+        <!-- Poste -->
+        <div class="col-lg-3">
+          <mat-label>Poste&thinsp;:</mat-label>
+        </div>
+        <div class="col-lg-9">
+          <mat-form-field required class="example-full-width">
+            <input name="jobTitle" [(ngModel)]="candidat.jobTitle" #jobTitle="ngModel" required type="text" matInput />
+            <mat-error *ngIf="
           jobTitle.invalid &&
           (jobTitle.dirty || jobTitle.touched) &&
           jobTitle.hasError('required')
-        "
-        >Le poste du candidat est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">Le poste du candidat est obligatoire.</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
 
-    <h2>Courte présentation</h2>
-    <mat-form-field required class="example-full-width" appearance="fill">
-      <textarea
-        name="description"
-        [(ngModel)]="candidat.description"
-        #description="ngModel"
-        required
-        type="text"
-        matInput
-      ></textarea>
-      <mat-error
-        *ngIf="
+    <section>
+      <h2>Courte présentation</h2>
+      <!-- Champs de saisie de texte -->
+      <mat-form-field required class="example-full-width">
+        <textarea name="description" rows="10" [(ngModel)]="candidat.description" #description="ngModel" required
+          type="text" matInput></textarea>
+        <mat-error *ngIf="
           description.invalid &&
           (description.dirty || description.touched) &&
           description.hasError('required')
-        "
-        >La description est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">La description est obligatoire.</mat-error>
+      </mat-form-field>
 
-    <h4>Informations personnelles</h4>
-
-    <mat-label>Adresse</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="address"
-        [(ngModel)]="candidat.address"
-        #address="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <h3>Informations personnelles</h3>
+      <!-- Addresse -->
+      <div class="bordure-input">
+        <mat-label>Adresse</mat-label>
+        <mat-form-field class="example-full-width">
+          <input name="address" [(ngModel)]="candidat.address" #address="ngModel" required type="text" matInput />
+          <mat-error *ngIf="
           address.invalid &&
           (address.dirty || address.touched) &&
           address.hasError('required')
-        "
-        >L'adresse est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">L'adresse est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <mat-label>Telephone</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="phone"
-        [(ngModel)]="candidat.phone"
-        #phone="ngModel"
-        required
-        type="tel"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <!-- Téléphone -->
+      <div class="bordure-input">
+        <mat-label>Téléphone</mat-label>
+        <mat-form-field class="example-full-width">
+          <input name="phone" [(ngModel)]="candidat.phone" #phone="ngModel" required type="tel" matInput />
+          <mat-error *ngIf="
           phone.invalid &&
           (phone.dirty || phone.touched) &&
           phone.hasError('required')
-        "
-        >Le numéro de téléphone est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">Le numéro de téléphone est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <mat-label>Ville</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="city"
-        [(ngModel)]="candidat.city"
-        #city="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <!-- Ville -->
+      <div class="bordure-input">
+        <mat-label>Ville</mat-label>
+        <mat-form-field class="example-full-width">
+          <input name="city" [(ngModel)]="candidat.city" #city="ngModel" required type="text" matInput />
+          <mat-error *ngIf="
           city.invalid &&
           (city.dirty || city.touched) &&
           city.hasError('required')
-        "
-        >La ville est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">La ville est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <mat-label>Courriel</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="email"
-        [(ngModel)]="candidat.email"
-        #email="ngModel"
-        required
-        type="email"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <!-- Courriel -->
+      <div class="bordure-input">
+        <mat-label>Courriel</mat-label>
+        <mat-form-field>
+          <input name="email" [(ngModel)]="candidat.email" #email="ngModel" required type="email" matInput />
+          <mat-error *ngIf="
           email.invalid &&
           (email.dirty || email.touched) &&
           email.hasError('required')
-        "
-        >Le courriel est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">Le courriel est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <mat-label>Province</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="province"
-        [(ngModel)]="candidat.province"
-        #province="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <!-- Province -->
+      <div class="bordure-input">
+        <mat-label>Province</mat-label>
+        <mat-form-field class="example-full-width">
+          <input name="province" [(ngModel)]="candidat.province" #province="ngModel" required type="text" matInput />
+          <mat-error *ngIf="
           province.invalid &&
           (province.dirty || province.touched) &&
           province.hasError('required')
-        "
-        >La province est obligatoire.</mat-error
-      >
-    </mat-form-field>
+        ">La province est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
 
-    <mat-label>Code Postal</mat-label>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input
-        name="postalCode"
-        [(ngModel)]="candidat.postalCode"
-        #postalCode="ngModel"
-        required
-        type="text"
-        matInput
-      />
-      <mat-error
-        *ngIf="
+      <!-- Code postal -->
+      <div class="bordure-input">
+        <mat-label>Code Postal</mat-label>
+        <mat-form-field class="example-full-width">
+          <input name="postalCode" [(ngModel)]="candidat.postalCode" #postalCode="ngModel" required type="text"
+            matInput />
+          <mat-error *ngIf="
           postalCode.invalid &&
           (postalCode.dirty || postalCode.touched) &&
           postalCode.hasError('required')
-        "
-        >Le code postal est obligatoire.</mat-error
-      >
-    </mat-form-field>
-  </div>
+        ">Le code postal est obligatoire.</mat-error>
+        </mat-form-field>
+      </div>
+    </section>
 
-  <button mat-stroked-button>Annuler</button>
-  <button
-    mat-stroked-button
-    type="submit"
-    [disabled]="!candidatForm.form.valid"
-    (click)="saveCandidat()"
-  >
-    <mat-icon>save</mat-icon> Sauvegarde
-  </button>
-</form>
+<!-- BOUTONS -->
+    <div class="row">
+      <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
+        <button class="btn__annuler me-3">Annuler</button>
+
+        <button class="btn__sauvegarde d-flex" type="submit" [disabled]="!candidatForm.form.valid"
+          (click)="saveCandidat()">
+          <mat-icon class="me-3">save</mat-icon> Sauvegarder
+        </button>
+      </div>
+    </div>
+
+  </form>
+</main>

@@ -26,9 +26,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table'; 
+import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -82,7 +82,7 @@ registerLocaleData(localeFr);
     CandidatsComponent,
     DemandesDeStagesComponent,
     EntreprisesComponent,
-    OffresDeStageComponent,    
+    OffresDeStageComponent,
     SideBarreComponent,
     TableauDeBordComponent,
     FicheCVComponent,
@@ -92,9 +92,9 @@ registerLocaleData(localeFr);
     FicheStageComponent,
     EditerOffreStageComponent,
     AjoutOffreStageComponent,
-    FicheCandidatComponent,    
+    FicheCandidatComponent,
     AjoutCandidatComponent,
-    AjoutEntrepriseComponent,    
+    AjoutEntrepriseComponent,
     FicheEntrepriseComponent,
     ListeEntreprisesComponent,
     AccueilComponent,
@@ -122,27 +122,27 @@ registerLocaleData(localeFr);
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    MatDatepickerModule,    
+    MatDatepickerModule,
     MatInputModule,
     NoopAnimationsModule,
     MatChipsModule,
     FormsModule,
-    MatFormFieldModule,    
+    MatFormFieldModule,
     MatDialogModule,
-    MatCheckboxModule,  
+    MatCheckboxModule,
     MatNativeDateModule,
     MatSelectModule,
     ReactiveFormsModule
-    ],
+  ],
 
   providers: [CandidatService,
     EntrepriseService,
     OffrestageService,
     RegionService,
-    RequetestagaService,  
+    RequetestagaService,
     { provide: LOCALE_ID, useValue: "fr-CA" }
   ],
   bootstrap: [AppComponent],
-  entryComponents : [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
+  entryComponents: [DialogSuppressionComponent] /* MODAL SUPRESSION - SG */
 })
 export class AppModule { }

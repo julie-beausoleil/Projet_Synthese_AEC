@@ -67,9 +67,13 @@ import { DernieresDemandesComponent } from './dernieres-demandes/dernieres-deman
 import { DernieresOffresComponent } from './dernieres-offres/dernieres-offres.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
 import { DialogComponent } from './dialog/dialog.component';
+<<<<<<< HEAD
 import { CounterEntreprisesComponent } from './counter-entreprises/counter-entreprises.component';
 import { CountersComponent } from './counters/counters.component';
 import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppression.component';
+=======
+import { FicheDemandeComponent } from './fiche-demande/fiche-demande.component';
+>>>>>>> section-demande-stage
 
 registerLocaleData(localeFr);
 
@@ -107,9 +111,13 @@ registerLocaleData(localeFr);
     DernieresOffresComponent,
     ListeOffreStageComponent,
     DialogComponent,
+<<<<<<< HEAD
     CounterEntreprisesComponent,
     CountersComponent,
     DialogSuppressionComponent
+=======
+    FicheDemandeComponent
+>>>>>>> section-demande-stage
   ],
   imports: [
     BrowserModule,

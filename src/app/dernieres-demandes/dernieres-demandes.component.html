@@ -5,11 +5,11 @@
       <h2>En attente de validation</h2>
     </div>
     <div class="col-3 ms-auto text-end">
-    <button class="btn__valider">Valider toutes les offres</button>
-  </div>
+      <button class="btn__valider">Valider toutes les offres</button>
+    </div>
   </div>
 
-<!-- Tableau afichant les dernières demandes de stage -->
+  <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
     <thead >
@@ -30,17 +30,25 @@
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
+<<<<<<< HEAD
         <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
         <td class="d-flex justify-content-between"> <!-- Actions-->
           <button type="button" class="btn__refuser align-items-center">Refuser</button>
+=======
+        <td>{{ requeteStage.startDate | date: "yyyy-mm-dd" }}</td>
+        <td>
+          <button type="button" class="btn__refuser">Refuser</button>
+>>>>>>> section-demande-stage
           <button type="button" class="btn__accepter">Accepter</button>
-          <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon class="btn__vue">visibility</mat-icon></a>          
-          <a routerLink="/administrationInternshipRequestComponent"
-            ><mat-icon class="btn__modifier">create</mat-icon></a>          
-            <a routerLink="">
-              <mat-icon class="btn__supprimer">delete</mat-icon>
-            </a>
+          <a routerLink="/fiche-demande">
+            <mat-icon class="btn__vue">visibility</mat-icon></a
+          >
+          <a routerLink="/editer-demande-stage"
+            ><mat-icon class="btn__modifier">create</mat-icon></a
+          >
+          <a routerLink="">
+            <mat-icon class="btn__supprimer">delete</mat-icon>
+          </a>
         </td>
       </tr>
     </tbody>

@@ -23,7 +23,7 @@ h2 {
 section h2 {
   font-weight: 700;
   font-size: 2.75rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 section h3 {
@@ -41,6 +41,18 @@ section h3 {
 
 .h1_ajouter {
   line-height: 3.75rem;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.69rem;
+}
+
+.texte-fiche {
+  color: #707070;
+  font-size: 1.125rem;
+  line-height: 1.69rem;
 }
 
 .button-accueil {
@@ -132,7 +144,7 @@ h2 {
 section h2 {
   font-weight: 700;
   font-size: 2.75rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 section h3 {
@@ -150,6 +162,18 @@ section h3 {
 
 .h1_ajouter {
   line-height: 3.75rem;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.69rem;
+}
+
+.texte-fiche {
+  color: #707070;
+  font-size: 1.125rem;
+  line-height: 1.69rem;
 }
 
 #pages {

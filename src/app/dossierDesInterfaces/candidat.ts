@@ -10,6 +10,7 @@ export interface Candidat {
   province: String,
   postalCode: String,
   published: Boolean,
+  __v?: number
 }
 
 

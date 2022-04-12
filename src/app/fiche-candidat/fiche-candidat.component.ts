@@ -65,7 +65,7 @@ export class FicheCandidatComponent implements OnInit {
     if (candidatForm.valid && this.selectedCandidat!= null) {
       this.candidatService.editCandidat(this.selectedCandidat)
           .subscribe(() => this.selectedCandidat = undefined);
-          this.router.navigate(['/entreprises'])
+          this.router.navigate(['/candidats'])
     }
   }
   

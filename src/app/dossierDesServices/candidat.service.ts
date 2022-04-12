@@ -40,14 +40,16 @@ export class CandidatService {
     const _candidat: Partial<Candidat> = {...candidat};
     delete _candidat._id; 
     delete _candidat.__v;
-    return this.http.put<Candidat>(this.candidatUrl + "/" + candidat._id, candidat, httpOptions);
+    return this.http.put<Candidat>(this.candidatUrl + "/" + candidat._id, _candidat, httpOptions);
   } 
 
+  
  /* POUR SUPRIMER UN CANDIDAT- SG */
   deleteCandidat(_id: String): Observable<Candidat> {
-    return this.http.delete<Candidat>(this.candidatUrl + "/=" + _id);
+    return this.http.delete<Candidat>(this.candidatUrl + "/" + _id);
   }
 
+  
 /* POUR LE MODAL DE CONFIRMATION DE SUPRESSION - SG */
   openConfirmDialog(){
     return this.dialog.open (DialogSuppressionComponent, {

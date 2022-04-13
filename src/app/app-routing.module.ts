@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TableInternshipRequestComponent } from './table-internship-request/table-internship-request.component';
 
 
 /* Liens pour la side barre (barre de navigation) */
@@ -25,6 +24,7 @@ import { FicheDemandeComponent } from './fiche-demande/fiche-demande.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeCandidatComponent } from './liste-candidat/liste-candidat.component';
 import { ListeOffreStageComponent } from './liste-offre-stage/liste-offre-stage.component';
+import { ListeDemandeStageComponent } from './liste-demande-stage/liste-demande-stage.component';
 import { FicheStageComponent } from './fiche-stage/fiche-stage.component';
 
 /* Liens pour les pages éditer */
@@ -42,7 +42,8 @@ const routes: Routes = [
   { path: 'fiche-stage', component: FicheStageComponent },
   { path: 'fiche-demande', component: FicheDemandeComponent},
   { path: 'editer-offre-stage', component: EditerOffreStageComponent },
-  { path: 'editer-demande-stage', component: EditerDemandeStageComponent},
+  { path: 'editer-demande-stage', component: EditerDemandeStageComponent },
+  { path: 'demandes-de-stages', component: ListeDemandeStageComponent},
   { path: 'candidats', component: ListeCandidatComponent },
   /*
   { path: 'administrationInternshipRequestComponent', component: TableInternshipRequestComponent },*/

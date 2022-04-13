@@ -1,214 +1,7 @@
 <!-- partie entete de la page JG-->
 <main class="container">
   <h1 class="h1_ajouter bordure-gauche">Ajouter une demande</h1>
-
-  <!-- Boutons annuler / sauvegarder -->
-  <!-- Voir candidat pour validation formulaire -->
-  <div class="row">
-    <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
-      <button [routerLink]="['/demandes-de-stages']" class="btn__annuler me-3">Annuler</button>
-      <!-- Le bouton ne fonctionne pas-->
-      <!--  <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutDemandeStage()"> -->
-      <button class="btn__sauvegarde d-flex" type="submit">
-        <mat-icon class="me-3">save</mat-icon> Sauvegarder
-      </button>
-    </div>
-  </div>
-  <div class="container mb-5">
-    <div class="row d-flex g-0 align-items-center mb-5">
-      <!-- Titre -->
-      <div class="col-lg-3">
-        <mat-label for="fname">Titre&thinsp;:</mat-label>
-      </div>
-
-      <!-- Titre input -->
-      <div class="col-lg-9">
-        <mat-form-field required class="example-full-width">
-          <input name="titre" required matInput>
-          <!--     <input name="titre" [(ngModel)]="offrestage.title" #name="ngModel" size=100 type="text" id="ngModel" required
-            matInput> -->
-          <!--! Devrait-on le rajouter pour la validation ? -->
-          <!-- <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Le nom de
-                l'entreprise est obligatoire.</mat-error> -->
-        </mat-form-field>
-      </div>
-    </div>
-    <section>
-      <div class="mb-5">
-        <mat-label>Nom et prénom</mat-label>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder required />
-        </mat-form-field>
-      </div>
-      <div class="mb-5">
-        <mat-label>Présentation</mat-label>
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder rows="10" required></textarea>
-        </mat-form-field>
-      </div>
-
-      <!-- fin -->
-      <!-- partie description de la tache -->
-
-      <!--! debut zone de texte -->
-      <div class="row g-0 mb-3">
-        <div class="col-lg-6 bordure-input pe-lg-4">
-          <mat-label>Programme de formation</mat-label>
-          <mat-form-field class="example-full-width">
-            <input matInput>
-          </mat-form-field>
-        </div>
-        <!-- Établissement scolaire JG-->
-        <div class="col-lg-6 bordure-input pe-lg-4">
-          <mat-label>Établissement scolaire</mat-label>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder required>
-          </mat-form-field>
-        </div>
-      </div>
-      <!-- Secteur d'activité avec select JG -->
-      <div class="row g-0 mb-3">
-        <div class="col-lg-6 bordure-input pe-lg-4">
-          <mat-label>Secteur d'activité</mat-label>
-          <mat-form-field class="example-full-width">
-            <mat-select class="position__select">
-              <mat-option>Veuillez efffectuer un choix</mat-option>
-              <mat-option value="Central">Central</mat-option>
-              <mat-option value="Future">Future</mat-option>
-              <mat-option value="Human">Human</mat-option>
-              <mat-option value="Investor">Investor</mat-option>
-              <mat-option value="Future">Future</mat-option>
-              <mat-option value="Investor">Investor</mat-option>
-              <mat-option value="International">International</mat-option>
-              <mat-option value="Customer">Customer</mat-option>
-              <mat-option value="Forward">Forward</mat-option>
-              <mat-option value="Future">Future</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="col-lg-6 bordure-input pe-lg-4">
-          <mat-label>Ville</mat-label>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder required>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row g-0 mb-3">
-        <div class="col-lg-6 bordure-input pe-lg-4">
-          <mat-label>Région</mat-label>
-          <mat-form-field class="example-full-width p-2">
-            <mat-select name="demande" id="demande">
-              <mat-option>Veuillez efffectuer un choix</mat-option>
-              <mat-option value="Kansas">Kansas</mat-option>
-              <mat-option value="Connecticut">Connecticut</mat-option>
-              <mat-option value="Washington">Washington</mat-option>
-              <mat-option value="Illinois">Illinois</mat-option>
-              <mat-option value="Nevada">Nevada</mat-option>
-              <mat-option value="Nebraska">Nebraska</mat-option>
-              <mat-option value="Vermont">Vermont</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-
-        <div class="bordure-input pe-lg-4 mb-5">
-          <mat-label>Compétences</mat-label>
-          <mat-form-field class="example-full-width">
-            <textarea matInput placeholder rows="10" required></textarea>
-          </mat-form-field>
-        </div>
-
-        <!-- fin zone de texte-->
-
-        <!-- partie information sur le stage recherchee -->
-
-        <h3>Informations sur le stage recherché</h3>
-
-        <!-- Type de stage avec select JG -->
-        <div class="row g-0 mb-3">
-          <div class="col-lg-6 bordure-input pe-lg-4">
-            <mat-label>Type de stage</mat-label>
-            <mat-form-field class="example-full-width">
-              <mat-select class="position__select" name="demande" id="demande">
-                <mat-option>Veuillez efffectuer un choix</mat-option>
-                <mat-option value="Temps Plein">Temps Plein</mat-option>
-                <mat-option value="Temps Partiel">Temps Partiel</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <!-- VOIR CODE A WHISTLER DANS OFFRE -->
-          <div class="col-lg-6 pe-4">
-            <div class="bordure-input">
-              <mat-label>Date de debut</mat-label><br>
-              <app-date-picker></app-date-picker>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-0 mb-3">
-          <div class="col-lg-6 bordure-input pe-lg-4">
-            <mat-label>Nombre d'heures par semaine</mat-label>
-            <mat-form-field class="example-full-width">
-              <mat-select class="position__select" name="demande" id="demande">
-                <mat-option>Veuillez efffectuer un choix</mat-option>
-                <mat-option value="5">5</mat-option>
-                <mat-option value="10">10</mat-option>
-                <mat-option value="15">15</mat-option>
-                <mat-option value="20">20</mat-option>
-                <mat-option value="25">25</mat-option>
-                <mat-option value="30">30</mat-option>
-                <mat-option value="35">35</mat-option>
-                <mat-option value="40">40</mat-option>
-                <mat-option value="40 +">40 +</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <!-- <app-selection></app-selection> -->
-
-
-          <div class="col-lg-6 bordure-input pe-lg-4">
-            <mat-label>Date de fin</mat-label><br>
-            <app-date-picker></app-date-picker>
-          </div>
-        </div>
-
-        <!-- fin -->
-
-        <!-- partie remuneration jusqu'à la fin de la page -->
-
-        <div class="row g-0 mb-3">
-          <div class="col-lg-6 bordure-input pe-lg-4">
-            <form action="/action_page.php">
-              <mat-label class="d-block mb-3"> Remuneration </mat-label>
-              <input type="checkbox" class="me-3" name="choix1" value="valuer1" />
-              <label for="choix1"> A la discrétion de l'entreprise</label><br /><br />
-              <input type="checkbox" class="me-3" name="choix2" value="valeur2" />
-              <label for="choix2"> Stage remunéré</label><br /><br />
-              <input type="checkbox" class="me-3" name="choix3" value="value3" checked />
-              <label for="choix3"> Stage non remunéré </label><br /><br />
-            </form>
-          </div>
-        </div>
-
-        <div class="row g-0">
-          <h3>Informations supppementaires</h3>
-          <mat-form-field class="example-full-width">
-            <textarea matInput placeholder rows="10" required></textarea>
-          </mat-form-field>
-        </div>
-
-        <div class="row g-0 d-flex">
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder />
-          </mat-form-field>
-          <button type="button" class="btn btnParcourir  d-flex justify-self-end text-end">Parcourir</button>
-        </div>
-      </div>
-    </section>
-
-
-
+  <form class="example-form" #demandeForm="ngForm">
     <!-- Boutons annuler / sauvegarder -->
     <!-- Voir candidat pour validation formulaire -->
     <div class="row">
@@ -221,9 +14,280 @@
         </button>
       </div>
     </div>
-  </div>
+
+
+    <!-- Titre -->
+    <div class="container mb-5">
+      <div class="row d-flex g-0 align-items-center mb-5">
+        <!-- Titre -->
+        <div class="col-lg-3">
+          <mat-label for="fname">Titre&thinsp;:</mat-label>
+        </div>
+
+        <!-- Titre input -->
+        <div class="col-lg-9">
+          <mat-form-field required class="example-full-width">
+            <input name="titre" required matInput>
+            <input name="title" [(ngModel)]="requeteStage.title" #title="ngModel" required type="text" matInput />
+            <mat-error *ngIf="
+                  title.invalid &&
+                  (title.dirty || title.touched) &&
+                  title.hasError('required')
+                ">Le titre de la demande de stage est obligatoire.</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
 
 
 
-  <!-- fin -->
+      <!-- NOM ET PRÉNOM -->
+
+      <section>
+        <div class="mb-5">
+          <mat-label>Nom et prénom</mat-label>
+          <mat-form-field class="example-full-width">
+            <input name="studentName" [(ngModel)]="requeteStage.studentName" #studentName="ngModel" required type="text"
+              matInput />
+            <mat-error *ngIf="
+                studentName.invalid &&
+                (studentName.dirty || studentName.touched) &&
+                studentName.hasError('required')
+              ">
+              Le nom et le prénom est obligatoire.</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="mb-5">
+          <mat-label>Présentation</mat-label>
+          <mat-form-field class="example-full-width">
+            <textarea matInput placeholder rows="10" required></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- fin -->
+        <!-- partie description de la tache -->
+
+
+        <!-- PROGRAMME DE FORMATION -->
+        <h4>Programme de formation</h4>
+        <mat-form-field class="example-full-width" appearance="fill">
+
+        </mat-form-field>
+
+
+        <!--! debut zone de texte -->
+        <div class="row g-0 mb-3">
+          <div class="col-lg-6 bordure-input pe-lg-4">
+            <mat-label>Programme de formation</mat-label>
+            <mat-form-field class="example-full-width">
+              <input name="program" [(ngModel)]="requeteStage.program" #program="ngModel" required type="text"
+                matInput />
+              <mat-error *ngIf="
+        program.invalid &&
+        (program.dirty || program.touched) &&
+        program.hasError('required')
+      ">
+                Le programme de formation est obligatoire.</mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Établissement scolaire JG-->
+          <div class="col-lg-6 bordure-input pe-lg-4">
+            <mat-label>Établissement scolaire</mat-label>
+            <mat-form-field class="example-full-width">
+              <input name="school" [(ngModel)]="requeteStage.school" #school="ngModel" required type="text" matInput />
+              <mat-error *ngIf="
+        school.invalid &&
+        (school.dirty || school.touched) &&
+        school.hasError('required')
+      ">
+                L'établissement scolaire est obligatoire.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <!-- Secteur d'activité avec select JG -->
+        <div class="row g-0 mb-3">
+          <div class="col-lg-6 bordure-input pe-lg-4">
+            <mat-label>Secteur d'activité</mat-label>
+            <mat-form-field class="example-full-width">
+              <mat-select class="position__select">
+                <mat-option>Veuillez efffectuer un choix</mat-option>
+                <mat-option value="Central">Central</mat-option>
+                <mat-option value="Future">Future</mat-option>
+                <mat-option value="Human">Human</mat-option>
+                <mat-option value="Investor">Investor</mat-option>
+                <mat-option value="Future">Future</mat-option>
+                <mat-option value="Investor">Investor</mat-option>
+                <mat-option value="International">International</mat-option>
+                <mat-option value="Customer">Customer</mat-option>
+                <mat-option value="Forward">Forward</mat-option>
+                <mat-option value="Future">Future</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 bordure-input pe-lg-4">
+            <mat-label>Ville</mat-label>
+            <mat-form-field class="example-full-width">
+              <input name="region" [(ngModel)]="requeteStage.region" #region="ngModel" required type="text" matInput />
+              <mat-error *ngIf="
+                    region.invalid &&
+                    (region.dirty || region.touched) &&
+                    region.hasError('required')
+                  ">
+                La région est obligatoire.</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        
+
+
+
+
+
+
+        <div class="row g-0 mb-3">
+          <div class="col-lg-6 bordure-input pe-lg-4">
+            <mat-label>Région</mat-label>
+            <mat-form-field class="example-full-width p-2">
+              <mat-select name="demande" id="demande">
+                <mat-option>Veuillez efffectuer un choix</mat-option>
+                <mat-option value="Kansas">Kansas</mat-option>
+                <mat-option value="Connecticut">Connecticut</mat-option>
+                <mat-option value="Washington">Washington</mat-option>
+                <mat-option value="Illinois">Illinois</mat-option>
+                <mat-option value="Nevada">Nevada</mat-option>
+                <mat-option value="Nebraska">Nebraska</mat-option>
+                <mat-option value="Vermont">Vermont</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="bordure-input pe-lg-4 mb-5">
+            <mat-label>Compétences</mat-label>
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder rows="10" required></textarea>
+            </mat-form-field>
+          </div>
+
+          <!-- fin zone de texte-->
+
+          <!-- partie information sur le stage recherchee -->
+
+
+
+
+
+          <h2>Informations sur le stage recherché</h2>
+
+
+          <h3>Informations sur le stage recherché</h3>
+
+          <!-- Type de stage avec select JG -->
+          <div class="row g-0 mb-3">
+            <div class="col-lg-6 bordure-input pe-lg-4">
+              <mat-label>Type de stage</mat-label>
+              <mat-form-field class="example-full-width">
+                <mat-select class="position__select" name="demande" id="demande">
+                  <mat-option>Veuillez efffectuer un choix</mat-option>
+                  <mat-option value="Temps Plein">Temps Plein</mat-option>
+                  <mat-option value="Temps Partiel">Temps Partiel</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+
+
+
+            <!-- VOIR CODE A WHISTLER DANS OFFRE -->
+            <div class="col-lg-6 pe-4">
+              <div class="bordure-input">
+                <mat-label>Date de debut</mat-label><br>
+                <app-date-picker></app-date-picker>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-0 mb-3">
+            <div class="col-lg-6 bordure-input pe-lg-4">
+              <mat-label>Nombre d'heures par semaine</mat-label>
+              <mat-form-field class="example-full-width">
+                <mat-select class="position__select" name="demande" id="demande">
+                  <mat-option>Veuillez efffectuer un choix</mat-option>
+                  <mat-option value="5">5</mat-option>
+                  <mat-option value="10">10</mat-option>
+                  <mat-option value="15">15</mat-option>
+                  <mat-option value="20">20</mat-option>
+                  <mat-option value="25">25</mat-option>
+                  <mat-option value="30">30</mat-option>
+                  <mat-option value="35">35</mat-option>
+                  <mat-option value="40">40</mat-option>
+                  <mat-option value="40 +">40 +</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- <app-selection></app-selection> -->
+
+
+            <div class="col-lg-6 bordure-input pe-lg-4">
+              <mat-label>Date de fin</mat-label><br>
+              <app-date-picker></app-date-picker>
+            </div>
+          </div>
+
+          <!-- fin -->
+
+          <!-- partie remuneration jusqu'à la fin de la page -->
+
+
+          <div class="row g-0 mb-3">
+            <div class="col-lg-6 bordure-input pe-lg-4">
+              <form action="/action_page.php">
+                <mat-label class="d-block mb-3"> Remuneration </mat-label>
+                <input type="checkbox" class="me-3" name="choix1" value="valuer1" />
+                <label for="choix1"> A la discrétion de l'entreprise</label><br /><br />
+                <input type="checkbox" class="me-3" name="choix2" value="valeur2" />
+                <label for="choix2"> Stage remunéré</label><br /><br />
+                <input type="checkbox" class="me-3" name="choix3" value="value3" checked />
+                <label for="choix3"> Stage non remunéré </label><br /><br />
+              </form>
+            </div>
+          </div>
+
+          <div class="row g-0">
+            <h3>Informations supppementaires</h3>
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder rows="10" required></textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="row g-0 d-flex">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder />
+            </mat-form-field>
+            <button type="button" class="btn btnParcourir  d-flex justify-self-end text-end">Parcourir</button>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Boutons annuler / sauvegarder -->
+      <!-- Voir candidat pour validation formulaire -->
+      <div class="row">
+        <div class="col-12 col-lg-3 offset-lg-9 d-flex mb-5">
+          <button [routerLink]="['/demandes-de-stages']" class="btn__annuler me-3">Annuler</button>
+          <!-- Le bouton ne fonctionne pas-->
+          <!--  <button class="btn__sauvegarde d-flex" type="submit" (click)="ajoutDemandeStage()"> -->
+          <button class="btn__sauvegarde d-flex" type="submit">
+            <mat-icon class="me-3">save</mat-icon> Sauvegarder
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
 </main>

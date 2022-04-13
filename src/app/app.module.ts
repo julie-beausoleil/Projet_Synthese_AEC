@@ -74,6 +74,7 @@ import { DialogSuppressionComponent } from './dialog-suppression/dialog-suppress
 import { CounterCandidatsComponent } from './counter-candidats/counter-candidats.component';
 import { CounterOffresStagesComponent } from './counter-offres-stages/counter-offres-stages.component';
 import { CounterDemandesStagesComponent } from './counter-demandes-stages/counter-demandes-stages.component';
+import { ListeDemandeStageComponent } from './liste-demande-stage/liste-demande-stage.component';
 
 
 registerLocaleData(localeFr);
@@ -119,7 +120,8 @@ registerLocaleData(localeFr);
     DialogSuppressionComponent,
     CounterCandidatsComponent,
     CounterOffresStagesComponent,
-    CounterDemandesStagesComponent
+    CounterDemandesStagesComponent,
+    ListeDemandeStageComponent
 
   ],
   imports: [

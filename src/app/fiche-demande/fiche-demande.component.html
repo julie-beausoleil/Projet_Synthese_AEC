@@ -6,45 +6,74 @@
 <br />
 
 <div *ngFor="let requeteStage of requetesStages">
+  <!-- Nom et présentation JG-->
   <h5>{{ requeteStage.studentName }}</h5>
   <p>{{ requeteStage.Presentation }}</p>
   <br />
+
+  <!-- Programme de formation JG-->
   <h5>Programme de formation</h5>
   <p>{{ requeteStage.program }}</p>
   <br />
+
+  <!-- Programme de Secteur d'activité JG -->
   <h5>Programme de Secteur d'activité</h5>
   <p>{{ requeteStage.activitySector }}</p>
   <br />
+
+  <!-- Compétences JG -->
   <h5>Compétences</h5>
   <p>{{ requeteStage.skills }}</p>
   <br />
+
+  <!-- Établissement d'enseignement JG -->
   <h5>Établissement d'enseignement</h5>
   <p>{{ requeteStage.school }}</p>
   <br />
+
+  <!-- Ville JG -->
   <h5>Ville</h5>
   <p>{{ requeteStage.city }}</p>
   <br />
+
+  <!-- Région JG -->
   <h5>Région</h5>
   <p>{{ requeteStage.region }}</p>
   <br />
+
+  <!-- Information sur le stage recherché JG-->
   <h4>Information sur le stage recherché</h4>
   <br />
+
+  <!-- Type de stage JG -->
   <h5>Type de stage</h5>
   <p>{{ requeteStage.stageType }}</p>
   <br />
+
+  <!-- Nombre d'heure par semaine JG -->
   <h5>Nombre d'heure par semaine</h5>
   <p>{{ requeteStage.hoursPerWeek }}</p>
   <br />
+
+  <!-- Rémunération JG -->
   <h5>Rémunération</h5>
   <p>{{ requeteStage.paid }}</p>
   <br />
+
+  <!-- Date de début JG -->
   <h5>Date de début</h5>
   <p>{{ requeteStage.startDated }}</p>
   <br />
+
+  <!-- Date de fin JG -->
   <h5>Date de fin</h5>
   <p>{{ requeteStage.endDate }}</p>
   <br />
+
+  <!-- Informations supplémentaires -->
   <h4>Informations supplémentaires</h4>
   <p>{{ requeteStage.additionalInfo }}</p>
+
+  <!-- button Télécharger le C.V. JG -->
   <button type="submit" class="btn">Télécharger le C.V.</button>
 </div>

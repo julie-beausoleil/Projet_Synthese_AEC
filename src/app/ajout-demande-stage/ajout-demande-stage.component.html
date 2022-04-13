@@ -1,184 +1,54 @@
-<!-- partie entete de la page JG-->
-<div>
-  <div class="body__form">
-    <h1 class="titre__entete">Ajouter une demande</h1>
-    <!-- Button JG-->
-    <button [routerLink]="['/demandes-de-stages']" class="btn__annuler me-3">
-      Annuler
-    </button>
-    <button class="btn__align--color" mat-button>
-      <mat-icon>save</mat-icon>Sauvegarder
-    </button>
+<!-- AJOUT DEMANDE DE STAGE - SG --> 
 
-    <br /><br />
+<h1 class="h1_ajouter bordure-gauche">Ajouter une demande</h1>
 
-    <div>
-      <div class="pt3">
-        <!-- Titre JG-->
-        <div>
-          <label for="fname">Titre :</label>
+<form class="example-form" #demandeForm="ngForm">
+
+<!-- METTRE SECTION DES BOUTONS -->
+<!-- ############################################################ -->
+
+<!-- Titre -->
+      <mat-label>Titre</mat-label>        
+        <div class="col-lg-9">
+          <mat-form-field required class="example-full-width">
+            <input name="title" [(ngModel)]="requeteStage.title" #title="ngModel" required type="text" matInput />
+            <mat-error *ngIf="title.invalid && (title.dirty || title.touched) && title.hasError('required')">Le titre de la demande de stage est obligatoire.</mat-error>              
+          </mat-form-field>
         </div>
-        <div class="position">
-          <input size="100" type="text" id="fname" name="fname" required />
-        </div>
-        <br />
-        <!-- Nom et Pténom JG-->
-        <h4>Nom et prénom</h4>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder required /> </mat-form-field
-        ><br />
-        <!-- Présentation JG -->
-        <h4>Présentation</h4>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <textarea matInput placeholder required></textarea>
-        </mat-form-field>
+<!-- DÉBUT DE LA SECTION DU FORMUALIRE -->
 
-        <!-- Programme de formation JG-->
-        <h4>Programme de formation</h4>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder required /> </mat-form-field
-        ><br />
 
-        <!-- Établissement scolaire JG-->
-        <h4>Établissement scolaire</h4>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder required /> </mat-form-field
-        ><br />
-        <!-- Secteur d'activité avec select JG -->
-        <div>
-          <label for="name">Secteur d'activité:</label>
-          <div class="position">
-            <select class="position__select">
-              <option>Veuillez efffectuer un choix</option>
-              <option value="Central">Central</option>
-              <option value="Future">Future</option>
-              <option value="Human">Human</option>
-              <option value="Investor">Investor</option>
-              <option value="Future">Future</option>
-              <option value="Investor">Investor</option>
-              <option value="International">International</option>
-              <option value="Customer">Customer</option>
-              <option value="Forward">Forward</option>
-              <option value="Future">Future</option>
-            </select>
-          </div>
-        </div>
-        <br /><br />
-        <!-- Ville -->
-        <h4>Ville</h4>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <input matInput placeholder required /> </mat-form-field
-        ><br />
+<!-- IL SEMBLE NE PAS AVOIR DE SECTION DANS LA BASE DE DONNÉ POUR CETTE SECTION ??? -->
 
-        <!-- Région avec select JG -->
-        <div>
-          <label for="name">Région:</label>
-          <div class="position">
-            <select class="position__select" name="demande" id="demande">
-              <option>Veuillez efffectuer un choix</option>
-              <option value="Kansas">Kansas</option>
-              <option value="Connecticut">Connecticut</option>
-              <option value="Washington">Washington</option>
-              <option value="Illinois">Illinois</option>
-              <option value="Nevada">Nevada</option>
-              <option value="Nebraska">Nebraska</option>
-              <option value="Vermont">Vermont</option>
-            </select>
-          </div>
-        </div>
-        <br /><br />
+<!-- NOM ET PRÉNOM -->
+<mat-label>Nom et prénom</mat-label>
+<mat-form-field class="example-full-width">
+  <input name="studentName" [(ngModel)]="requeteStage.studentName" #studentName="ngModel" required type="text" matInput />
+  <mat-error *ngIf="studentName.invalid && (studentName.dirty || studentName.touched) && studentName.hasError('required')"> Le nom de la personne contact est obligatoire.</mat-error>
+</mat-form-field>
 
-        <!-- partie information sur le stage recherché JG -->
+<!-- PRÉSENTATION -->
+    <mat-label>Présentation</mat-label>
+    <mat-form-field class="example-full-width">
+      <input name="description" [(ngModel)]="requeteStage.description" #description="ngModel" required type="text" matInput />
+      <mat-error *ngIf="description.invalid && (description.dirty || description.touched) && description.hasError('required')"> Le nom de la personne contact est obligatoire.</mat-error>
+    </mat-form-field>
 
-        <h2 class="titre3">Informations sur le stage recherché</h2>
-        <mat-form-field class="example-full-width" appearance="fill">
-          <textarea matInput placeholder required></textarea>
-        </mat-form-field>
-        <br />
+<!-- PROGRAMME DE FORMATION -->
+    <mat-label>Programme de formation</mat-label>
+    <mat-form-field class="example-full-width">
+      <input name="program" [(ngModel)]="requeteStage.program" #program="ngModel" required type="text" matInput />
+      <mat-error *ngIf="program.invalid && (program.dirty || program.touched) && program.hasError('required')"> Le nom de la personne contact est obligatoire.</mat-error>
+    </mat-form-field>
 
-        <!-- Type de stage avec select JG -->
-        <div>
-          <label for="name">Type de stage:</label>
-          <div class="position">
-            <select class="position__select" name="demande" id="demande">
-              <option>Veuillez efffectuer un choix</option>
-              <option value="Temps Plein">Temps Plein</option>
-              <option value="Temps Partiel">Temps Partiel</option>
-            </select>
-          </div>
-        </div>
-        <br /><br />
+<!-- ÉTABLISSEMENT SCOLAIRE -->
+    <mat-label>Établissement scolaire</mat-label>
+    <mat-form-field class="example-full-width">
+      <input name="school" [(ngModel)]="requeteStage.school" #school="ngModel" required type="text" matInput />
+      <mat-error *ngIf="school.invalid && (school.dirty || school.touched) && school.hasError('required')"> Le nom de la personne contact est obligatoire.</mat-error>
+    </mat-form-field>
 
-        <!-- Nombres d'heures par semaine JG -->
-        <div>
-          <label for="name">Nombres d'heures par semaine:</label>
-          <div class="position">
-            <select class="position__select" name="demande" id="demande">
-              <option>Veuillez efffectuer un choix</option>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-              <option value="25">25</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-              <option value="40 +">40 +</option>
-            </select>
-          </div>
-        </div>
-        <br /><br />
 
-        <div class="datepicker__align">
-          <h5>Date de debut</h5>
-          <app-date-picker></app-date-picker>
-        </div>
-      </div>
-      <br />
 
-      <div class="datepicker__align">
-        <h5>Date de fin</h5>
-        <app-date-picker></app-date-picker>
-      </div>
-    </div>
-
-    <!-- fin -->
-
-    <!-- partie remuneration jusqu'à la fin de la page -->
-
-    <div class="pt 3">
-      <form action="/action_page.php">
-        <Label> Rémuneration </Label><br /><br />
-        <input type="checkbox" name="choix1" value="valuer1" />
-        <label for="choix1"> A la discrétion de l'entreprise</label><br /><br />
-        <input type="checkbox" name="choix2" value="valeur2" />
-        <label for="choix2"> Stage remunéré</label><br /><br />
-        <input type="checkbox" name="choix3" value="value3" checked />
-        <label for="choix3"> Stage non remunéré </label><br /><br />
-      </form>
-    </div>
-
-    <div class="pt 4">
-      <h1 class="titre4">Informations supppementaires</h1>
-      <br />
-      <mat-form-field class="example-full-width" appearance="fill">
-        <textarea matInput placeholder required></textarea>
-      </mat-form-field>
-
-      <button type="button" class="btn btnParcourir">Parcourir</button>
-
-      <div class="btn__align">
-        <button
-          [routerLink]="['/demandes-de-stages']"
-          class="btn__annuler me-3"
-        >
-          Annuler
-        </button>
-
-        <button class="btn__align--color" mat-button>
-          <mat-icon>save</mat-icon>Sauvegarder
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+       
+ </form> 

@@ -1,11 +1,179 @@
-<mat-card class="card__body">
-  <h1 class="card__entete">Offre de Stage</h1>
-  <h2 class="card__sousentete">Intégrateur Web junior</h2>
-  <mat-card class="largeur__card">acolyte communication</mat-card>
-  <mat-card-actions class="btn__align">
-    <button type="button" class="btn btnAnnuler" (click)="annuler()">
-      {{ titre }}
-    </button>
-    <button class="btn__align--color" mat-button>Mettre A jour</button>
-  </mat-card-actions>
-</mat-card>
+<h1 class="card">Demande de stage</h1>
+<h2 class="card__sousentete">Développeur Front-End</h2>
+
+<button type="button" class="btn btnAnnuler" (click)="annuler()">
+  {{ titre }}
+</button>
+<button class="btn__align--color" mat-button>Mettre A jour</button>
+<!-- Nom et Prénom JG-->
+<h4>Candidat</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <input matInput placeholder required /> </mat-form-field
+><br />
+<!-- Présentation JG -->
+<h4>Présentation</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <textarea
+    name="text"
+    matInput
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
+dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
+nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
+purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur"
+    required
+  ></textarea>
+</mat-form-field>
+
+<!-- Programme de formation JG-->
+<h4>Programme de formation</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <input matInput placeholder required /> </mat-form-field
+><br />
+
+<!-- Établissement scolaire JG-->
+<h4>Établissement scolaire</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <input matInput placeholder required /> </mat-form-field
+><br />
+<!-- Secteur d'activité avec select JG -->
+<div>
+  <label for="name">Secteur d'activité:</label>
+  <div class="position">
+    <select class="position__select">
+      <option>Veuillez efffectuer un choix</option>
+      <option value="Central">Central</option>
+      <option value="Future">Future</option>
+      <option value="Human">Human</option>
+      <option value="Investor">Investor</option>
+      <option value="Future">Future</option>
+      <option value="Investor">Investor</option>
+      <option value="International">International</option>
+      <option value="Customer">Customer</option>
+      <option value="Forward">Forward</option>
+      <option value="Future">Future</option>
+    </select>
+  </div>
+</div>
+<br /><br />
+<!-- Ville -->
+<h4>Ville</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <input matInput placeholder required /> </mat-form-field
+><br />
+
+<!-- Région avec select JG -->
+<div>
+  <label for="name">Région:</label>
+  <div class="position">
+    <select class="position__select" name="demande" id="demande">
+      <option>Veuillez efffectuer un choix</option>
+      <option value="Kansas">Kansas</option>
+      <option value="Connecticut">Connecticut</option>
+      <option value="Washington">Washington</option>
+      <option value="Illinois">Illinois</option>
+      <option value="Nevada">Nevada</option>
+      <option value="Nebraska">Nebraska</option>
+      <option value="Vermont">Vermont</option>
+    </select>
+  </div>
+</div>
+<br /><br />
+
+<!-- Compétences JG -->
+<h4>Compétences</h4>
+<mat-form-field class="example-full-width" appearance="fill">
+  <textarea
+    name="text"
+    matInput
+    placeholder="HTML, CSS, JavaScript, React, vue.js, GIT
+PHP, MySQL. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum
+facilisis eros, ut dapibus quam hendrerit nec."
+    required
+  ></textarea>
+</mat-form-field>
+
+<!-- partie information sur le stage recherché JG -->
+
+<h2 class="titre3">Informations sur le stage recherché</h2>
+<mat-form-field class="example-full-width" appearance="fill">
+  <textarea matInput placeholder required></textarea>
+</mat-form-field>
+<br />
+
+<!-- Type de stage avec select JG -->
+<div>
+  <label for="name">Type de stage:</label>
+  <div class="position">
+    <select class="position__select" name="demande" id="demande">
+      <option>Veuillez efffectuer un choix</option>
+      <option value="Temps Plein">Temps Plein</option>
+      <option value="Temps Partiel">Temps Partiel</option>
+    </select>
+  </div>
+</div>
+<br /><br />
+
+<!-- Nombres d'heures par semaine JG -->
+<div>
+  <label for="name">Nombres d'heures par semaine:</label>
+  <div class="position">
+    <select class="position__select" name="demande" id="demande">
+      <option>Veuillez efffectuer un choix</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+      <option value="30">30</option>
+      <option value="35">35</option>
+      <option value="40">40</option>
+      <option value="40 +">40 +</option>
+    </select>
+  </div>
+</div>
+<br /><br />
+
+<div class="datepicker__align">
+  <h5>Date de debut</h5>
+  <app-date-picker></app-date-picker>
+</div>
+
+<div class="datepicker__align">
+  <h5>Date de fin</h5>
+  <app-date-picker></app-date-picker>
+</div>
+
+<!-- partie remuneration jusqu'à la fin de la page -->
+
+<div class="pt 3">
+  <form action="/action_page.php">
+    <Label> Rémuneration </Label><br /><br />
+    <input type="checkbox" name="choix1" value="valuer1" />
+    <label for="choix1"> A la discrétion de l'entreprise</label><br /><br />
+    <input type="checkbox" name="choix2" value="valeur2" />
+    <label for="choix2"> Stage remunéré</label><br /><br />
+    <input type="checkbox" name="choix3" value="value3" checked />
+    <label for="choix3"> Stage non remunéré </label><br /><br />
+  </form>
+</div>
+
+<!-- Informations supppementaires JG -->
+<h1 class="titre4">Informations supppementaires</h1>
+<mat-form-field class="example-full-width" appearance="fill">
+  <textarea
+    name="text"
+    matInput
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam justo. Aliquam interdum facilisis eros, ut
+dapibus quam hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis tortor quis pharetra. Nulla dictum erat id
+nisl pulvinar, ac aliquam lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus ut ante efficitur, venenatis
+purus sit amet, condimentum leo. Pellentesque nulla sem, consectetur"
+    required
+  ></textarea>
+</mat-form-field>
+<br />
+<button type="button" class="btn btnParcourir">Parcourir</button>
+<button type="submit" class="btn">Télécharger le C.V.</button>
+<button type="button" class="btn btnAnnuler" (click)="annuler()">
+  {{ titre }}
+</button>
+<button class="btn__align--color" mat-button>Mettre A jour</button>

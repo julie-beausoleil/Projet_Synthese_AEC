@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
+import { RequeteStage } from '../dossierDesInterfaces/requete-stage';
+import { RequetestagaService } from '../dossierDesServices/requetestaga.service';
 
 @Component({
   selector: 'app-editer-demande-stage',
@@ -7,8 +9,11 @@ import { Location } from '@angular/common';
   styleUrls: ['./editer-demande-stage.component.sass']
 })
 export class EditerDemandeStageComponent implements OnInit {
-@Input() titre: String = "Annuler";
-  constructor(private location: Location) { }
+  @Input() titre: String = "Annuler";
+  
+  
+  constructor(private location: Location,
+   private requetestagaService: RequetestagaService) { }
 
   ngOnInit(): void {
   }

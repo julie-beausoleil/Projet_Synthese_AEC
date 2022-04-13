@@ -8,9 +8,9 @@ describe('FicheDemandeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FicheDemandeComponent ]
+      declarations: [FicheDemandeComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

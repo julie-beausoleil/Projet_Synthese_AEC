@@ -1,0 +1,54 @@
+@import ../../styles.sass
+
+$theme: $candidat_mauve
+$theme-dark: $candidat_mauve_dark
+
+section
+    @include bg
+    margin-bottom: 4rem
+
+.h1--candidat
+    font-size: $taille-defaut * 2.5
+    color: $texte-gris
+
+.job-candidat
+    padding: 0.5rem
+    background-color: $blanc
+    color: $texte-gris
+    font-size: $taille-defaut * 1.5
+    margin-top: 1.5rem
+    font-weight: $bold
+
+section h2, section h3
+    color: $theme
+
+.candidat
+    color: $texte-gris
+    font-weight: $bold
+    font-size: 1.5rem
+
+.btn__sauvegarde
+    @include btn
+    align-content: center
+
+.btn__annuler
+    @include btn-annuler
+
+mat-form-field
+    @include mat-form-field
+
+mat-label
+    @include mat-label
+
+.bordure-gauche
+    @include bordure-gauche
+
+.bordure-input
+    @include bordure-input
+
+img
+    max-width: 170px
+
+.hauteurChamps
+    @include mat-form-field
+    line-height: 2rem

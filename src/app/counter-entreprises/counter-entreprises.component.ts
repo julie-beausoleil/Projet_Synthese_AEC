@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service */
-import { Entreprise } from "../dossierDesInterfaces/entreprise";/* Importation de mon interface */
+import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service - SG*/
+import { Entreprise } from "../dossierDesInterfaces/entreprise";/* Importation de mon interface - SG */
 
 
 @Component({

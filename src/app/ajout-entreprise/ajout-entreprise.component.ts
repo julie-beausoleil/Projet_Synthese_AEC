@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AjoutEntrepriseComponent implements OnInit {
 
-   /*  entreprise : Entreprise [] = []; */
+   
    @Input() entreprise : Omit<Entreprise, "_id"> = {
     name: "",
     description: "",
@@ -36,6 +36,6 @@ export class AjoutEntrepriseComponent implements OnInit {
 
   saveEntreprise() : void {
     this.entrepriseService.addEntreprise(this.entreprise)
-      .subscribe(() => this.router.navigate(["entreprises"]));
+      .subscribe(() => this.router.navigate(["/entreprises"]));
   }
 }

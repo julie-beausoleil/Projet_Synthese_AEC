@@ -9,10 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-candidat.component.sass']
 })
 export class AjoutCandidatComponent implements OnInit {
- /* @Input() candidat?: Candidat; */
- /* candidats: Candidat[] = []; */
-  @Input() candidat: Candidat = {
-    _id: " ",
+
+  @Input() candidat : Omit<Candidat, "_id"> = {    
     name: " ",
     description: " ",
     jobTitle: " ",
@@ -24,16 +22,18 @@ export class AjoutCandidatComponent implements OnInit {
     postalCode: " ",
     published: false,
   };
+
   @Output() majTableau = new EventEmitter();
+
   constructor( private candidatService: CandidatService,
-  private router : Router) { }
+              private router : Router) { }
 
   ngOnInit(): void {
   }
-   saveCandidat() : void {
+  
+  saveCandidat() : void {
     this.candidatService.addCandidat(this.candidat)
-      .subscribe(resultat => this.candidat = resultat);      
-    this.router.navigate(["candidats"]);
+      .subscribe(() => this.router.navigate(["/candidats"]));
   }
 
 }

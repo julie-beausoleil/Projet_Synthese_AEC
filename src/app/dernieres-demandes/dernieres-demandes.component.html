@@ -4,8 +4,16 @@
       <h1>Dernière <span>demandes</span> de stage</h1>
       <h2>En attente de validation</h2>
     </div>
+    <!-- Valider les demandes -->
     <div class="col-3 ms-auto text-end">
-      <button class="btn__valider">Valider toutes les offres</button>
+      <button
+        type="button"
+        class="btn__valider"
+        (click)="acceptVal()"
+        onClick="alert('Toutes les demandes sont valider')"
+      >
+        Valider toutes les demandes
+      </button>
     </div>
   </div>
 

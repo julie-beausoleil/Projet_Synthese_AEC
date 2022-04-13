@@ -20,12 +20,14 @@ export class RequetestagaService {
     return this.http.get<RequeteStage[]>(this.reqstageUrl);  
   }
 
-  addReqStage(reqstage: RequeteStage): Observable<RequeteStage> {
-    return this.http.post<RequeteStage>(this.reqstageUrl, reqstage, httpOptions);
-  }
+  addReqStage(requeteStage : Omit<RequeteStage, "_id">): Observable<RequeteStage> {
+    return this.http.post<RequeteStage>(this.reqstageUrl, requeteStage, httpOptions);
+  }  
 
-  editReqStage(reqstage: RequeteStage): Observable<RequeteStage> {
-    return this.http.put<RequeteStage>(this.reqstageUrl + reqstage._id, reqstage, httpOptions);
+  
+
+  editReqStage(requeteStage: RequeteStage): Observable<RequeteStage> {
+    return this.http.put<RequeteStage>(this.reqstageUrl + requeteStage._id, requeteStage, httpOptions);
   }
 
   deleteReqStage(_id: String): Observable<RequeteStage> {

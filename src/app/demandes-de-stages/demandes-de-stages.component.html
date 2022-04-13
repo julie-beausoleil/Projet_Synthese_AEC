@@ -5,6 +5,13 @@
     </div>
   </div>
 
+  <div class="col-12 col-lg-3 mb-5">
+    <!-- <a routerLink="/ajout-demande-stage">Ajouter une demande de stage</a></button> -->
+    <button routerLink="/ajout-demande-stage" class="btn__valider">
+      Ajouter une demande
+    </button>
+  </div>
+
   <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
@@ -24,11 +31,12 @@
         <td class="d-none">{{ requeteStage._id }}</td>
         <td>
           <mat-icon>school</mat-icon>
-          {{ requeteStage.title }}
+          {{ requeteStage.title }}<br />
+          {{ requeteStage.studentName }}
         </td>
-        <td>{{ requeteStage.program }}</td>
+        <td>{{ requeteStage.region }}</td>
         <td>{{ requeteStage.enterprise }}</td>
-        <td>{{ requeteStage.startDate | date: "yyyy-mm-dd" }}</td>
+        <td>{{ requeteStage.startDate }}</td>
         <td>
           <a routerLink="/fiche-demande">
             <mat-icon class="btn__vue">visibility</mat-icon></a

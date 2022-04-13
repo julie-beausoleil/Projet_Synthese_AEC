@@ -1,1 +1,49 @@
-<p>fiche-demande works!</p>
+<h1>Demande de stage</h1>
+<h4>Développeur Front-End</h4>
+<button mat-button><i class="material-icons">done</i></button>
+<button mat-button><i class="material-icons">edit</i></button>
+<button mat-button><i class="material-icons">close</i></button>
+<br />
+<div *ngFor="let requeteStage of requetesStages">
+  <h5>{{ requeteStage.studentName }}</h5>
+  <p>{{ requeteStage.Presentation }}</p>
+  <br />
+  <h5>Programme de formation</h5>
+  <p>{{ requeteStage.program }}</p>
+  <br />
+  <h5>Programme de Secteur d'activité</h5>
+  <p>{{ requeteStage.activitySector }}</p>
+  <br />
+  <h5>Compétences</h5>
+  <p>{{ requeteStage.skills }}</p>
+  <br />
+  <h5>Établissement d'enseignement</h5>
+  <p>{{ requeteStage.school }}</p>
+  <br />
+  <h5>Ville</h5>
+  <p>{{ requeteStage.city }}</p>
+  <br />
+  <h5>Région</h5>
+  <p>{{ requeteStage.region }}</p>
+  <br />
+  <h4>Information sur le stage recherché</h4>
+  <br />
+  <h5>Type de stage</h5>
+  <p>{{ requeteStage.stageType }}</p>
+  <br />
+  <h5>Nombre d'heure par semaine</h5>
+  <p>{{ requeteStage.hoursPerWeek }}</p>
+  <br />
+  <h5>Rémunération</h5>
+  <p>{{ requeteStage.paid }}</p>
+  <br />
+  <h5>Date de début</h5>
+  <p>{{ requeteStage.startDated }}</p>
+  <br />
+  <h5>Date de fin</h5>
+  <p>{{ requeteStage.endDate }}</p>
+  <br />
+  <h4>Informations supplémentaires</h4>
+  <p>{{ requeteStage.additionalInfo }}</p>
+  <button type="submit" class="btn">Télécharger le C.V.</button>
+</div>

@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Candidat } from '../dossierDesInterfaces/candidat';
 import { CandidatService } from '../dossierDesServices/candidat.service'; /*importer le service candidat pour que le composant candidat*/
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-ajout-candidat',
@@ -9,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajout-candidat.component.sass']
 })
 export class AjoutCandidatComponent implements OnInit {
+
+  selectedCandidat?: Candidat;
 
   @Input() candidat : Omit<Candidat, "_id"> = {    
     name: " ",
@@ -30,10 +34,12 @@ export class AjoutCandidatComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  saveCandidat() : void {
-    this.candidatService.addCandidat(this.candidat)
+  /* zz */
+  saveCandidat(candidatForm: NgForm) : void {
+    if (candidatForm.valid) {
+      if (this.candidat != null && this.candidat) 
+      this.candidatService.addCandidat(this.candidat)
       .subscribe(() => this.router.navigate(["/candidats"]));
+    }    
   }
-
 }

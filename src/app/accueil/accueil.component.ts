@@ -16,7 +16,7 @@ export class AccueilComponent implements OnInit {
   valider(firstname: string, email: string){
     if( firstname ===''|| email ===''){
      
-      alert("le champs nom ou / et email ne doit / doivent pas vide (S)");
+      alert("les champs doivent etre remplis ");
     } 
     else{
       this.router.navigate(["tableau-de-bord"]);

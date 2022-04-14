@@ -1,0 +1,34 @@
+@import ../../styles.sass
+
+$theme: $demande-de-stage
+$theme-dark: $demande-de-stage_dark
+
+section
+    @include bg
+    margin-bottom: 4rem
+
+section h2, section h3
+    color: $theme
+
+.btn__sauvegarde
+    @include btn
+    align-content: center
+
+.btn__annuler
+    @include btn-annuler
+
+mat-form-field
+    @include mat-form-field
+
+.hauteurChamps
+    @include mat-form-field
+    line-height: 2rem
+
+mat-label
+    @include mat-label
+
+.bordure-gauche
+    @include bordure-gauche
+
+.bordure-input
+    @include bordure-input

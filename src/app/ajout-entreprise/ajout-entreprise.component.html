@@ -2,7 +2,7 @@
   <h1 class="h1_ajouter bordure-gauche">Ajouter une entreprise</h1>
 
   <!-- Formulaire pour ajouter un candidat -->
-  <form class="example-form" #entrepriseForm="ngForm" >
+  <form class="example-form" #entrepriseForm="ngForm">
 
     <!-- Boutons annuler / sauvegarder -->
     <div class="row">
@@ -29,7 +29,6 @@
             <input name="name" [(ngModel)]="entreprise.name" #name="ngModel" required type="text" matInput />
             <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.hasError('required')">Le nom de
               l'entreprise est obligatoire.</mat-error>
-              
           </mat-form-field>
         </div>
       </div>
@@ -40,22 +39,29 @@
           <mat-label>Logo</mat-label>
         </div>
         <div class="col-lg-9">
-          <mat-form-field required class="example-full-width">  
-          <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" type="text" matInput/>
-        </mat-form-field> 
-        <button>Parcourir</button>
-          <!--  <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">.</mat-error>  -->
-          <!-- 
-    <mat-form-field required class="example-full-width" appearance="fill">
-      <mat-label>Logo</mat-label>
-      <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" required type="image" matInput/>
-      <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">L'importation du logo est obligatoire.</mat-error>  
-    </mat-form-field>  
-  <button>Parcourir</button>
--->
+          <mat-form-field required class="example-full-width">
+            <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" type="text" matInput
+              />
+              <button type="button" class="btn--parcourir">Parcourir</button>
+          </mat-form-field>
+          
         </div>
       </div>
     </div>
+
+
+
+    <!--  <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">.</mat-error>  -->
+    <!-- 
+      <mat-form-field required class="example-full-width" appearance="fill">
+      <mat-label>Logo</mat-label>
+      <input name="imageUrl" [(ngModel)]="entreprise.imageUrl" #imageUrl="ngModel" required type="image" matInput/>
+      <mat-error *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched) && imageUrl.hasError('required')">L'importation du logo est obligatoire.</mat-error>  
+      </mat-form-field>  
+      <button>Parcourir</button>
+      -->
+  
+
 
     <section>
       <h2>Courte présentation</h2>
@@ -118,7 +124,8 @@
             <mat-label>Ville</mat-label>
             <mat-form-field class="example-full-width">
               <input name="city" [(ngModel)]="entreprise.city" #city="ngModel" required type="text" matInput />
-              <mat-error *ngIf="city.invalid && (city.dirty || city.touched) && city.hasError('required')">La ville est
+              <mat-error *ngIf="city.invalid && (city.dirty || city.touched) && city.hasError('required')">La ville
+                est
                 obligatoire.</mat-error>
             </mat-form-field>
           </div>

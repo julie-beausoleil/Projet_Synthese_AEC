@@ -8,9 +8,9 @@ describe('EditerDemandeStageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditerDemandeStageComponent ]
+      declarations: [EditerDemandeStageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -47,6 +47,8 @@ section h3 {
   color: #707070;
   font-size: 1.25rem;
   line-height: 1.69rem;
+  margin-top: 1rem;
+  vertical-align: bottom;
 }
 
 .texte-fiche {
@@ -90,6 +92,38 @@ section h3 {
 }
 .btn__supprimer:hover {
   color: #a84860;
+}
+
+.btn__checkvert {
+  color: #07a04a;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.btn__checkvert:hover {
+  color: #03662e;
+}
+
+.btn__modifier_bleu {
+  color: #2E466E;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.btn__modifier_bleu:hover {
+  color: #162235;
+}
+
+.btn__refuser {
+  color: #bb2026;
+  font-size: 2rem;
+}
+.btn__refuser:hover {
+  color: #661113;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.6875rem;
 }
 
 .icone-demande-stage {
@@ -138,8 +172,36 @@ section {
   margin-bottom: 4rem;
 }
 
+.h1--candidat {
+  font-size: 2.5rem;
+  color: #707070;
+}
+
+.job-candidat {
+  padding: 0.5rem;
+  background-color: #ffffff;
+  color: #707070;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: 700;
+}
+
 section h2, section h3 {
   color: #86a9e6;
+}
+
+.candidat, .contact, .entreprise {
+  color: #707070;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.entreprise {
+  font-size: 2.5rem;
+}
+
+.contact {
+  font-size: 2rem;
 }
 
 .btn__sauvegarde {
@@ -201,4 +263,17 @@ mat-label {
 
 img {
   max-width: 170px;
+}
+
+.hauteurChamps {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #a6acbe;
+  margin-top: 1.25rem;
+  line-height: 2rem;
+}
+
+.texte {
+  color: #707070;
 }/*# sourceMappingURL=fiche-entreprise.component.css.map */

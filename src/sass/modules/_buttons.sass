@@ -12,6 +12,7 @@
     color: $blanc
     opacity: 70%
 
+// BOUTONS POUR LISTES    
 .btn__vue
     color: $vue
     &:hover
@@ -26,3 +27,27 @@
     color: $icone-supprimer
     &:hover
         color: $icone-supprimer_dark
+
+// BOUTON POUR FICHES    
+.btn__checkvert
+    color: $btn__accepter_texte
+    font-weight: $bold
+    font-size: $taille_defaut * 2
+    &:hover
+        color: $btn__accepter_texte-dark
+
+.btn__modifier_bleu
+    color: $btn__modifier
+    font-weight: $bold
+    font-size: $taille_defaut * 2
+    &:hover
+        color: $btn__modifier_dark
+
+.btn__refuser
+    color: $btn__refuser_texte
+    font-size: $taille_defaut * 2
+    &:hover
+        color: $btn__refuser_texte_dark
+
+.texte
+    @include texte-fiche

@@ -34,8 +34,13 @@ export class AjoutEntrepriseComponent implements OnInit {
   }
 
 
-  saveEntreprise() : void {
-    this.entrepriseService.addEntreprise(this.entreprise)
+  saveEntreprise(entrepriseForm : NgForm) : void {
+    if (entrepriseForm.valid){
+      if (this.entreprise != null && this.entreprise)
+      this.entrepriseService.addEntreprise(this.entreprise)
       .subscribe(() => this.router.navigate(["/entreprises"]));
+      }    
+   }
   }
-}
+
+ 

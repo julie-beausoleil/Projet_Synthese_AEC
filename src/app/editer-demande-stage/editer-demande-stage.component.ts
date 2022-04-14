@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class EditerDemandeStageComponent implements OnInit {
   @Input() titre: String = "Annuler";
-  @Input() requeteStage : Omit<RequeteStage, "_id"> = {
-   
+  @Input() requeteStage: Omit<RequeteStage, "_id"> = {
+
     title: " ",
     description: " ",
     enterprise: " ",
@@ -35,10 +35,10 @@ export class EditerDemandeStageComponent implements OnInit {
     city: " ",
     linkToResume: " "
   }
-  
+
   constructor(private location: Location,
     private requetestagaService: RequetestagaService,
-    private router : Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
   }

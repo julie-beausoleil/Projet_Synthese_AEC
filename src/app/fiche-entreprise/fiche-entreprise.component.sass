@@ -7,8 +7,33 @@ section
     @include bg
     margin-bottom: 4rem
 
+.h1--candidat
+    font-size: $taille-defaut * 2.5
+    color: $texte-gris
+
+.job-candidat
+    padding: 0.5rem
+    background-color: $blanc
+    color: $texte-gris
+    font-size: $taille-defaut * 1.5
+    margin-top: 1.5rem
+    font-weight: $bold
+
 section h2, section h3
     color: $theme
+
+.candidat
+    color: $texte-gris
+    font-weight: $bold
+    font-size: 1.5rem
+
+.entreprise
+    @extend .candidat
+    font-size: $taille-defaut * 2.5
+
+.contact
+    @extend .candidat
+    font-size: $taille-defaut * 2
 
 .btn__sauvegarde
     @include btn
@@ -31,3 +56,10 @@ mat-label
 
 img
     max-width: 170px
+
+.hauteurChamps
+    @include mat-form-field
+    line-height: 2rem
+
+.texte
+    color: $texte-gris

@@ -1,7 +1,7 @@
 <div id="demandesstage" class="container">
   <div class="row mb-5 py-3 d-flex align-items-center">
-    <div class="col-9">
-      <h1>Demandes de stages</h1>
+    <div class="col-12 col-lg-9">
+      <h1 class="h1_ajouter">Demandes de stages</h1>
     </div>
   </div>
 
@@ -13,42 +13,45 @@
   </div>
 
   <!-- Tableau afichant les dernières demandes de stage -->
-  <table class="table">
-    <!-- Entete du tableau -->
-    <thead>
-      <tr class="title">
-        <th class="col" class="d-none">ID</th>
-        <th class="col">Poste</th>
-        <th class="col">Secteur d'activité</th>
-        <th class="col">Région</th>
-        <th class="col">Date d'inscription</th>
-        <th class="col">Actions</th>
-      </tr>
-    </thead>
-    <!-- Affichage des dernières offres de stage dans la liste -->
-    <tbody>
-      <tr *ngFor="let requeteStage of requetesStages">
-        <td class="d-none">{{ requeteStage._id }}</td>
-        <td>
-          <mat-icon>school</mat-icon>
-          {{ requeteStage.title }}<br />
-          {{ requeteStage.studentName }}
-        </td>
-        <td>{{ requeteStage.region }}</td>
-        <td>{{ requeteStage.enterprise }}</td>
-        <td>{{ requeteStage.startDate }}</td>
-        <td>
-          <a routerLink="/fiche-demande">
-            <mat-icon class="btn__vue">visibility</mat-icon></a
-          >
-          <a routerLink="/editer-demande-stage"
-            ><mat-icon class="btn__modifier">create</mat-icon></a
-          >
-          <a routerLink="">
-            <mat-icon class="btn__supprimer">delete</mat-icon>
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="dernieresoffres" class="container">
+    <table class="table">
+      <!-- Entete du tableau -->
+      <thead>
+        <tr class="title">
+          <th class="col" class="d-none">ID</th>
+          <th class="col col-lg-4">Poste</th>
+          <th class="col col-lg-2">Secteur d'activité</th>
+          <th class="col col-lg-2">Région</th>
+          <th class="col col-lg-2">Date d'inscription</th>
+          <th class="col col-lg-2">Actions</th>
+        </tr>
+      </thead>
+      <!-- Affichage des dernières offres de stage dans la liste -->
+      <tbody>
+        <tr *ngFor="let requeteStage of requetesStages">
+          <td class="d-none">{{ requeteStage._id }}</td>
+          <td>
+            <mat-icon class="icone-demande-stage" aria-hidden="true">school</mat-icon>
+            {{ requeteStage.title }}<br />
+            {{ requeteStage.studentName }}
+          </td>
+          <td>{{ requeteStage.region }}</td>
+          <td>{{ requeteStage.enterprise }}</td>
+          <td>{{ requeteStage.startDate }}</td>
+          <td class="d-flex justify-content-between">
+            <a routerLink="/fiche-demande">
+              <mat-icon class="btn__vue">visibility</mat-icon>
+            </a>
+            <a routerLink="/editer-demande-stage">
+              <mat-icon class="btn__modifier">create</mat-icon>
+            </a>
+            <a routerLink="">
+              <mat-icon class="btn__supprimer">delete</mat-icon>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    
+    </table>
+  </div>
 </div>

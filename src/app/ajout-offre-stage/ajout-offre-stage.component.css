@@ -47,6 +47,8 @@ section h3 {
   color: #707070;
   font-size: 1.25rem;
   line-height: 1.69rem;
+  margin-top: 1rem;
+  vertical-align: bottom;
 }
 
 .texte-fiche {
@@ -90,6 +92,38 @@ section h3 {
 }
 .btn__supprimer:hover {
   color: #a84860;
+}
+
+.btn__checkvert {
+  color: #07a04a;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.btn__checkvert:hover {
+  color: #03662e;
+}
+
+.btn__modifier_bleu {
+  color: #2E466E;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.btn__modifier_bleu:hover {
+  color: #162235;
+}
+
+.btn__refuser {
+  color: #bb2026;
+  font-size: 2rem;
+}
+.btn__refuser:hover {
+  color: #661113;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.6875rem;
 }
 
 .icone-demande-stage {
@@ -206,43 +240,4 @@ mat-label {
   border-left: 10px solid #707070;
   padding-left: 1rem;
   margin-bottom: 3rem;
-}
-
-.datepicker__align {
-  margin-left: 40rem;
-  margin-top: -6rem;
-}
-
-.btn__align--color {
-  background-color: red;
-  color: white;
-}
-
-.position {
-  text-align: end;
-  margin-top: -1.5rem;
-  border-color: whitesmoke;
-}
-
-.position__select {
-  width: 738px;
-}
-
-.champ__zone__text {
-  height: 8rem;
-  width: 65rem;
-  border: solid 1px;
-  border-color: gray;
-}
-
-.champ__formation {
-  height: 2rem;
-  width: 30rem;
-  border: solid 1px;
-  border-color: gray;
-}
-
-.datepicker__position {
-  width: 35rem;
-  height: 2.5rem;
 }/*# sourceMappingURL=ajout-offre-stage.component.css.map */

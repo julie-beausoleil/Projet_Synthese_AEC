@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./fiche-demande.component.sass']
 })
 export class FicheDemandeComponent implements OnInit {
- requetesStages: RequeteStage[] = [];
+  requetesStages: RequeteStage[] = [];
 
   constructor(private requetestagaService: RequetestagaService, router: Router) { }
 

@@ -21,14 +21,31 @@
         <!-- Formulaire d'accès -->
         <form class="form contour">
           <mat-form-field class="">
+<<<<<<< HEAD
+            <mat-label>Nom</mat-label>
+            <input
+              matInput
+              type="text" id="username" name="username" #username   required
+            
+=======
             <input
               matInput
               value="Votre nom et prénom"
+>>>>>>> origin
               class="form--input__placeholder"
             />
           </mat-form-field>
 
           <mat-form-field>
+<<<<<<< HEAD
+            <mat-label>Email</mat-label>
+            <input
+              matInput type="text" id="email" name="email" #email 
+              class="form--input__placeholder"
+            />
+          </mat-form-field>
+          <button  type="submit" (click)="valider(username.value, email.value)"class="button-accueil">
+=======
             <input
               matInput
               value="Votre courriel"
@@ -37,6 +54,7 @@
           </mat-form-field>
 
           <button [routerLink]="['/tableau-de-bord']" class="button-accueil">
+>>>>>>> origin
             Accéder maintenant
           </button>
         </form>

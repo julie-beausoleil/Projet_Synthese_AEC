@@ -1,31 +1,42 @@
 <div id="window" class="container-fluid g-0">
   <header class="row">
-    <img src="../../assets/img/logo.svg" alt="Logo de la compagnie eStage." title="Logo de la compagnie eStage."
-      class="col-6 col-md-2 align-self-center">
+    <img
+      src="../../assets/img/logo.svg"
+      alt="Logo de la compagnie eStage."
+      title="Logo de la compagnie eStage."
+      class="col-6 col-md-2 align-self-center"
+    />
   </header>
   <main class="row">
     <!-- Image d'accueil -->
-    <aside class="col-12 col-md-6">
-    </aside>
+    <aside class="col-12 col-md-6"></aside>
 
     <section class="col-12 col-md-6 d-flex align-items-center">
-      <div class="col-md-8 offset-md-1 ">
+      <div class="col-md-8 offset-md-1">
         <h1>Identification</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam tempora
-          eum.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam
+          tempora eum.
         </p>
         <!-- Formulaire d'accès -->
         <form class="form contour">
           <mat-form-field class="">
-            <input matInput value="Votre nom et prénom" class="form--input__placeholder"/>
+            <input
+              matInput
+              type="text" id="username" name="username" #username   required
+            
+              class="form--input__placeholder"
+            />
           </mat-form-field>
-          <br />
+
           <mat-form-field>
-            <input matInput value="Votre courriel" class="form--input__placeholder"/>
+            <input
+              matInput type="text" id="email" name="email" #email
+             
+              class="form--input__placeholder"
+            />
           </mat-form-field>
-          <br />
-          <button [routerLink]="['/tableau-de-bord']" class="button-accueil">
+          <button  type="submit" (click)="valider(username.value, email.value)"class="button-accueil">
             Accéder maintenant
           </button>
         </form>

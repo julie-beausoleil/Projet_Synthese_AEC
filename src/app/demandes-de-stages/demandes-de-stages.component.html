@@ -1,1 +1,54 @@
-<p>demandes-de-stages works!</p>
+<div id="demandesstage" class="container">
+  <div class="row mb-5 py-3 d-flex align-items-center">
+    <div class="col-9">
+      <h1>Demandes de stages</h1>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-3 mb-5">
+    <!-- <a routerLink="/ajout-demande-stage">Ajouter une demande de stage</a></button> -->
+    <button routerLink="/ajout-demande-stage" class="btn__valider">
+      Ajouter une demande
+    </button>
+  </div>
+
+  <!-- Tableau afichant les dernières demandes de stage -->
+  <table class="table">
+    <!-- Entete du tableau -->
+    <thead>
+      <tr class="title">
+        <th class="col" class="d-none">ID</th>
+        <th class="col">Poste</th>
+        <th class="col">Secteur d'activité</th>
+        <th class="col">Région</th>
+        <th class="col">Date d'inscription</th>
+        <th class="col">Actions</th>
+      </tr>
+    </thead>
+    <!-- Affichage des dernières offres de stage dans la liste -->
+    <tbody>
+      <tr *ngFor="let requeteStage of requetesStages">
+        <td class="d-none">{{ requeteStage._id }}</td>
+        <td>
+          <mat-icon>school</mat-icon>
+          {{ requeteStage.title }}<br />
+          {{ requeteStage.studentName }}
+        </td>
+        <td>{{ requeteStage.region }}</td>
+        <td>{{ requeteStage.enterprise }}</td>
+        <td>{{ requeteStage.startDate }}</td>
+        <td>
+          <a routerLink="/fiche-demande">
+            <mat-icon class="btn__vue">visibility</mat-icon></a
+          >
+          <a routerLink="/editer-demande-stage"
+            ><mat-icon class="btn__modifier">create</mat-icon></a
+          >
+          <a routerLink="">
+            <mat-icon class="btn__supprimer">delete</mat-icon>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,6 +1,6 @@
 .card__body {
-  width: 75rem;
-  margin-left: 20rem;
+  width: 65rem;
+  margin-left: 6rem;
 }
 
 .card__entete {
@@ -30,8 +30,8 @@
 }
 
 .body__form {
-  width: 75rem;
-  margin-left: 20rem;
+  width: 65rem;
+  margin-left: 6rem;
 }
 
 .titre1 {
@@ -47,11 +47,11 @@
 }
 
 .card__size1 {
-  width: 75rem;
+  width: 65rem;
 }
 
 .card__size2 {
-  width: 75rem;
+  width: 65rem;
 }
 
 .card__border {
@@ -68,15 +68,20 @@
 .titre3 {
   font-size: 1.5rem;
   color: red;
+  margin-left: 6rem;
 }
 
 .largeur__champ {
-  width: 35rem;
+  width: 25rem;
   height: 2.5rem;
   border-color: gray;
 }
 
 .datepicker__position {
-  width: 35rem;
+  width: 25rem;
   height: 2.5rem;
+}
+
+.position {
+  margin-left: 6rem;
 }/*# sourceMappingURL=fiche-stage.component.css.map */

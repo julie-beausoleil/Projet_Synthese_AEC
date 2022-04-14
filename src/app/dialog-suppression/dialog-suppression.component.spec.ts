@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoutesComponent } from './routes.component';
+import { DialogSuppressionComponent } from './dialog-suppression.component';
 
-describe('RoutesComponent', () => {
-  let component: RoutesComponent;
-  let fixture: ComponentFixture<RoutesComponent>;
+describe('DialogSuppressionComponent', () => {
+  let component: DialogSuppressionComponent;
+  let fixture: ComponentFixture<DialogSuppressionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoutesComponent ]
+      declarations: [ DialogSuppressionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoutesComponent);
+    fixture = TestBed.createComponent(DialogSuppressionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

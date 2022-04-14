@@ -1,46 +1,61 @@
 <div id="dernieresoffres" class="container">
   <div class="row mb-5 py-3 d-flex align-items-center">
-    <div class="col-9">
+    <div class="col-12 col-lg-9">
       <h1>Dernière <span>demandes</span> de stage</h1>
       <h2>En attente de validation</h2>
     </div>
+    <!-- Valider les demandes -->
     <div class="col-3 ms-auto text-end">
-    <button class="btn__valider">Valider toutes les offres</button>
-  </div>
+      <button
+        type="button"
+        class="btn__valider"
+        (click)="acceptVal()"
+        onClick="alert('Toutes les demandes sont valider')"
+      >
+        Valider toutes les demandes
+      </button>
+    </div>
   </div>
 
-<!-- Tableau afichant les dernières demandes de stage -->
+  <!-- Tableau afichant les dernières demandes de stage -->
   <table class="table">
     <!-- Entete du tableau -->
-    <thead >
+    <thead>
       <tr class="title">
         <th class="col" class="d-none">ID</th>
-        <th class="col">Profil</th>
-        <th class="col">Établissement</th>
-        <th class="col">Date</th>
-        <th class="col">Actions</th>
+        <th class="col col-12 col-lg-6">Profil</th>
+        <th class="col col-12 col-lg-2">Établissement</th>
+        <th class="col col-12 col-lg-1">Date</th>
+        <th class="col col-12 col-lg-3">Actions</th>
       </tr>
     </thead>
-    <!-- Affichage des dernières offres de stage dans la liste -->
+    <!-- Affichage des dernières demandes de stage dans la liste -->
     <tbody>
       <tr *ngFor="let requeteStage of requetesStages">
         <td class="d-none">{{ requeteStage._id }}</td>
         <td>
-          <mat-icon class="icone-demande-stage" aria-hidden="true">school</mat-icon>
+          <mat-icon class="icone-demande-stage" aria-hidden="true"
+            >school</mat-icon
+          >
           {{ requeteStage.title }}
         </td>
         <td>{{ requeteStage.city }}</td>
-        <td>{{ requeteStage.startDate | date:"yyyy-mm-dd" }}</td>
-        <td class="d-flex justify-content-between"> <!-- Actions-->
-          <button type="button" class="btn__refuser align-items-center">Refuser</button>
+        <td>{{ requeteStage.startDate | date: "yyyy-mm-dd" }}</td>
+        <td class="d-flex justify-content-between">
+          <!-- Actions-->
+          <button type="button" class="btn__refuser align-items-center">
+            Refuser
+          </button>
           <button type="button" class="btn__accepter">Accepter</button>
-          <a routerLink="/administrationInternshipRequestComponent">
-            <mat-icon class="btn__vue">visibility</mat-icon></a>          
-          <a routerLink="/administrationInternshipRequestComponent"
-            ><mat-icon class="btn__modifier">create</mat-icon></a>          
-            <a routerLink="">
-              <mat-icon class="btn__supprimer">delete</mat-icon>
-            </a>
+          <a routerLink="/fiche-demande">
+            <mat-icon class="btn__vue">visibility</mat-icon></a
+          >
+          <a routerLink="/editer-demande-stage"
+            ><mat-icon class="btn__modifier">create</mat-icon></a
+          >
+          <a routerLink="">
+            <mat-icon class="btn__supprimer">delete</mat-icon>
+          </a>
         </td>
       </tr>
     </tbody>

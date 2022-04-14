@@ -3,15 +3,19 @@ import { Entreprise } from "../dossierDesInterfaces/entreprise"; /* Importation 
 import { EntrepriseService } from '../dossierDesServices/entreprise.service'; /* Importantion de mon service -SG  */
 import { NgForm } from '@angular/forms';  // Permet de vérifier si le formulaire est valide 
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogSuppressionComponent } from '../dialog-suppression/dialog-suppression.component';
+
 
 @Component({
   selector: 'app-fiche-entreprise',
   templateUrl: './fiche-entreprise.component.html',
   styleUrls: ['./fiche-entreprise.component.sass']
 })
-export class FicheEntrepriseComponent implements OnInit { 
+export class FicheEntrepriseComponent implements OnInit {
 
-  entreprise : Entreprise = {
+
+  entreprise: Entreprise = {
     _id: " ",
     name: "",
     description: "",
@@ -24,35 +28,59 @@ export class FicheEntrepriseComponent implements OnInit {
     province: "",
     postalCode: "",
     published: false,
-  };  
+  };
 
-  selectedEntreprise?: Entreprise; 
-  
+  selectedEntreprise?: Entreprise;
+  columnsToDisplay = ['actions'];
 
-  constructor(private entrepriseService : EntrepriseService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+
+  constructor(private entrepriseService: EntrepriseService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public dialog: MatDialog,) { }
+
+
 
   ngOnInit(): void {
-   const id = String (this.route.snapshot.params['_id']);
-   this.entrepriseService.getEntreprise(id)
-    .subscribe(resultat => this.entreprise = resultat);
+    const id = String(this.route.snapshot.params['_id']);
+    this.entrepriseService.getEntreprise(id)
+      .subscribe(resultat => this.entreprise = resultat);
   }
 
   onSelect(entreprise: Entreprise): void {
-    this.selectedEntreprise = entreprise; 
+    this.selectedEntreprise = entreprise;
   }
 
 
-  onDelete(entreprise: Entreprise ): void {
-    this.entrepriseService.deleteEntreprise(entreprise._id)
-      .subscribe(() => this.router.navigate(['/']));
-  } 
-
-  onEdit(entrepriseFormEdition: NgForm): void {
-    if (entrepriseFormEdition.valid && this.selectedEntreprise!= null) {
-      this.entrepriseService.editEntreprise(this.selectedEntreprise)
-          .subscribe(() => this.selectedEntreprise = undefined);
+  /* FONCTIONE POUR MON DIALOG DE SUPRESSION ET DE LA SUPRESSION DE MON ENTREPRISE - SG */
+  openConfirmationDialog(entreprise: Entreprise): void {
+    this.entrepriseService.openConfirmDialog()
+      .afterClosed(); {
+      this.entrepriseService.deleteEntreprise(entreprise._id)
+        .subscribe();
+      this.router.navigate(['/entreprises']);
     }
   }
+
+
+
+  onEdit(entrepriseForm: NgForm): void {
+    if (entrepriseForm.valid && this.selectedEntreprise != null) {
+      this.entrepriseService.editEntreprise(this.selectedEntreprise)
+        .subscribe(() => this.selectedEntreprise = undefined);
+      this.router.navigate(['/entreprises'])
+    }
+  }
+
+  onSave(entrepriseForm: NgForm) {
+    if (entrepriseForm.valid) {
+      if (this.entreprise._id != null && this.entreprise._id != '') {
+        // Si on a un id, on doit modifier l'entreprise
+        this.entrepriseService.editEntreprise(this.entreprise).subscribe(() => this.router.navigate(['/entreprises']));;
+      }
+    }
+
+  }
 }
+
+

@@ -1,12 +1,25 @@
 <!-- PAGE CANDIDAT - importation de mon composant candidat pour afFicher les cartes de visites en boucle - SG-->
-<h1>Candidat</h1>
+<div id="candidats" class="container justify-items-start">
+  <header class="row g-0">
+    <h1 class="demandes">Candidats</h1>
 
-<!-- Boutton pour ajouter un candidat -->
-<button mat-stroked-button>  <a routerLink="/ajout-candidat">Ajouter un candidat</a></button>
+    <!-- Boutton pour ajouter un candidat -->
 
-<!-- Boucle pour afficher les cartes des candidats de mon API - SG-->
-<div class="liste-candidats" *ngFor="let candidat of candidats"> 
-  <div (click)="onClick(candidat._id)">    
-    <app-candidats [candidat]="candidat" ></app-candidats>
-  </div>
+    <div class="col-12 col-lg-3 mb-5">
+      <!-- <a routerLink="/ajout-candidat">Ajouter un candidat</a></button> -->
+      <button routerLink="/ajout-candidat" class="btn__valider">Ajouter un candidat</button>
+    </div>
+  </header>
+
+
+  <main class="row g-0">
+    <!-- Boucle pour afficher les cartes des candidats de mon API - SG-->
+    <div class="liste-candidats col-12 col-lg-4" *ngFor="let candidat of candidats">
+      <div (click)="onClick(candidat._id)">
+        <div class="carte-candidat ms-auto mt-auto mx-5 my-3">
+          <app-candidats [candidat]="candidat"></app-candidats>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>

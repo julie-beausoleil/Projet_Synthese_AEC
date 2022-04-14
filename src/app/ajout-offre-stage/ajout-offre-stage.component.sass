@@ -1,9 +1,39 @@
-.titre__entete
-    color: gray
-    font-size:  3rem
+@import ../../styles.sass
 
-.btn__align
-    text-align: end
+$theme: $offre-de-stage
+$theme-dark: $offre-de-stage_dark
+
+section
+    @include bg
+    margin-bottom: 4rem
+
+section h2, section h3
+    color: $theme
+
+.btn__sauvegarde
+    @include btn
+    align-content: center
+
+.btn__annuler
+    @include btn-annuler
+
+mat-form-field
+    @include mat-form-field
+
+.hauteurChamps
+    @include mat-form-field
+    line-height: 2rem
+
+mat-label
+    @include mat-label
+
+.bordure-gauche
+    @include bordure-gauche
+
+.bordure-input
+    @include bordure-input
+
+// Styles Whistler
 
 .datepicker__align
     margin-left: 40rem
@@ -14,46 +44,25 @@
     color: white
 
 .position
-  text-align: end
-  margin-top: -1.5rem
-  border-color: whitesmoke
+    text-align: end
+    margin-top: -1.5rem
+    border-color: whitesmoke
 
 .position__select
-  width: 738px
-  
-.champ__zone__text 
+    width: 738px
+
+.champ__zone__text
     height: 8rem
     width: 65rem
     border: solid 1px
-    border-color: gray 
+    border-color: gray
 
-.champ__formation 
+.champ__formation
     height: 2rem
     width: 30rem
     border: solid 1px
     border-color: gray
 
-.body__form
-    width: 65rem
-    margin-left: 2rem   
-
-.titre1
-    color: red
-    font-size: 2rem
-
-.titre2
-    font-size: 1rem
-
-.titre3
-    font-size: 1.5rem
-    color: red
-
-.titre4
-    color: red
-    font-size: 1rem
-
-.datepicker__position 
-  width: 35rem
-  height: 2.5rem
-
-
+.datepicker__position
+    width: 35rem
+    height: 2.5rem

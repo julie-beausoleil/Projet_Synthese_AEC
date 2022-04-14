@@ -20,6 +20,41 @@ h2 {
   color: #bb2026;
 }
 
+section h2 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin: 2rem 0;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin: 3rem 0 2rem;
+  font-weight: 700;
+}
+
+.demandes, .h1_ajouter {
+  color: #707070;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.h1_ajouter {
+  line-height: 3.75rem;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.69rem;
+}
+
+.texte-fiche {
+  color: #707070;
+  font-size: 1.125rem;
+  line-height: 1.69rem;
+}
+
 .button-accueil {
   border: none;
   text-decoration: none;
@@ -75,10 +110,25 @@ h2 {
   margin-right: 0.75rem;
 }
 
+input {
+  color: #707070;
+  align-items: center;
+  padding: 0rem 0.75rem;
+  line-height: 0.5rem;
+}
+
 :host {
   font-family: "Open Sans", sans-serif !important;
   color: #111111 !important;
   height: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-ripple {
+  display: none;
 }
 
 .bg_demande {
@@ -89,11 +139,60 @@ h2 {
 }
 .bg_demande p {
   font-size: 1rem;
+  margin: 0;
 }
 
 .bg_demande_dark {
   background-color: #986d22;
   border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.bg_offre {
+  background-color: #bb2026;
+  padding: 2rem;
+  border-radius: 0.75rem 0 0 0.75rem;
+  color: #ffffff;
+}
+.bg_offre p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bg_offre_dark {
+  background-color: #821519;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.bg_candidat {
+  background-color: #7f2987;
+  padding: 2rem;
+  border-radius: 0.75rem 0 0 0.75rem;
+  color: #ffffff;
+}
+.bg_candidat p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bg_candidat_dark {
+  background-color: #4A1150;
+  /* border-radius: 0 0.75rem 0.75rem 0 */
+}
+
+.bg_entreprise {
+  background-color: #86a9e6;
+  padding: 2rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: #ffffff;
+}
+.bg_entreprise p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bg_entreprise_dark {
+  background-color: #5E7EB5;
+  /* border-radius: 0.75rem 0 0 0.75rem */
 }
 
 mat-icon {

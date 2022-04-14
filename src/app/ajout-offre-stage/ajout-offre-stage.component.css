@@ -1,10 +1,211 @@
-.titre__entete {
-  color: gray;
-  font-size: 3rem;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+/* Changer la couleur du theme et du theme-dark dans les variables */        
+/* Ajouter color et bgcolor */
+/* Test */
+.contourrouge {
+  border: 1px solid red;
 }
 
-.btn__align {
-  text-align: end;
+.contourbleu {
+  border: 1px solid blue;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #bb2026;
+}
+
+section h2 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin: 2rem 0;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin: 3rem 0 2rem;
+  font-weight: 700;
+}
+
+.demandes, .h1_ajouter {
+  color: #707070;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+}
+
+.h1_ajouter {
+  line-height: 3.75rem;
+}
+
+.texte {
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.69rem;
+}
+
+.texte-fiche {
+  color: #707070;
+  font-size: 1.125rem;
+  line-height: 1.69rem;
+}
+
+.button-accueil {
+  border: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.125rem;
+  letter-spacing: 20;
+  background-color: #0c9da4;
+  padding: 1.25rem 0.875rem;
+  border-radius: 0.25rem;
+}
+
+.button-accueil:hover {
+  color: #ffffff;
+  opacity: 70%;
+}
+
+.btn__vue {
+  color: #0c9da4;
+}
+.btn__vue:hover {
+  color: #07575c;
+}
+
+.btn__modifier {
+  color: #f89747;
+}
+.btn__modifier:hover {
+  color: #ad6932;
+}
+
+.btn__supprimer {
+  color: #f26689;
+}
+.btn__supprimer:hover {
+  color: #a84860;
+}
+
+.icone-demande-stage {
+  color: #70582E;
+  background-color: #D6B477;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+.icone-offre-stage {
+  color: #FF9FA3;
+  background-color: #bb2026;
+  border-radius: 5px;
+  padding: 0.75rem;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+input {
+  color: #707070;
+  align-items: center;
+  padding: 0rem 0.75rem;
+  line-height: 0.5rem;
+}
+
+:host {
+  font-family: "Open Sans", sans-serif !important;
+  color: #111111 !important;
+  height: 100%;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-ripple {
+  display: none;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+section h2, section h3 {
+  color: #bb2026;
+}
+
+.btn__sauvegarde {
+  background-color: #bb2026;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  align-content: center;
+}
+.btn__sauvegarde:hover {
+  background-color: #821519;
+}
+
+.btn__annuler {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #707070;
+  background-color: none;
+  padding: 1rem;
+  border: 1px solid #707070;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+.btn__annuler:hover {
+  background-color: #4b4b4b;
+  color: #a6acbe;
+}
+
+mat-form-field {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #a6acbe;
+  margin-top: 1.25rem;
+}
+
+.hauteurChamps {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #a6acbe;
+  margin-top: 1.25rem;
+  line-height: 2rem;
+}
+
+mat-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #707070;
+}
+
+.bordure-gauche {
+  border-left: 10px solid #bb2026;
+  padding-left: 1rem;
+  margin: 4rem 0 6rem;
+}
+
+.bordure-input {
+  border-left: 10px solid #707070;
+  padding-left: 1rem;
+  margin-bottom: 3rem;
 }
 
 .datepicker__align {
@@ -30,39 +231,15 @@
 .champ__zone__text {
   height: 8rem;
   width: 65rem;
-  border: solid;
-  border-color: whitesmoke;
+  border: solid 1px;
+  border-color: gray;
 }
 
 .champ__formation {
   height: 2rem;
   width: 30rem;
-  border: solid;
-  border-color: whitesmoke;
-}
-
-.body__form {
-  width: 65rem;
-  margin-left: 20rem;
-}
-
-.titre1 {
-  color: red;
-  font-size: 2rem;
-}
-
-.titre2 {
-  font-size: 1rem;
-}
-
-.titre3 {
-  font-size: 1.5rem;
-  color: red;
-}
-
-.titre4 {
-  color: red;
-  font-size: 1rem;
+  border: solid 1px;
+  border-color: gray;
 }
 
 .datepicker__position {

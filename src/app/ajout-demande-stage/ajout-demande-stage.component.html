@@ -1,1 +1,242 @@
-<p>ajout-demande-stage works!</p>
+<!-- AJOUT DEMANDE DE STAGE - SG -->
+
+<h1 class="h1_ajouter bordure-gauche">Ajouter une demande</h1>
+<br />
+<form class="example-form" #demandeForm="ngForm">
+  <!-- Button JG-->
+  <button [routerLink]="['/demandes-de-stages']" class="btn__annuler me-3">
+    Annuler
+  </button>
+  <button class="btn__align--color" mat-button>
+    <mat-icon>save</mat-icon>Sauvegarder
+  </button>
+
+  <br /><br />
+  <!-- ############################################################ -->
+
+  <!-- Titre -->
+  <h4>Titre</h4>
+  <div class="col-lg-9">
+    <mat-form-field required class="example-full-width" appearance="fill">
+      <input
+        name="title"
+        [(ngModel)]="requeteStage.title"
+        #title="ngModel"
+        required
+        type="text"
+        matInput
+      />
+      <mat-error
+        *ngIf="
+          title.invalid &&
+          (title.dirty || title.touched) &&
+          title.hasError('required')
+        "
+        >Le titre de la demande de stage est obligatoire.</mat-error
+      >
+    </mat-form-field>
+  </div>
+  <!-- DÉBUT DE LA SECTION DU FORMUALIRE -->
+
+  <!-- NOM ET PRÉNOM -->
+  <h4>Nom et prénom</h4>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input
+      name="studentName"
+      [(ngModel)]="requeteStage.studentName"
+      #studentName="ngModel"
+      required
+      type="text"
+      matInput
+    />
+    <mat-error
+      *ngIf="
+        studentName.invalid &&
+        (studentName.dirty || studentName.touched) &&
+        studentName.hasError('required')
+      "
+    >
+      Le nom et le prénom est obligatoire.</mat-error
+    >
+  </mat-form-field>
+
+  <!-- PRÉSENTATION -->
+  <h4>Présentation</h4>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <textarea matInput placeholder required></textarea>
+  </mat-form-field>
+
+  <!-- PROGRAMME DE FORMATION -->
+  <h4>Programme de formation</h4>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input
+      name="program"
+      [(ngModel)]="requeteStage.program"
+      #program="ngModel"
+      required
+      type="text"
+      matInput
+    />
+    <mat-error
+      *ngIf="
+        program.invalid &&
+        (program.dirty || program.touched) &&
+        program.hasError('required')
+      "
+    >
+      Le programme de formation est obligatoire.</mat-error
+    >
+  </mat-form-field>
+
+  <!-- ÉTABLISSEMENT SCOLAIRE -->
+  <h4>Établissement scolaire</h4>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input
+      name="school"
+      [(ngModel)]="requeteStage.school"
+      #school="ngModel"
+      required
+      type="text"
+      matInput
+    />
+    <mat-error
+      *ngIf="
+        school.invalid &&
+        (school.dirty || school.touched) &&
+        school.hasError('required')
+      "
+    >
+      L'établissement scolaire est obligatoire.</mat-error
+    >
+  </mat-form-field>
+
+  <!-- Secteur d'activité avec select JG -->
+  <h4>Secteur d'activité</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Veuillez efffectuer un choix</mat-label>
+    <mat-select>
+      <mat-option value="Central">Central</mat-option>
+      <mat-option value="Future">Future</mat-option>
+      <mat-option value="Human">Human</mat-option>
+      <mat-option value="Investor">Investor</mat-option>
+      <mat-option value="Future">Future</mat-option>
+      <mat-option value="Investor">Investor</mat-option>
+      <mat-option value="International">International</mat-option>
+      <mat-option value="Customer">Customer</mat-option>
+      <mat-option value="Forward">Forward</mat-option>
+      <mat-option value="Future">Future</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- VILLE -->
+  <h4>Ville</h4>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <input
+      name="region"
+      [(ngModel)]="requeteStage.region"
+      #region="ngModel"
+      required
+      type="text"
+      matInput
+    />
+    <mat-error
+      *ngIf="
+        region.invalid &&
+        (region.dirty || region.touched) &&
+        region.hasError('required')
+      "
+    >
+      La région est obligatoire.</mat-error
+    >
+  </mat-form-field>
+
+  <!-- Région JG -->
+  <h4>Région</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Veuillez efffectuer un choix</mat-label>
+    <mat-select>
+      <mat-option value="Kansas">Kansas</mat-option>
+      <mat-option value="Connecticut">Connecticut</mat-option>
+      <mat-option value="Washington">Washington</mat-option>
+      <mat-option value="Illinois">Illinois</mat-option>
+      <mat-option value="Nevada">Nevada</mat-option>
+      <mat-option value="Nebraska">Nebraska</mat-option>
+      <mat-option value="Vermont">Vermont</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- partie information sur le stage recherché JG -->
+  <h2>Informations sur le stage recherché</h2>
+  <br /><br />
+
+  <!-- Type de stage avec select JG -->
+  <h4>Type de stage</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Veuillez efffectuer un choix</mat-label>
+    <mat-select>
+      <mat-option value="Temps Plein">Temps Plein</mat-option>
+      <mat-option value="Temps Partiel">Temps Partiel</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Nombres d'heures par semaine JG -->
+  <h4>Nombres d'heures par semaine</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Veuillez efffectuer un choix</mat-label>
+    <mat-select>
+      <mat-option value="5">5</mat-option>
+      <mat-option value="10">10</mat-option>
+      <mat-option value="15">15</mat-option>
+      <mat-option value="20">20</mat-option>
+      <mat-option value="25">25</mat-option>
+      <mat-option value="30">30</mat-option>
+      <mat-option value="35">35</mat-option>
+      <mat-option value="40">40</mat-option>
+      <mat-option value="40 +">40 +</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Date de début JG -->
+  <div class="datepicker__align">
+    <h4>Date de debut</h4>
+    <app-date-picker></app-date-picker>
+  </div>
+
+  <!-- Date de fin JG -->
+  <div class="datepicker__align">
+    <h4>Date de fin</h4>
+    <app-date-picker></app-date-picker>
+  </div>
+
+  <div class="pt 3">
+    <form>
+      <h4>Rémuneration</h4>
+      <br /><br />
+      <input type="checkbox" name="choix1" value="valuer1" />
+      <label for="choix1"> A la discrétion de l'entreprise</label><br /><br />
+      <input type="checkbox" name="choix2" value="valeur2" />
+      <label for="choix2"> Stage remunéré</label><br /><br />
+      <input type="checkbox" name="choix3" value="value3" checked />
+      <label for="choix3"> Stage non remunéré </label><br /><br />
+    </form>
+  </div>
+
+  <!-- Information suplémentaires -->
+  <h2>Information suplémentaires</h2>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <textarea matInput placeholder required></textarea>
+  </mat-form-field>
+
+  <!-- Bouton Parcourir Annuler et Sauvegarder -->
+  <button type="button" class="btn btnParcourir">Parcourir</button>
+
+  <div class="btn__align">
+    <button [routerLink]="['/demandes-de-stages']" class="btn__annuler me-3">
+      Annuler
+    </button>
+
+    <button class="btn__align--color" mat-button>
+      <mat-icon>save</mat-icon>Sauvegarder
+    </button>
+  </div>
+</form>

@@ -1,0 +1,8 @@
+<!-- FORMULAIRE DE DIALOGUE POUR LA SUPRESSION UTILISER POUR ENTREPRISE ET CANDIDAT-->
+<div>
+  <div class="content-container">    
+    <span>Êtes-vous certain de vouloir supprimer ?</span>
+  </div>
+    <button (click)="closeDialog()" >Annuler</button>  
+    <button mat-flat-button id="yes-button" [mat-dialog-close]="true"> Oui, supprimer !</button>  
+</div>

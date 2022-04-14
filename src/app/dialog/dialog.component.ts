@@ -12,20 +12,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DialogComponent implements OnInit {
 
-  @Input() offrestage? : OffreStage; 
-  
+  @Input() offrestage?: OffreStage;
 
-  offrestages : OffreStage[] = [];
+
+  offrestages: OffreStage[] = [];
   selectedOffrestage?: OffreStage;
 
   title: string;
   message: string;
-  id = String (this.route.snapshot.params['_id']);
+  id = String(this.route.snapshot.params['_id']);
 
-  constructor( public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogModel, 
-    private offrestageService : OffrestageService, private route: ActivatedRoute, private router: Router) {
-   
+  constructor(public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogModel,
+    private offrestageService: OffrestageService, private route: ActivatedRoute, private router: Router) {
+
     this.title = data.title;
     this.message = data.message;
   }
@@ -33,25 +33,25 @@ export class DialogComponent implements OnInit {
   }
 
   onSelect(offrestage?: OffreStage): void {
-     this.selectedOffrestage = offrestage; 
+    this.selectedOffrestage = offrestage;
   }
 
   //  appel de la fonction pour la suppression
 
   deleteOffreStage(id: String): void {
-    if(id){
+    if (id) {
       this.offrestageService.deleteOffreStage(id)
-      .subscribe(result => this.offrestages = this.offrestages.filter(p => p !== this.offrestage));
+        .subscribe(result => this.offrestages = this.offrestages.filter(p => p !== this.offrestage));
     }
-      this.dialogRef.close(true);
+    this.dialogRef.close(true);
   }
-     
+
   onDelete(): void {
     this.dialogRef.close(false);
   }
 
-  }
-  export class DialogModel {
+}
+export class DialogModel {
   constructor(public title: string, public message: string) {
   }
 }

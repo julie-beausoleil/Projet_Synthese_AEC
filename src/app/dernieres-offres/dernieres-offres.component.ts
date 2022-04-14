@@ -25,4 +25,17 @@ export class DernieresOffresComponent implements OnInit {
       .subscribe(_result => this.offresStages = this.offresStages.filter(p => p !== OffresStages));
   }
 
+  acceptVal() {
+    for (let i in this.offresStages) {
+      this.offreStatus(this.offresStages[i], true);
+    }
+  }
+  offreStatus(offresStages: OffreStage, active: boolean) {
+    this.OffrestageService.editOffreStage({
+      ...offresStages,
+    }).subscribe((_result) => {
+      offresStages.active = active;
+    });
+  }
+  
 }

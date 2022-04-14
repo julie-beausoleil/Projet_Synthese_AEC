@@ -5,10 +5,12 @@
 <button mat-button><i class="material-icons">close</i></button>
 <br />
 
-<div *ngFor="let requeteStage of requetesStages">
+<div *ngFor="let requeteStage of requeteStages">
   <!-- Nom et présentation JG-->
-  <h5>{{ requeteStage.studentName }}</h5>
-  <p>{{ requeteStage.Presentation }}</p>
+  <div>
+    <h5>{{ requeteStage.studentName }}</h5>
+    <p>{{ requeteStage.Presentation }}</p>
+  </div>
   <br />
 
   <!-- Programme de formation JG-->
